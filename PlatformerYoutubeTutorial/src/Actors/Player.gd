@@ -1,16 +1,17 @@
 extends Actor
 
+# This is used when hitting an enemy from above
 export var stomp_impulse := 1000.0 #pixels per second
 
 
-#Callbacks
+		#Callbacks
+
 func _on_EnemyDetector_area_entered(area):
 	velocity = calculate_stomp_velocity(velocity, stomp_impulse)
 	
 func _on_EnemyDetector_body_entered(body):
 	queue_free()
 
-#Called every frame
 func _physics_process(delta: float) -> void:
 	var direction := get_direction()
 	var is_jump_interrupted := Input.is_action_just_released("jump") and velocity.y < 0
@@ -19,7 +20,8 @@ func _physics_process(delta: float) -> void:
 	velocity = move_and_slide(velocity, FLOOR_NORMAL)
 
 
-# Helper Functions
+		# Helper Functions
+
 func get_direction() -> Vector2:
 	var directionX := Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	var directionY := 1.0
@@ -28,16 +30,13 @@ func get_direction() -> Vector2:
 	return Vector2(directionX, directionY)
 
 func calculate_move_velocity(
-	liner_velocity: Vector2, 
-	direction: Vector2, 
-	speed: Vector2, 
-	is_jump_interrupted: bool
+	liner_velocity: Vector2, direction: Vector2, speed: Vector2, is_jump_interrupted: bool
 ) -> Vector2:
 	var out := liner_velocity
 	out.x = speed.x * direction.x
 	out.y += gravity * get_physics_process_delta_time()
 	
-	if direction.y < 0: out.y = speed.y * direction.y
+	if direction.y < 0:     out.y = speed.y * direction.y
 	if is_jump_interrupted: out.y = 0.0
 	
 	return out
@@ -46,6 +45,3 @@ func calculate_stomp_velocity(linear_velocity: Vector2, impulse: float) -> Vecto
 	var out := linear_velocity
 	out.y = -impulse
 	return out
-
-
-

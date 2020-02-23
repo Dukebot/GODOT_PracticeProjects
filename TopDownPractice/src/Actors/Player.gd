@@ -7,7 +7,7 @@ func _input(event):
 
 
 func _physics_process(delta: float) -> void:
-	var direction := get_movement_direction()
+	var direction = get_movement_direction()
 	velocity = calculate_movement_velocity(direction, max_speed)
 	velocity = move_and_slide(velocity)
 
