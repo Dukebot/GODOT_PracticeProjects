@@ -15,18 +15,20 @@ _global_script_class_icons={
 
 [application]
 
-config/name="DemoProject"
-run/main_scene="res://Scenes/HelloWorld.tscn"
+config/name="Dodge the Creeps"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=480
 window/size/height=720
+window/size/resizable=false
+
+[gdnative]
+
+singletons=[  ]
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
-vram_compression/import_etc=true
-vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"
