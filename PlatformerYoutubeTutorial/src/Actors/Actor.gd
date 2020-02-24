@@ -10,4 +10,4 @@ export var speed := Vector2(300.0, 1000.0)
 export var gravity := 4000.0
 
 # Veclocity vector, also called motion, movement or speedX and speedY
-var velocity: = Vector2.ZERO
+var _velocity := Vector2.ZERO
