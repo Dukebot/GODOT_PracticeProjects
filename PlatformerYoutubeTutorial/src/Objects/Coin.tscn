@@ -74,6 +74,7 @@ __meta__ = {
 }
 
 [node name="CoinSprite" type="Sprite" parent="."]
+position = Vector2( 0, 16 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
