@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/background.png" type="Texture" id=4]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Objects/Portal2D.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Levels/Level01.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -57,20 +57,8 @@ tile_data = PoolIntArray( 131071, 0, 0, 65536, 0, 0, 65548, 0, 0, 196607, 0, 0, 
 position = Vector2( 272, 128 )
 speed = Vector2( 800, 1400 )
 
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 310.495, 471.629 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1828.96, 420.326 )
-
-[node name="Enemy3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3612.72, 476.507 )
-
 [node name="Enemy4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 4968.1, 553.757 )
-
-[node name="Enemy5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2805.11, 399.258 )
 
 [node name="Coin" parent="." instance=ExtResource( 5 )]
 position = Vector2( 467.174, 366.874 )
