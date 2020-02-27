@@ -18,12 +18,16 @@ func _physics_process(delta):
 
 
 func calculate_movement(motion):
+	var out = motion
+	
 	# Set horizontal motion
-	motion.x = 0
-	if Input.is_action_pressed("ui_right"): motion.x += SPEED
-	if Input.is_action_pressed("ui_left"):  motion.x -= SPEED
+	out.x = 0
+	if Input.is_action_pressed("ui_right"): out.x += SPEED
+	if Input.is_action_pressed("ui_left"):  out.x -= SPEED
+	
 	# Set vertical motion
-	motion.y += GRAVITY
+	out.y += GRAVITY
 	if is_on_floor() and Input.is_action_pressed("ui_up"):
-		motion.y = JUMP_HEIGHT
-	return motion
+		out.y = JUMP_HEIGHT
+	
+	return out
