@@ -7,14 +7,65 @@ extents = Vector2( 16, 16 )
 
 [node name="JungleDirtTiles" type="Node"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite0" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 96, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite0"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite0/StaticBody2D"]
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite1" type="Sprite" parent="."]
+position = Vector2( 64, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 32, 96, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite1/StaticBody2D"]
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 64, 96, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
+position = Vector2( 16, 16 )
+shape = SubResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 192, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 96, 32, 32 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/StaticBody2D"]
 position = Vector2( 16, 16 )
 shape = SubResource( 1 )
