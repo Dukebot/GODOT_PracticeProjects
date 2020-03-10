@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+signal shoot
 signal health_changed
 signal dead
 
@@ -17,6 +18,9 @@ var alive = true
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
 
+func _on_GunTimer_timeout():
+	can_shoot = true
+
 func _physics_process(delta):
 	if not alive: return
 	control(delta)
@@ -24,3 +28,14 @@ func _physics_process(delta):
 
 func control(delta):
 	pass
+
+func shoot():
+	if can_shoot:
+		can_shoot = false
+		$GunTimer.start()
+		
+		var direction = Vector2(1, 0).rotated($Turret.global_rotation)
+		emit_signal("shoot", Bullet, $Turret/BulletSpawn.global_position, direction)
+
+
+

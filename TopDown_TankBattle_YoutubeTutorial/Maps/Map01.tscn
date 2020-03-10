@@ -33,3 +33,4 @@ position = Vector2( 692.007, 449.994 )
 rotation = -2.28497
 
 [node name="EnemyTank" parent="PathsContainer/Path2D/PathFollow2D" instance=ExtResource( 4 )]
+[connection signal="shoot" from="PlayerTank" to="." method="_on_Tank_shoot"]

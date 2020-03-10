@@ -12,8 +12,9 @@ func _ready():
 	$DetectRadius/CollisionShape2D.shape.radius = detect_radius
 
 func _on_DetectRadius_body_entered(body):
-	if (body.name == "PlayerTank"): 
-		target = body
+	#we've configurated that the DetecRadius Only detects the player
+	#if (body.name == "PlayerTank"): 
+	target = body
 
 func _on_DetectRadius_body_exited(body):
 	if (body == target): 
