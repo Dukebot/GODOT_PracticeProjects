@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="TopDown_TankBattle_YoutubeTutorial"
+run/main_scene="res://Maps/Map01.tscn"
 config/icon="res://icon.png"
 
 [importer_defaults]
