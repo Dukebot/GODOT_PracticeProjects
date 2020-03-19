@@ -16,7 +16,7 @@ Bullet = ExtResource( 4 )
 max_speed = 200
 rotation_speed = 1.0
 gun_cooldown = 0.4
-health = 10
+max_health = 10
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 2 )

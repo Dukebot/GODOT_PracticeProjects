@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://terrain/terrain_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://tanks/PlayerTank.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Maps/Map.gd" type="Script" id=3]
 [ext_resource path="res://tanks/EnemyTank.tscn" type="PackedScene" id=4]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -33,5 +34,8 @@ position = Vector2( 692.007, 449.994 )
 rotation = -2.28497
 
 [node name="EnemyTank" parent="PathsContainer/Path2D/PathFollow2D" instance=ExtResource( 4 )]
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
+[connection signal="health_changed" from="PlayerTank" to="HUD" method="update_healthbar"]
 [connection signal="shoot" from="PlayerTank" to="." method="_on_Tank_shoot"]
 [connection signal="shoot" from="PathsContainer/Path2D/PathFollow2D/EnemyTank" to="." method="_on_Tank_shoot"]
