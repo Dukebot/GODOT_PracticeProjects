@@ -34,6 +34,7 @@ func _physics_process(delta):
 	control(delta)
 	move_and_slide(velocity)
 
+#override in child scripts
 func control(delta):
 	pass
 
