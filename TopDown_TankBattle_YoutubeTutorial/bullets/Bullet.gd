@@ -29,5 +29,11 @@ func _process(delta):
 
 
 func explode():
-	queue_free()
+	velocity = Vector2()
+	$Sprite.hide()
+	$Explosion.show()
+	$Explosion.play("smoke")
 
+#Cuando termina la animación de la explosión, eliminamos el proyectil del árbol
+func _on_Explosion_animation_finished():
+	queue_free()

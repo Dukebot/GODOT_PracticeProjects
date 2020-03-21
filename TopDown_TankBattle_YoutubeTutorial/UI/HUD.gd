@@ -11,7 +11,12 @@ func update_healthbar(value):
 	if value < 60: bar_texture = bar_yellow
 	if value < 25: bar_texture = bar_red
 	
-	var healthBar = $Margin/Container/HealthBar
-	healthBar.texture_progress = bar_texture
-	#healthBar.Tween.interpolate_property($Margin/Container, "value", )
-	healthBar.value = value
+	$Margin/Container/HealthBar.texture_progress = bar_texture
+	
+	#Substract the life over time with Tween node interpolation
+	$Margin/Container/HealthBar/Tween.interpolate_property(
+		$Margin/Container/HealthBar, 'value', 
+		$Margin/Container/HealthBar.value, value, 
+		0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+	)
+	$Margin/Container/HealthBar/Tween.start()
