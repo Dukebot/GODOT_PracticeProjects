@@ -25,9 +25,8 @@ func _ready():
 func health_changed(): 
 	emit_signal('health_changed', health * 100/max_health)
 
-func _on_GunTimer_timeout():
+func _on_GunTimer_timeout(): 
 	can_shoot = true
-
 
 func _physics_process(delta):
 	if not alive: return
@@ -38,7 +37,6 @@ func _physics_process(delta):
 func control(delta):
 	pass
 
-
 func shoot():
 	if can_shoot:
 		can_shoot = false
@@ -46,16 +44,22 @@ func shoot():
 		
 		var direction = Vector2(1, 0).rotated($Turret.global_rotation)
 		emit_signal("shoot", Bullet, $Turret/BulletSpawn.global_position, direction)
+		$AnimationPlayer.play("muzzle_flash")
 
+#Damage and death logic
 
 func take_damage(amount):
 	health -= amount
 	health_changed()
 	if health <= 0: explode()
 
-func explode(): queue_free()
+func explode():
+	$CollisionShape2D.disabled = true
+	alive = false
+	$Turret.hide()
+	$Body.hide()
+	$Explosion.show()
+	$Explosion.play()
 
-
-
-
-
+func _on_Explosion_animation_finished():
+	queue_free()
