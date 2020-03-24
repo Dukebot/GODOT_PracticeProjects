@@ -37,14 +37,17 @@ func _physics_process(delta):
 func control(delta):
 	pass
 
-func shoot():
-	if can_shoot:
-		can_shoot = false
-		$GunTimer.start()
-		
-		var direction = Vector2(1, 0).rotated($Turret.global_rotation)
-		emit_signal("shoot", Bullet, $Turret/BulletSpawn.global_position, direction)
-		$AnimationPlayer.play("muzzle_flash")
+func shoot(target = null):
+	if not can_shoot: return
+	can_shoot = false
+	
+	$GunTimer.start()
+	
+	var dir = Vector2(1, 0).rotated($Turret.global_rotation)
+	var pos = $Turret/BulletSpawn.global_position
+	emit_signal("shoot", Bullet, pos, dir, target)
+	
+	$AnimationPlayer.play("muzzle_flash")
 
 #Damage and death logic
 

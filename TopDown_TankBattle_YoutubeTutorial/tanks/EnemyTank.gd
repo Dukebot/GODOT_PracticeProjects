@@ -24,17 +24,18 @@ func _on_DetectRadius_body_exited(body):
 		target = null
 
 func _process(delta):
-	if target:
-		var target_direction = (target.global_position - global_position).normalized()
-		var current_direction = Vector2(1, 0).rotated($Turret.global_rotation)
-		
-		$Turret.global_rotation = current_direction.linear_interpolate(
-			target_direction, turret_speed * delta
-		).angle()
-		
-		#see dot product on godot documentation
-		if target_direction.dot(current_direction) > 0.9:
-			shoot()
+	if not target: return
+	
+	var target_direction = (target.global_position - global_position).normalized()
+	var current_direction = Vector2(1, 0).rotated($Turret.global_rotation)
+	
+	$Turret.global_rotation = current_direction.linear_interpolate(
+		target_direction, turret_speed * delta
+	).angle()
+	
+	#see dot product on godot documentation
+	if target_direction.dot(current_direction) > 0.9:
+		shoot(target)
 
 func control(delta):
 	if $LookAhead1.is_colliding() or $LookAhead2.is_colliding():
