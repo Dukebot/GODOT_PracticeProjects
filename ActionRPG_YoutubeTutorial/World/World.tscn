@@ -6,15 +6,16 @@
 [node name="World" type="YSort"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 184, 128 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 0, 0, 120, 0, 104, 40, 128, 72, 136, 112, 104, 160, 112, 192, 48, 168, 0, 168, -16, 96, 8, 32 )
+position = Vector2( 80, 120 )
 
 [node name="Bush" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 56 )
+position = Vector2( 40, 48 )
+
+[node name="Bush" parent="Bush" instance=ExtResource( 1 )]
+position = Vector2( 152, 0 )
+
+[node name="Bush2" parent="Bush" instance=ExtResource( 1 )]
+position = Vector2( 224, 80 )
 
 [node name="Bush2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 280, 120 )
+position = Vector2( 152, 128 )
