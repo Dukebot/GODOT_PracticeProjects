@@ -3,15 +3,18 @@ extends KinematicBody2D
 const ACCELERATION = 500
 const FRICTION = 500
 const MAX_SPEED = 100
+const ROLL_SPEED = 125
 
 enum {MOVE, ROLL, ATTACK}
 
 var state = MOVE
 var velocity = Vector2.ZERO
+var roll_vector = Vector2.LEFT
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+
 
 func _ready():
 	animationTree.active = true
@@ -21,30 +24,33 @@ func _physics_process(delta):
 		MOVE: 
 			move_state(delta)
 		ROLL: 
-			pass
+			roll_state(delta)
 		ATTACK: 
 			attack_state(delta)
 
 
+#MOVE STATE
 func move_state(delta):
-	#Movement
+	#Apply movement and update animation information
 	var input_vector = get_input_vector()
 	
 	if input_vector != Vector2.ZERO:
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Run/blend_position", input_vector)
 		animationTree.set("parameters/Attack/blend_position", input_vector)
+		animationTree.set("parameters/Roll/blend_position", input_vector)
 		animationState.travel("Run")
+		roll_vector = input_vector
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	else:
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-	
-	velocity = move_and_slide(velocity)
-	
-	#Switch to attack state
-	if Input.is_action_just_pressed("attack"):
-		state = ATTACK
+
+	move()
+
+	#Switch to other states
+	if Input.is_action_just_pressed("roll"): state = ROLL
+	if Input.is_action_just_pressed("attack"): state = ATTACK
 
 func get_input_vector() -> Vector2:
 	return Vector2(
@@ -52,11 +58,27 @@ func get_input_vector() -> Vector2:
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	).normalized()
 
+func move(): velocity = move_and_slide(velocity)
 
+
+#ROLL STATE
+func roll_state(delta):
+	velocity = roll_vector * ROLL_SPEED
+	animationState.travel("Roll")
+	move()
+
+func roll_animation_finished():
+	velocity *= 0.8
+	state = MOVE
+
+
+#ATTACK STATE
 func attack_state(delta):
 	velocity = Vector2.ZERO
 	animationState.travel("Attack")
 
-#Called when attack animation ends
 func attack_animation_finished():
 	state = MOVE
+
+
+
