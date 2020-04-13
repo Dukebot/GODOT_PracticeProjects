@@ -1,4 +1,5 @@
 extends Node
 
 func _ready():
-	print()
+	var text = "What are you waiting for? GODOT!"
+	print(text)
