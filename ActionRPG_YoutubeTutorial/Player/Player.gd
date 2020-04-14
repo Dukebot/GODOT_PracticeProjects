@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-const ACCELERATION = 500
-const FRICTION = 500
-const MAX_SPEED = 100
-const ROLL_SPEED = 125
+export var ACCELERATION = 500
+export var FRICTION = 500
+export var MAX_SPEED = 100
+export var ROLL_SPEED = 125
 
 enum {MOVE, ROLL, ATTACK}
 
@@ -15,6 +15,7 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var swordHitbox = $HitboxPivot/SwordHitbox
+
 
 func _ready():
 	animationTree.active = true
