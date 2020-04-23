@@ -4,8 +4,8 @@
 [ext_resource path="res://Assets/Shadows/LargeShadow.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 5.0
-height = 8.0
+radius = 5.99998
+height = 14.0
 
 [node name="Tree" type="StaticBody2D"]
 
