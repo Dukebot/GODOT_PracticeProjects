@@ -1,24 +1,57 @@
 extends Control
 
+var player_words = []
+var story = "One upon a time someone called %s and flavoured %s sandwich which made him feel all %s inside. It was %s day."
+var prompts = ["a name", "a noun", "adverb", "adjective"]
+
+onready var PlayerText = $VBoxContainer/HBoxContainer/PlayerText
+onready var DisplayText = $VBoxContainer/DisplayText
+
 
 func _ready():
-	var prompts = ["Yann", "banana", "tingly", "glorious"]
-	var story = "One upon a time someone called %s and flavoured %s sandwich which made him feel all %s inside. It was %s day."
-	
-	var displayText = (story % prompts)
-	$VBoxContainer/DisplayText.text = displayText
+	DisplayText.text = "Wellcome to Loony Lips! We're going to tell a story and have a wonderful time!"
+	check_player_words_length()
+	PlayerText.grab_focus()
 
 
 func _on_PlayerText_text_entered(new_text):
-	update_DisplayText(new_text)
+	add_to_player_words()
+
 
 func _on_TextureButton_pressed():
-	var words = $VBoxContainer/HBoxContainer/PlayerText.text
-	update_DisplayText(words)
-
-func update_DisplayText(words):
-	$VBoxContainer/DisplayText.text = words
-	$VBoxContainer/HBoxContainer/PlayerText.clear()
+	if is_story_done():
+		get_tree().reload_current_scene()
+	else:
+		add_to_player_words()
 
 
+func add_to_player_words():
+	player_words.append(PlayerText.text)
+	DisplayText.text = ""
+	PlayerText.clear()
+	check_player_words_length()
 
+
+func is_story_done():
+	return player_words.size() == prompts.size()
+
+
+func check_player_words_length():
+	if is_story_done():
+		end_game()
+	else:
+		promp_player()
+
+
+func tell_story():
+	DisplayText.text = story % player_words
+
+
+func promp_player():
+	DisplayText.text += "May I have " + prompts[player_words.size()] + " please?"
+
+
+func end_game():
+	PlayerText.queue_free()
+	$VBoxContainer/HBoxContainer/Label.text = "Again!"
+	tell_story()
