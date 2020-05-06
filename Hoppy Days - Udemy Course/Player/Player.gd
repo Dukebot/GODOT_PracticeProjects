@@ -1,9 +1,11 @@
 extends KinematicBody2D
 
+signal animate
+
 const UP = Vector2(0, -1)
-const SPEED = 500
-const GRAVITY = 300
-const JUMP_SPEED = 3000
+const SPEED = 1000
+const GRAVITY = 7000
+const JUMP_SPEED = 2500
 
 var motion = Vector2(0, 0)
 
@@ -13,24 +15,23 @@ func _ready():
 
 
 func _physics_process(delta):
-	apply_gravity()
+	apply_gravity(delta)
 	jump()
 	move()
+	animate()
 	move_and_slide(motion, UP)
 
 
-#I think this should be multipliyed by delta, as we are adding an acceleration amount each frame
-#If the framerate drops down we will be accelerating slower I think
-func apply_gravity():
+func apply_gravity(delta):
 	if not is_on_floor():
-		motion.y += GRAVITY
+		motion.y += GRAVITY * delta
 	else:
 		motion.y = 0
 
 
 func jump():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		motion.y -= JUMP_SPEED
+	if Input.is_action_pressed("jump") and is_on_floor():
+		motion.y = -JUMP_SPEED
 
 
 func move():
@@ -40,3 +41,7 @@ func move():
 		motion.x = SPEED
 	else:
 		motion.x = 0
+
+
+func animate():
+	emit_signal("animate", motion)
