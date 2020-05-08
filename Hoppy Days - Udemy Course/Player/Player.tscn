@@ -17,8 +17,10 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 500, 0 )
 current = true
 zoom = Vector2( 3, 3 )
 limit_left = 0
+limit_smoothed = true
 smoothing_enabled = true
 [connection signal="animate" from="." to="PlayerAnimation" method="_on_Player_animate"]
