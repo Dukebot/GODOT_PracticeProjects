@@ -4,7 +4,7 @@ signal animate
 
 const UP = Vector2(0, -1)
 const SPEED = 1000
-const GRAVITY = 7000
+const GRAVITY = 3500 #7000 es un buen valor
 const JUMP_SPEED = 2500
 
 var motion = Vector2(0, 0)
