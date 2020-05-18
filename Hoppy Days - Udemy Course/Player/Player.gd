@@ -11,10 +11,8 @@ const WORLD_LIMIT = 4000
 var motion = Vector2(0, 0)
 var lives = 3
 
-
 func _ready():
 	pass
-
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -22,7 +20,6 @@ func _physics_process(delta):
 	move()
 	animate()
 	move_and_slide(motion, UP)
-
 
 func apply_gravity(delta):
 	if position.y > WORLD_LIMIT:
@@ -35,11 +32,10 @@ func apply_gravity(delta):
 	else:
 		motion.y += GRAVITY * delta
 
-
 func jump():
 	if Input.is_action_pressed("jump") and is_on_floor():
 		motion.y = -JUMP_SPEED
-
+		$JumpSFX.play()
 
 func move():
 	if Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
@@ -49,17 +45,15 @@ func move():
 	else:
 		motion.x = 0
 
-
 func animate():
 	emit_signal("animate", motion)
-
 
 func end_game():
 	get_tree().change_scene("res://Levels/GameOver.tscn")
 
-
 func hurt():
 	motion.y = -JUMP_SPEED
 	lives -= 1
+	$HurtSFX.play()
 	if lives < 0: 
 		end_game()
