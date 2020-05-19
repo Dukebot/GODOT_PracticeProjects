@@ -7,6 +7,7 @@ const SPEED = 1000
 const GRAVITY = 6000 #7000 es un buen valor
 const JUMP_SPEED = 2500
 const WORLD_LIMIT = 4000
+const BOOST_MULTIPLIER = 2
 
 var motion = Vector2(0, 0)
 var lives = 3
@@ -52,8 +53,15 @@ func end_game():
 	get_tree().change_scene("res://Levels/GameOver.tscn")
 
 func hurt():
-	motion.y = -JUMP_SPEED
+	position.y -= 1
+	yield(get_tree(), "idle_frame")
+	motion.y -= JUMP_SPEED
 	lives -= 1
 	$HurtSFX.play()
 	if lives < 0: 
 		end_game()
+
+func boost():
+	position.y -= 1
+	yield(get_tree(), "idle_frame")
+	motion.y -= JUMP_SPEED * BOOST_MULTIPLIER
