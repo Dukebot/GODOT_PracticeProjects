@@ -10,7 +10,6 @@ const WORLD_LIMIT = 4000
 const BOOST_MULTIPLIER = 2
 
 var motion = Vector2(0, 0)
-var lives = 3
 
 func _ready():
 	pass
@@ -24,7 +23,7 @@ func _physics_process(delta):
 
 func apply_gravity(delta):
 	if position.y > WORLD_LIMIT:
-		end_game()
+		get_tree().call_group("GameState", "end_game")
 	
 	if is_on_floor():
 		motion.y = 0
@@ -49,17 +48,12 @@ func move():
 func animate():
 	emit_signal("animate", motion)
 
-func end_game():
-	get_tree().change_scene("res://Levels/GameOver.tscn")
-
 func hurt():
 	position.y -= 1
 	yield(get_tree(), "idle_frame")
 	motion.y -= JUMP_SPEED
-	lives -= 1
 	$HurtSFX.play()
-	if lives < 0: 
-		end_game()
+
 
 func boost():
 	position.y -= 1
