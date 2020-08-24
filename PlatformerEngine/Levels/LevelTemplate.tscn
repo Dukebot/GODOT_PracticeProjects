@@ -1,14 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Environment/StaticBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=3]
 
 [node name="LevelTemplate" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 80.4732, 95.9488 )
 
 [node name="StaticBody" parent="." instance=ExtResource( 1 )]
-position = Vector2( 152.976, 2.56671 )
+position = Vector2( 322.434, 344.578 )
+scale = Vector2( 10, 1 )
 
 [node name="StaticBody2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -0.513351, 149.383 )
+position = Vector2( 456.791, 284.02 )
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 343.558, 246.835 )
