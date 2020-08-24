@@ -15,20 +15,22 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Hoppy Days - Udemy Course"
-run/main_scene="res://Levels/Level1.tscn"
+config/name="Platformer Engine"
+run/main_scene="res://Levels/LevelTemplate.tscn"
 config/icon="res://icon.png"
 
 [input]
 
-left={
+move_left={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
  ]
 }
-right={
+move_right={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
  ]
 }
 jump={
@@ -37,13 +39,6 @@ jump={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
-
-[layer_names]
-
-2d_physics/layer_1="Player"
-2d_physics/layer_2="Terrain"
-2d_physics/layer_3="Hazards"
-2d_physics/layer_4="Items"
 
 [rendering]
 
