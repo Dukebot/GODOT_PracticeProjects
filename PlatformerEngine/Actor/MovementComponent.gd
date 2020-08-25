@@ -2,12 +2,12 @@ extends Node
 
 const UP = Vector2(0, -1)
 
-const ACCELERATION = 1000
-const FRICTION = 4000
-const GRAVITY = 2000
+export var ACCELERATION = 1000
+export var FRICTION = 4000
+export var GRAVITY = 2000
 
-const MAX_SPEED = 300
-const JUMP_SPEED = 800
+export var MAX_SPEED = 300
+export var JUMP_SPEED = 800
 
 var motion = Vector2()
 
