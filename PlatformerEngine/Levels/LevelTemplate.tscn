@@ -9,12 +9,12 @@
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 80.4732, 95.9488 )
 
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 343.558, 246.835 )
+
 [node name="StaticBody" parent="." instance=ExtResource( 1 )]
 position = Vector2( 322.434, 344.578 )
 scale = Vector2( 10, 1 )
 
 [node name="StaticBody2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 456.791, 284.02 )
-
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 343.558, 246.835 )
