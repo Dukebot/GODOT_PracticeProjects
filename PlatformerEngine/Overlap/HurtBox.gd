@@ -1,6 +1,5 @@
 extends Area2D
 
-signal take_damage
+signal hit
 
-func take_damage(amount):
-	emit_signal("take_damage", amount)
+func hit(damage): emit_signal("hit", damage)
