@@ -11,4 +11,4 @@ func take_damage(amount):
 
 func _on_HurtBox_body_entered(body):
 	print("On hurtbox body entered!")
-	take_damage(10)
+	take_damage(100)
