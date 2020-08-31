@@ -18,10 +18,10 @@ func _ready():
 
 
 #Call this on the physics process of a kinematic body 2D
-func move(direction, delta):
+func move(direction, jump, delta):
 	horizontal_movement(direction, delta)
 	apply_gravity(delta)
-	jump()
+	if (jump): jump()
 	motion = get_parent().move_and_slide(motion, UP)
 
 
@@ -49,5 +49,5 @@ func apply_gravity(delta):
 
 
 func jump():
-	if Input.is_action_pressed("jump") and get_parent().is_on_floor():
+	if get_parent().is_on_floor():
 		motion.y = -JUMP_SPEED

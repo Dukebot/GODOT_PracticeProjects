@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Environment/StaticBody.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/EnemyMoveLeft.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Items/CoinItem.tscn" type="PackedScene" id=5]
 
 [node name="LevelTemplate" type="Node2D"]
 
@@ -16,5 +18,16 @@ position = Vector2( 343.558, 246.835 )
 position = Vector2( 322.434, 344.578 )
 scale = Vector2( 10, 1 )
 
+[node name="StaticBody3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 966.55, 344.578 )
+scale = Vector2( 10, 1 )
+
 [node name="StaticBody2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 456.791, 284.02 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1131.74, 170.618 )
+
+[node name="Area2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 713.124, 237.708 )
+script = null

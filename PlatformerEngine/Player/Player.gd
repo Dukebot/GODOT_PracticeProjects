@@ -7,7 +7,8 @@ func _ready():
 
 func _physics_process(delta):
 	var direction = get_movement_direction()
-	$MovementComponent.move(direction, delta)
+	var jump = Input.is_action_pressed("jump")
+	$MovementComponent.move(direction, jump, delta)
 
 
 func get_movement_direction():
