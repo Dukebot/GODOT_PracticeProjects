@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blueBall.png-fd4b7c71e8cf369f0a476bf7ff1978bf.stex"
+path="res://.import/blueBall.png-21c54598cc22bdedb982525ac4af339b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/blueBall.png"
-dest_files=[ "res://.import/blueBall.png-fd4b7c71e8cf369f0a476bf7ff1978bf.stex" ]
+source_file="res://GFX/Player/blueBall.png"
+dest_files=[ "res://.import/blueBall.png-21c54598cc22bdedb982525ac4af339b.stex" ]
 
 [params]
 

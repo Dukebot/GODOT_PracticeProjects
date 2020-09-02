@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/StaticBody2D.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Traps/Spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Traps/Blade.tscn" type="PackedScene" id=4]
 
 [node name="LevelTemplate" type="Node2D"]
 
@@ -15,11 +16,15 @@ scale = Vector2( 10, 1 )
 [node name="CollisionShape2D" parent="StaticBody2D" index="1"]
 position = Vector2( 0, 0.513336 )
 
-[node name="Spikes" parent="." instance=ExtResource( 3 )]
-position = Vector2( 427.701, 360.505 )
-scale = Vector2( 2, 2 )
+[node name="Traps" type="Node" parent="."]
 
-[node name="Spikes2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 277.008, 377.126 )
+[node name="Spikes" parent="Traps" instance=ExtResource( 3 )]
+position = Vector2( 507.479, 360.505 )
+
+[node name="Spikes2" parent="Traps" instance=ExtResource( 3 )]
+position = Vector2( 129.64, 361.614 )
+
+[node name="Trap" parent="Traps" instance=ExtResource( 4 )]
+position = Vector2( 448.753, 364.543 )
 
 [editable path="StaticBody2D"]

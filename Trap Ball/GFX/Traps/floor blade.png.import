@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spikes.png-d284038f3018b524331269db4ebae074.stex"
+path="res://.import/floor blade.png-9da7ca0b55f950083fc11ff38373c3e3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/spikes.png"
-dest_files=[ "res://.import/spikes.png-d284038f3018b524331269db4ebae074.stex" ]
+source_file="res://GFX/Traps/floor blade.png"
+dest_files=[ "res://.import/floor blade.png-9da7ca0b55f950083fc11ff38373c3e3.stex" ]
 
 [params]
 
