@@ -1,7 +1,7 @@
 extends Area2D
 
-const CHANGE_DIR_TIME = 1
-const SPEED = 150
+export var CHANGE_DIR_TIME = 1
+export var SPEED = 150
 
 var direction = -1
 

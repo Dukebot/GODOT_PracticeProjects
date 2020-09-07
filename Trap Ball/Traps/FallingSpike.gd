@@ -1,6 +1,7 @@
 extends Area2D
 
-const FALLING_SPEED = 400
+export var FALLING_SPEED = 400
+
 var falling = false
 
 func _on_PlayerDetector_body_entered(body):

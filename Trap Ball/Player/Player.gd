@@ -2,12 +2,12 @@ extends KinematicBody2D
 
 const UP = Vector2(0, -1)
 
-const ACCELERATION = 2000
-const FRICTION = 2000
-const GRAVITY = 2500
+export var ACCELERATION = 2000
+export var FRICTION = 2000
+export var GRAVITY = 2500
 
-const MAX_SPEED = 300
-const JUMP_SPEED = 1000
+export var MAX_SPEED = 300
+export var JUMP_SPEED = 1000
 
 var motion = Vector2()
 

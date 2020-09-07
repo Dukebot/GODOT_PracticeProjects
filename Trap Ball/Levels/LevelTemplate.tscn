@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/GroundGrass.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Traps/Spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Traps/Blade.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Traps/FallingSpike.tscn" type="PackedScene" id=5]
 
 [node name="LevelTemplate" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -12.9509, 6.47543 )
 
 [node name="Traps" type="Node" parent="."]
 
@@ -19,10 +21,21 @@ collision_mask = 2
 position = Vector2( 379.371, 331.224 )
 collision_mask = 2
 
+[node name="Trap" parent="Traps" instance=ExtResource( 4 )]
+position = Vector2( 884.973, 336.721 )
+
 [node name="World" type="Node" parent="."]
 
 [node name="GroundGrass" parent="World" instance=ExtResource( 2 )]
 position = Vector2( 12.1884, 411.08 )
+collision_mask = 1
+
+[node name="GroundGrass6" parent="World" instance=ExtResource( 2 )]
+position = Vector2( 1777.82, 408.922 )
+collision_mask = 1
+
+[node name="GroundGrass5" parent="World" instance=ExtResource( 2 )]
+position = Vector2( 1331.01, 408.921 )
 collision_mask = 1
 
 [node name="GroundGrass2" parent="World" instance=ExtResource( 2 )]
@@ -31,3 +44,6 @@ collision_mask = 1
 
 [node name="GroundGrass3" parent="World" instance=ExtResource( 2 )]
 position = Vector2( 268.875, 46.6541 )
+
+[node name="GroundGrass4" parent="World" instance=ExtResource( 2 )]
+position = Vector2( 878.498, 410.109 )
