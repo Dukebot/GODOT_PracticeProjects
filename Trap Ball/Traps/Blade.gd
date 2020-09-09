@@ -1,13 +1,13 @@
 extends Area2D
 
-export var CHANGE_DIR_TIME = 1
+export var CHANGE_DIR_TIME = 1.0
 export var SPEED = 150
 
 var direction = -1
 
 
 func _ready():
-	$Timer.start(CHANGE_DIR_TIME)
+	$Timer.start(CHANGE_DIR_TIME/2)
 
 func _on_Timer_timeout():
 	direction *= -1

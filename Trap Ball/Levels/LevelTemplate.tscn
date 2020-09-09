@@ -9,7 +9,7 @@
 [node name="LevelTemplate" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -12.9509, 6.47543 )
+position = Vector2( -144, 0 )
 
 [node name="Traps" type="Node" parent="."]
 
@@ -18,24 +18,43 @@ position = Vector2( 133.823, 89.6248 )
 collision_mask = 2
 
 [node name="Spikes" parent="Traps" instance=ExtResource( 3 )]
-position = Vector2( 379.371, 331.224 )
+position = Vector2( 352, 336 )
+collision_mask = 2
+
+[node name="Spikes4" parent="Traps" instance=ExtResource( 3 )]
+position = Vector2( 536, 336 )
+collision_mask = 2
+
+[node name="Spikes2" parent="Traps" instance=ExtResource( 3 )]
+position = Vector2( 824, 328 )
+collision_mask = 2
+
+[node name="Spikes3" parent="Traps" instance=ExtResource( 3 )]
+position = Vector2( 1080.12, 329.106 )
+collision_mask = 2
+
+[node name="Spikes5" parent="Traps" instance=ExtResource( 3 )]
+position = Vector2( 1560, 336 )
 collision_mask = 2
 
 [node name="Trap" parent="Traps" instance=ExtResource( 4 )]
-position = Vector2( 884.973, 336.721 )
+position = Vector2( 957.612, 332.444 )
+
+[node name="Trap2" parent="Traps" instance=ExtResource( 4 )]
+position = Vector2( 1408, 336 )
 
 [node name="World" type="Node" parent="."]
 
 [node name="GroundGrass" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 12.1884, 411.08 )
+position = Vector2( -88, 416 )
 collision_mask = 1
 
 [node name="GroundGrass6" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 1777.82, 408.922 )
+position = Vector2( 1968, 408 )
 collision_mask = 1
 
 [node name="GroundGrass5" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 1331.01, 408.921 )
+position = Vector2( 1456, 408.921 )
 collision_mask = 1
 
 [node name="GroundGrass2" parent="World" instance=ExtResource( 2 )]
@@ -46,4 +65,4 @@ collision_mask = 1
 position = Vector2( 268.875, 46.6541 )
 
 [node name="GroundGrass4" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 878.498, 410.109 )
+position = Vector2( 951.137, 405.832 )
