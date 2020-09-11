@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Traps/Trap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GFX/Traps/microsoft-minesweeper-video-game-quantum-minesweeper-land-mine-android.jpg" type="Texture" id=2]
+[ext_resource path="res://Traps/SpikesBall.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 236.129
+
+[node name="SpikesBall" instance=ExtResource( 1 )]
+scale = Vector2( 0.1, 0.1 )
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 15.4757, 10.8329 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, -2.32135 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="." index="2"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
