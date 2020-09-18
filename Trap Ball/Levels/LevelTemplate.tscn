@@ -1,98 +1,27 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://World/GroundGrass.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Traps/Spikes.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Traps/Blade.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Traps/FallingSpike.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Components/PlayerRespawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://SFX/Studiopolis_Zone_Act_2_Prime_Time_-_Sonic_Mania_-_.wav" type="AudioStream" id=6]
-[ext_resource path="res://Traps/SpikesBall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://World/GroundGrassSmall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/Level.gd" type="Script" id=9]
 
 [node name="LevelTemplate" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -144, 0 )
+position = Vector2( -176, 8 )
+
+[node name="PlayerRespawner" parent="." instance=ExtResource( 2 )]
 
 [node name="Traps" type="Node" parent="."]
 
-[node name="FallingSpike" parent="Traps" instance=ExtResource( 5 )]
-position = Vector2( 128, 88 )
-collision_mask = 2
-
-[node name="FallingSpike2" parent="Traps" instance=ExtResource( 5 )]
-position = Vector2( 1448, 72 )
-collision_mask = 2
-
-[node name="FallingSpike3" parent="Traps" instance=ExtResource( 5 )]
-position = Vector2( 896, 80 )
-collision_mask = 2
-
-[node name="Spikes" parent="Traps" instance=ExtResource( 3 )]
-position = Vector2( 352, 336 )
-collision_mask = 2
-
-[node name="Spikes4" parent="Traps" instance=ExtResource( 3 )]
-position = Vector2( 536, 336 )
-collision_mask = 2
-
-[node name="Spikes6" parent="Traps" instance=ExtResource( 3 )]
-position = Vector2( 1104, 328 )
-collision_mask = 2
-
-[node name="Spikes3" parent="Traps" instance=ExtResource( 3 )]
-position = Vector2( 2576.12, 328 )
-collision_mask = 2
-
-[node name="Spikes5" parent="Traps" instance=ExtResource( 3 )]
-position = Vector2( 1560, 336 )
-collision_mask = 2
-
-[node name="Trap" parent="Traps" instance=ExtResource( 4 )]
-position = Vector2( 2400, 334.894 )
-
-[node name="Trap2" parent="Traps" instance=ExtResource( 4 )]
-position = Vector2( 1408, 336 )
-
-[node name="SpikesBall" parent="Traps" instance=ExtResource( 7 )]
-position = Vector2( 680, 296 )
-
 [node name="World" type="Node" parent="."]
 
-[node name="GroundGrass" parent="World" instance=ExtResource( 2 )]
-position = Vector2( -88, 416 )
-collision_mask = 1
+[node name="Bouncepads" type="Node" parent="."]
 
-[node name="GroundGrass6" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 1968, 408 )
-collision_mask = 1
+[node name="Checkpoints" type="Node" parent="."]
 
-[node name="GroundGrass5" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 1456, 408.921 )
-collision_mask = 1
-
-[node name="GroundGrass2" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 439.889, 409.972 )
-collision_mask = 1
-
-[node name="GroundGrass3" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 268.875, 46.6541 )
-
-[node name="GroundGrass7" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 1432, 32 )
-
-[node name="GroundGrass8" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 880, 40 )
-
-[node name="GroundGrass4" parent="World" instance=ExtResource( 2 )]
-position = Vector2( 2447.14, 404.726 )
-
-[node name="GroundGrassSmall" parent="World" instance=ExtResource( 8 )]
-position = Vector2( 840, 408 )
-
-[node name="GroundGrassSmall2" parent="World" instance=ExtResource( 8 )]
-position = Vector2( 1096, 408 )
-
-[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+volume_db = -38.369
 autoplay = true

@@ -5,13 +5,13 @@
 [ext_resource path="res://Traps/FallingSpike.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.00879, 7.07311 )
+extents = Vector2( 6.89316, 9.25821 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 22.5727, 99.6999 )
+extents = Vector2( 30.1495, 99.687 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 5.72717, 2.60444 )
+extents = Vector2( 3.90708, 2.79087 )
 
 [node name="FallingSpike" instance=ExtResource( 1 )]
 scale = Vector2( 2, 2 )
@@ -22,7 +22,7 @@ position = Vector2( 0, 16.4149 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( -0.00992584, 11.2213 )
+position = Vector2( -0.00992584, 9.24491 )
 shape = SubResource( 1 )
 
 [node name="PlayerDetector" type="Area2D" parent="." index="2"]
@@ -30,14 +30,17 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
-position = Vector2( -15.0804, 99.4185 )
+position = Vector2( 0.0551929, 99.6737 )
 shape = SubResource( 2 )
 
 [node name="GroundDetectror" type="Area2D" parent="." index="3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetectror" index="0"]
-position = Vector2( -0.198608, 15.69 )
+position = Vector2( 0.209202, 15.69 )
 shape = SubResource( 3 )
+
+[node name="LifeTime" type="Timer" parent="." index="4"]
 [connection signal="body_entered" from="." to="." method="_on_FallingSpike_body_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
 [connection signal="body_entered" from="GroundDetectror" to="." method="_on_GroundDetectror_body_entered"]
+[connection signal="timeout" from="LifeTime" to="." method="_on_LifeTime_timeout"]

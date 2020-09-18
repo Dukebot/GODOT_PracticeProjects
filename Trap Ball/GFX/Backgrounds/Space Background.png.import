@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/microsoft-minesweeper-video-game-quantum-minesweeper-land-mine-android.jpg-b5966e658841e0edac21d643c6e70614.stex"
+path="res://.import/Space Background.png-a5e0e23f275a069e88db56d01dd9d909.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GFX/Traps/microsoft-minesweeper-video-game-quantum-minesweeper-land-mine-android.jpg"
-dest_files=[ "res://.import/microsoft-minesweeper-video-game-quantum-minesweeper-land-mine-android.jpg-b5966e658841e0edac21d643c6e70614.stex" ]
+source_file="res://GFX/Backgrounds/Space Background.png"
+dest_files=[ "res://.import/Space Background.png-a5e0e23f275a069e88db56d01dd9d909.stex" ]
 
 [params]
 
