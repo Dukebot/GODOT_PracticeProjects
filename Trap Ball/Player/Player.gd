@@ -3,6 +3,8 @@ extends KinematicBody2D
 func _physics_process(delta):
 	var direction = $PlayerInput.get_horizontal_direction()
 	$PlayerMovement.move(direction, delta)
+	if position.y > 2000:
+		destroy()
 
 func _on_Hitbox_area_entered(area):
 	destroy()
