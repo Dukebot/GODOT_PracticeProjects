@@ -33,14 +33,15 @@ collision_mask = 2
 position = Vector2( 0.0551929, 99.6737 )
 shape = SubResource( 2 )
 
-[node name="GroundDetectror" type="Area2D" parent="." index="3"]
+[node name="GroundDetector" type="Area2D" parent="." index="3"]
+collision_layer = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetectror" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetector" index="0"]
 position = Vector2( 0.209202, 15.69 )
 shape = SubResource( 3 )
 
 [node name="LifeTime" type="Timer" parent="." index="4"]
 [connection signal="body_entered" from="." to="." method="_on_FallingSpike_body_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
-[connection signal="body_entered" from="GroundDetectror" to="." method="_on_GroundDetectror_body_entered"]
+[connection signal="body_entered" from="GroundDetector" to="." method="_on_GroundDetectror_body_entered"]
 [connection signal="timeout" from="LifeTime" to="." method="_on_LifeTime_timeout"]

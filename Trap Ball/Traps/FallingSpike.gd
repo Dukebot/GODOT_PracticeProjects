@@ -1,10 +1,7 @@
 extends Area2D
 
-signal respawn_spike
-
 export var FALLING_SPEED = 400
-export var respawn_time = 5
-export var life_time = 10
+export var life_time = 3
 
 var falling = false
 
@@ -16,18 +13,24 @@ func _on_PlayerDetector_body_entered(body):
 	$LifeTime.start(life_time)
 
 func _on_GroundDetectror_body_entered(body):
-	destroy()
+	disable()
 
 func _on_LifeTime_timeout():
-	destroy()
+	enable()
+
 
 func _process(delta):
 	if falling:
 		position.y += FALLING_SPEED * delta
 
-func destroy():
-	emit_signal("respawn_spike", initial_position, respawn_time)
-	queue_free()
+
+func disable():
+	set_visible(false)
+
+func enable():
+	falling = false
+	position = initial_position
+	set_visible(true)
 
 
 func set_position(value):
