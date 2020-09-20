@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Traps/FallingSpike.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Traps/Blade.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Traps/Spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Items/BouncePad.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Traps/SpikesBall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/LevelTemplate.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Ground/GroundGrass.tscn" type="PackedScene" id=7]
+
+[node name="Level1" instance=ExtResource( 6 )]
+position = Vector2( 0, -8 )
+
+[node name="Player" parent="." index="1"]
+position = Vector2( 1.42109e-14, 9.09495e-13 )
+
+[node name="EndLevel" parent="." index="2"]
+position = Vector2( 1728, -128 )
+next_level = "res://Levels/Level2.tscn"
+
+[node name="Spikes" parent="Traps" index="0" instance=ExtResource( 3 )]
+position = Vector2( 384, 296 )
+
+[node name="FallingSpike" parent="Traps" index="1" instance=ExtResource( 1 )]
+position = Vector2( 1728, 88 )
+
+[node name="SpikesBall" parent="Traps" index="2" instance=ExtResource( 5 )]
+position = Vector2( 1280, 232 )
+speed_y = 100
+change_dir_time = 1.0
+
+[node name="Blade" parent="Traps" index="3" instance=ExtResource( 2 )]
+position = Vector2( 832, 296 )
+
+[node name="GroundGrassSmall" parent="World" index="0"]
+position = Vector2( 32, 368 )
+
+[node name="GroundGrass2" parent="World" index="1" instance=ExtResource( 7 )]
+position = Vector2( 832, 368 )
+
+[node name="GroundGrass6" parent="World" index="2" instance=ExtResource( 7 )]
+position = Vector2( 384, 368 )
+
+[node name="GroundGrass3" parent="World" index="3" instance=ExtResource( 7 )]
+position = Vector2( 1280, 368 )
+
+[node name="GroundGrass4" parent="World" index="4" instance=ExtResource( 7 )]
+position = Vector2( 1728, 368 )
+
+[node name="GroundGrass5" parent="World" index="5" instance=ExtResource( 7 )]
+position = Vector2( 1728, 48 )
+
+[node name="BouncePad" parent="Bouncepads" index="0" instance=ExtResource( 4 )]
+position = Vector2( 2016, 352 )
+
+[node name="Checkpoint" parent="Checkpoints" index="0"]
+position = Vector2( 672, 224 )
+
+[node name="Checkpoint2" parent="Checkpoints" index="1"]
+position = Vector2( 1120, 224 )
+
+[node name="Checkpoint3" parent="Checkpoints" index="2"]
+position = Vector2( 1576, 232 )

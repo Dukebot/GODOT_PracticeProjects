@@ -7,7 +7,7 @@ export var FRICTION = 2000
 export var GRAVITY = 2000
 
 export var MAX_SPEED = 300
-export var JUMP_SPEED = 800
+export var JUMP_SPEED = 700
 
 var motion = Vector2()
 
@@ -38,4 +38,5 @@ func vertical_movement(delta):
 	if not get_parent().is_on_floor():
 		motion.y += GRAVITY * delta
 	else:
+		get_parent().position.y -= 2
 		motion.y = -JUMP_SPEED

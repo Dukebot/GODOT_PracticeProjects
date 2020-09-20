@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="LevelSection" type="Node2D"]
+
+[node name="Traps" type="Node" parent="."]
+
+[node name="World" type="Node" parent="."]
