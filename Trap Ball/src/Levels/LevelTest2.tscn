@@ -1,0 +1,188 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/Levels/LevelTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/World/Ground/GroundGrass.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/World/Ground/GroundGrassSmall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/World/Ground/GroundGrassSmallMovable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Traps/Spikes.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Traps/Blade.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Traps/FallingSpike.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/World/Ground/GroundGrassMovable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Items/BouncePad.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Traps/SpikesBall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Items/Checkpoint.tscn" type="PackedScene" id=11]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 190.378, 46.0497 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 99.5638, 49.0564 )
+
+[node name="LevelTest2" instance=ExtResource( 1 )]
+
+[node name="Player" parent="." index="1"]
+position = Vector2( -152, 120 )
+
+[node name="EndLevel" parent="." index="2"]
+position = Vector2( -1232, -2152 )
+
+[node name="FallingSpike2" parent="Traps" index="0" instance=ExtResource( 7 )]
+position = Vector2( 1824, -96 )
+
+[node name="FallingSpike3" parent="Traps" index="1" instance=ExtResource( 7 )]
+position = Vector2( 1552, -96 )
+
+[node name="FallingSpike4" parent="Traps" index="2" instance=ExtResource( 7 )]
+position = Vector2( 1304, -104 )
+
+[node name="FallingSpike5" parent="Traps" index="3" instance=ExtResource( 7 )]
+position = Vector2( 672, -936 )
+
+[node name="FallingSpike6" parent="Traps" index="4" instance=ExtResource( 7 )]
+position = Vector2( 856, -936 )
+
+[node name="Blade2" parent="Traps" index="5" instance=ExtResource( 6 )]
+position = Vector2( 504, 208 )
+
+[node name="Blade3" parent="Traps" index="6" instance=ExtResource( 6 )]
+position = Vector2( 1552, -216 )
+
+[node name="Spikes3" parent="Traps" index="7" instance=ExtResource( 5 )]
+position = Vector2( 784, 208 )
+
+[node name="Spikes4" parent="Traps" index="8" instance=ExtResource( 5 )]
+position = Vector2( 1544, 312 )
+
+[node name="Spikes6" parent="Traps" index="9" instance=ExtResource( 5 )]
+position = Vector2( 1824, -216 )
+
+[node name="Spikes7" parent="Traps" index="10" instance=ExtResource( 5 )]
+position = Vector2( 768, -624 )
+
+[node name="Spikes8" parent="Traps" index="11" instance=ExtResource( 5 )]
+position = Vector2( 416, -720 )
+
+[node name="Spikes9" parent="Traps" index="12" instance=ExtResource( 5 )]
+position = Vector2( 160, -800 )
+
+[node name="Spikes5" parent="Traps" index="13" instance=ExtResource( 5 )]
+position = Vector2( 1808, 224 )
+
+[node name="Spikes2" parent="Traps" index="14" instance=ExtResource( 5 )]
+position = Vector2( 208, 208 )
+
+[node name="SpikesBall" parent="Traps" index="15" instance=ExtResource( 10 )]
+position = Vector2( 640, 192 )
+
+[node name="SpikesBall2" parent="Traps" index="16" instance=ExtResource( 10 )]
+position = Vector2( 1304, -232 )
+
+[node name="SpikesBall3" parent="Traps" index="17" instance=ExtResource( 10 )]
+position = Vector2( 768, -656 )
+
+[node name="GroundGrass" parent="World" index="0" instance=ExtResource( 2 )]
+position = Vector2( -176, 288 )
+
+[node name="GroundGrass2" parent="World" index="1" instance=ExtResource( 2 )]
+position = Vector2( 1208, 464 )
+
+[node name="GroundGrass3" parent="World" index="2" instance=ExtResource( 2 )]
+position = Vector2( 768, -552 )
+
+[node name="GroundGrass4" parent="World" index="3" instance=ExtResource( 2 )]
+position = Vector2( 760, -976 )
+
+[node name="GroundGrass5" parent="World" index="4" instance=ExtResource( 2 )]
+position = Vector2( -512, -2064 )
+
+[node name="GroundGrass9" parent="World" index="5" instance=ExtResource( 2 )]
+position = Vector2( -64, -2064 )
+
+[node name="GroundGrass6" parent="World" index="6" instance=ExtResource( 2 )]
+position = Vector2( -872, -2440 )
+
+[node name="GroundGrass7" parent="World" index="7" instance=ExtResource( 2 )]
+position = Vector2( -432, -2440 )
+
+[node name="GroundGrass8" parent="World" index="8" instance=ExtResource( 2 )]
+position = Vector2( 0, -2440 )
+
+[node name="GroundGrassMovable" parent="World" index="9" instance=ExtResource( 8 )]
+position = Vector2( -368, -720 )
+
+[node name="CollisionShape2D" parent="World/GroundGrassMovable" index="2"]
+position = Vector2( 3.03686e-05, 1.51992e-05 )
+shape = SubResource( 1 )
+
+[node name="GroundGrassSmall" parent="World" index="10"]
+position = Vector2( 208, 288 )
+
+[node name="GroundGrassSmall2" parent="World" index="11" instance=ExtResource( 3 )]
+position = Vector2( 496, 288 )
+
+[node name="GroundGrassSmall3" parent="World" index="12" instance=ExtResource( 3 )]
+position = Vector2( 776, 288 )
+
+[node name="GroundGrassSmall4" parent="World" index="13" instance=ExtResource( 3 )]
+position = Vector2( 1544, 392 )
+
+[node name="GroundGrassSmall5" parent="World" index="14" instance=ExtResource( 3 )]
+position = Vector2( 1808, 304 )
+
+[node name="GroundGrassSmall6" parent="World" index="15" instance=ExtResource( 3 )]
+position = Vector2( 1816, -136 )
+
+[node name="GroundGrassSmall7" parent="World" index="16" instance=ExtResource( 3 )]
+position = Vector2( 1552, -136 )
+
+[node name="GroundGrassSmall8" parent="World" index="17" instance=ExtResource( 3 )]
+position = Vector2( 1296, -136 )
+
+[node name="GroundGrassSmall9" parent="World" index="18" instance=ExtResource( 3 )]
+position = Vector2( 408, -640 )
+
+[node name="GroundGrassSmall10" parent="World" index="19" instance=ExtResource( 3 )]
+position = Vector2( 160, -720 )
+
+[node name="GroundGrassSmall11" parent="World" index="20" instance=ExtResource( 3 )]
+position = Vector2( -912, -720 )
+
+[node name="GroundGrassSmall12" parent="World" index="21" instance=ExtResource( 3 )]
+position = Vector2( -928, -2064 )
+
+[node name="GroundGrassSmallMovable2" parent="World" index="22" instance=ExtResource( 4 )]
+position = Vector2( 2080, 64 )
+
+[node name="CollisionShape2D" parent="World/GroundGrassSmallMovable2" index="2"]
+position = Vector2( 7.63535e-05, 0 )
+shape = SubResource( 2 )
+
+[node name="BouncePad" parent="Bouncepads" index="0" instance=ExtResource( 9 )]
+position = Vector2( 1088, -136 )
+
+[node name="BouncePad2" parent="Bouncepads" index="1" instance=ExtResource( 9 )]
+position = Vector2( -1120, -800 )
+
+[node name="BouncePad3" parent="Bouncepads" index="2" instance=ExtResource( 9 )]
+position = Vector2( -904, -1256 )
+
+[node name="BouncePad4" parent="Bouncepads" index="3" instance=ExtResource( 9 )]
+position = Vector2( -1176, -1632 )
+
+[node name="BouncePad5" parent="Bouncepads" index="4" instance=ExtResource( 9 )]
+position = Vector2( 288, -2072 )
+
+[node name="Checkpoint" parent="Checkpoints" index="0" instance=ExtResource( 11 )]
+position = Vector2( 1088, 368 )
+
+[node name="Checkpoint2" parent="Checkpoints" index="1" instance=ExtResource( 11 )]
+position = Vector2( 1088, -232 )
+
+[editable path="Traps/SpikesBall2"]
+
+[editable path="Traps/SpikesBall3"]
+
+[editable path="World/GroundGrassMovable"]
+
+[editable path="World/GroundGrassSmallMovable2"]

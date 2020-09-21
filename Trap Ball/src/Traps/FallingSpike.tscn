@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Traps/Trap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/GFX/Traps/falling spike.png" type="Texture" id=2]
+[ext_resource path="res://src/Traps/FallingSpike.gd" type="Script" id=3]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.89316, 9.25821 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 28.0927, 81.2243 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 3.90708, 2.79087 )
+
+[node name="FallingSpike" instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 0, 16.4149 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( -0.00992584, 9.24491 )
+shape = SubResource( 1 )
+
+[node name="PlayerDetector" type="Area2D" parent="." index="2"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
+position = Vector2( 0.0551929, 81.1488 )
+shape = SubResource( 2 )
+
+[node name="GroundDetector" type="Area2D" parent="." index="3"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundDetector" index="0"]
+position = Vector2( 0.209202, 15.69 )
+shape = SubResource( 3 )
+
+[node name="LifeTime" type="Timer" parent="." index="4"]
+[connection signal="body_entered" from="." to="." method="_on_FallingSpike_body_entered"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
+[connection signal="body_entered" from="GroundDetector" to="." method="_on_GroundDetectror_body_entered"]
+[connection signal="timeout" from="LifeTime" to="." method="_on_LifeTime_timeout"]

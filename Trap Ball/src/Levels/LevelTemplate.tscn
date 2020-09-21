@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/Items/EndLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/World/Ground/GroundGrassSmall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Items/Checkpoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/SFX/Studiopolis_Zone_Act_2_Prime_Time_-_Sonic_Mania_-_.wav" type="AudioStream" id=6]
+[ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Levels/Level.gd" type="Script" id=8]
+[ext_resource path="res://src/Components/CameraComponent.tscn" type="PackedScene" id=9]
+
+[node name="LevelTemplate" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="CameraComponent" parent="." instance=ExtResource( 9 )]
+position = Vector2( -7.95387, 83.8963 )
+scale = Vector2( 0.66, 0.66 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( -7.95387, 83.8963 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../CameraComponent")
+
+[node name="EndLevel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 559.636, 167.527 )
+
+[node name="Traps" type="Node" parent="."]
+
+[node name="Effects" type="Node" parent="."]
+
+[node name="World" type="Node" parent="."]
+
+[node name="GroundGrassSmall" parent="World" instance=ExtResource( 3 )]
+position = Vector2( 7.03235, 351.616 )
+
+[node name="Bouncepads" type="Node" parent="."]
+
+[node name="Checkpoints" type="Node" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 161.927, 166.17 )
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 261.442, 165.518 )
+
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource( 4 )]
+position = Vector2( 362.621, 163.518 )
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -38.369
+autoplay = true
