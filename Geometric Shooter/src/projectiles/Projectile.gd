@@ -2,10 +2,8 @@ extends Area2D
 
 class_name Projectile
 
-
-export var speed = 500
-export var damage = 1
-export var life_time = 10.0
+var speed = 0
+var damage = 0
 
 var direction = Vector2()
 
@@ -13,10 +11,13 @@ onready var sprite = $Sprite
 onready var timer = $Timer
 
 
-func init(initial_pos, destination_pos):
+func init(initial_pos, destination_pos, _speed, _damage, life_time):
 	position = initial_pos
 	direction = (destination_pos - initial_pos).normalized()
-	$Timer.start(life_time)
+	speed = _speed
+	damage = _damage
+	timer.start(life_time)
+	rotation = direction.angle()
 
 func _process(delta):
 	position += direction * speed * delta

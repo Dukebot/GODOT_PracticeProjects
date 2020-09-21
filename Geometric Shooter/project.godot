@@ -14,14 +14,38 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/actor/Actor.gd"
 }, {
+"base": "Actor",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/actor/enemies/Enemy.gd"
+}, {
+"base": "Enemy",
+"class": "EnemyCercle",
+"language": "GDScript",
+"path": "res://src/actor/enemies/EnemyCercle.gd"
+}, {
+"base": "Actor",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/actor/player/Player.gd"
+}, {
 "base": "Area2D",
 "class": "Projectile",
 "language": "GDScript",
 "path": "res://src/projectiles/Projectile.gd"
+}, {
+"base": "Node",
+"class": "ShootComponent",
+"language": "GDScript",
+"path": "res://src/components/ShootComponent.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
-"Projectile": ""
+"Enemy": "",
+"EnemyCercle": "",
+"Player": "",
+"Projectile": "",
+"ShootComponent": ""
 }
 
 [application]

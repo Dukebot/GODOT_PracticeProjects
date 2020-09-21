@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shot11x22av2.png-76e83de1f6efb43e833a3ed8741a410c.stex"
+path="res://.import/enemy39b7v3.png-c927c9c096aaf45363bcdaafa96087c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/projectiles/shot11x22av2.png"
-dest_files=[ "res://.import/shot11x22av2.png-76e83de1f6efb43e833a3ed8741a410c.stex" ]
+source_file="res://Assets/graphics/actor/enemies/enemy39b7v3.png"
+dest_files=[ "res://.import/enemy39b7v3.png-c927c9c096aaf45363bcdaafa96087c0.stex" ]
 
 [params]
 
