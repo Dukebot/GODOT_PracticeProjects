@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/levels/map limits/MapVerticalLimit.gd" type="Script" id=1]
+[ext_resource path="res://src/levels/map limits/MapHorizontalLimit.gd" type="Script" id=2]
+[ext_resource path="res://src/levels/map limits/MapHorizontalLimit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/levels/map limits/MapVerticalLimit.tscn" type="PackedScene" id=4]
+
+[node name="MapLimits" type="Node"]
+
+[node name="MapHorizontalLimitArea" type="Area2D" parent="." instance=ExtResource( 3 )]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="MapVerticalLimitArea" type="Area2D" parent="." instance=ExtResource( 4 )]
+script = ExtResource( 1 )
+[connection signal="body_entered" from="MapHorizontalLimitArea" to="MapHorizontalLimitArea" method="_on_MapVerticalLimitArea_body_entered"]
+[connection signal="body_entered" from="MapVerticalLimitArea" to="MapVerticalLimitArea" method="_on_MapVerticalLimitArea_body_entered"]

@@ -8,14 +8,18 @@ var invincible = false
 onready var invincibility_timer = $InvincibilityTimer
 
 
-func take_damage(amount):
+func take_damage(damage_amount):
 	if not invincible:
 		invincible = true
 		invincibility_timer.start(invincible_time)
-		
-		health -= amount
+
+		health -= damage_amount
 		if health <= 0:
 			get_parent().destroy()
+
+func set_invincibility(time):
+	invincible = true
+	invincibility_timer.start(time)
 
 
 func _on_InvincibilityTimer_timeout():

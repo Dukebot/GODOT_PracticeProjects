@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/actor/enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/graphics/actor/enemies/enemy39av3.png" type="Texture" id=2]
+[ext_resource path="res://src/actor/enemies/Cercles/EnemyCercle.gd" type="Script" id=3]
+[ext_resource path="res://Assets/sound/bounce.wav" type="AudioStream" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 21.8189
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 19.6542
+
+[node name="EnemyCercle" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="3"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="4"]
+shape = SubResource( 2 )
+
+[node name="Bounce" type="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource( 4 )
+
+[editable path="HitboxComponent"]

@@ -3,18 +3,24 @@
 [ext_resource path="res://src/projectiles/Projectile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/graphics/projectiles/shot11x22av2.png" type="Texture" id=2]
 
-
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 5.87279
-height = 11.9876
+radius = 5.96009
+height = 10.2755
 
 [node name="PlayerPrimaryProjectile" instance=ExtResource( 1 )]
-collision_layer = 0
-collision_mask = 2
+speed = 800
+damage = 1
+life_time = 3.0
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="HitboxComponent" parent="." index="2"]
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
 rotation = 1.5708
 shape = SubResource( 1 )
+[connection signal="body_entered" from="HitboxComponent" to="." method="_on_HitboxComponent_body_entered"]
+
+[editable path="HitboxComponent"]

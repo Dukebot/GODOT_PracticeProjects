@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/actor/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/actor/enemies/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://src/components/HitboxComponent.tscn" type="PackedScene" id=3]
 
 [node name="Enemy" instance=ExtResource( 1 )]
 collision_layer = 2
 script = ExtResource( 2 )
+
+[node name="HitboxComponent" parent="." index="2" instance=ExtResource( 3 )]
+collision_mask = 1
+[connection signal="body_entered" from="HitboxComponent" to="." method="_on_HitboxComponent_body_entered"]

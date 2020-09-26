@@ -6,4 +6,16 @@
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="SpawnPosition1" type="Position2D" parent="."]
+position = Vector2( 169.09, 146.728 )
+
+[node name="SpawnPosition2" type="Position2D" parent="."]
+position = Vector2( -144.575, 132.378 )
+
+[node name="SpawnPosition3" type="Position2D" parent="."]
+position = Vector2( 153.783, -143.38 )
+
+[node name="SpawnPosition4" type="Position2D" parent="."]
+position = Vector2( -146.847, -135.726 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/actor/enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/actor/enemies/triangles/EnemyTriangle.gd" type="Script" id=2]
+[ext_resource path="res://Assets/graphics/actor/enemies/triangle.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 25.1319
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 22.6963
+
+[node name="EnemyTriangle" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="HealthComponent" parent="." index="0"]
+invincible_time = 0.1
+
+[node name="MovementComponent" parent="." index="1"]
+max_speed = 500
+acceleration = 10000
+friction = 10000
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="3"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="4"]
+shape = SubResource( 2 )
+
+[node name="LifeTimer" type="Timer" parent="." index="5"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+[connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]
+
+[editable path="HitboxComponent"]
