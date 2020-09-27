@@ -32,16 +32,16 @@ position = Vector2( 4.65088, 492.64 )
 [node name="EnemySpawner" parent="." instance=ExtResource( 5 )]
 
 [node name="SpawnPosition1" parent="EnemySpawner" index="1"]
-position = Vector2( 475.173, 263.72 )
+position = Vector2( 458.849, 251.477 )
 
 [node name="SpawnPosition2" parent="EnemySpawner" index="2"]
-position = Vector2( -472.424, 269.775 )
+position = Vector2( -443.856, 238.487 )
 
 [node name="SpawnPosition3" parent="EnemySpawner" index="3"]
-position = Vector2( 469.389, -268.533 )
+position = Vector2( 465.308, -252.209 )
 
 [node name="SpawnPosition4" parent="EnemySpawner" index="4"]
-position = Vector2( -482.859, -274.484 )
+position = Vector2( -458.372, -259.52 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 

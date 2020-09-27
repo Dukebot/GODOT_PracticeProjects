@@ -18,8 +18,8 @@ func _on_Timer_timeout():
 	var spawn_position = get_random_spawn_position_node()
 	
 	var enemy = enemies_to_spawn[rand_index].instance()
-	get_tree().current_scene.add_enemy(enemy)
 	enemy.position = spawn_position.position
+	get_tree().current_scene.add_enemy(enemy)
 
 
 func get_random_enemy_index():

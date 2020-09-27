@@ -11,6 +11,7 @@ radius = 25.1319
 radius = 22.6963
 
 [node name="EnemyTriangle" instance=ExtResource( 1 )]
+scale = Vector2( 0.66, 0.66 )
 script = ExtResource( 2 )
 
 [node name="HealthComponent" parent="." index="0"]

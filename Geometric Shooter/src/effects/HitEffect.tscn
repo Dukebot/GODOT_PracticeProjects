@@ -23,6 +23,7 @@ animations = [ {
 } ]
 
 [node name="HitEffect" instance=ExtResource( 1 )]
+scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 3 )
 animation = "animate"
 
