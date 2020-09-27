@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/projectiles/Projectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/graphics/projectiles/plasma shoot animation/shot25av20.png" type="Texture" id=2]
+[ext_resource path="res://src/components/MapLimitAreaDetector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/particles/PlasmaParticle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/projectiles/PlayerSecondaryFire.gd" type="Script" id=12]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 13.6388
+
+[node name="PlayerSecondaryProjectile" instance=ExtResource( 1 )]
+script = ExtResource( 12 )
+speed = 500
+damage = 1
+life_time = 5.0
+Particle = ExtResource( 4 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="HitboxComponent" parent="." index="2"]
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="HitboxComponent" index="0"]
+shape = SubResource( 2 )
+
+[node name="MapLimitAreaDetector" parent="." index="3" instance=ExtResource( 3 )]
+
+[editable path="HitboxComponent"]

@@ -17,44 +17,40 @@ current = true
 
 [node name="MapLimits" parent="." instance=ExtResource( 2 )]
 
-[node name="RightLimitCollisionShape" parent="MapLimits/MapHorizontalLimitArea" index="0"]
-position = Vector2( 631.473, 7.58734 )
+[node name="LeftLimit" parent="MapLimits/MapHorizontalLimit" index="0"]
+position = Vector2( -552, 0 )
 
-[node name="LeftLimitCollisionShapè" parent="MapLimits/MapHorizontalLimitArea" index="1"]
-position = Vector2( -640.943, 0 )
+[node name="RightLimit" parent="MapLimits/MapHorizontalLimit" index="1"]
+position = Vector2( 584, -24 )
 
-[node name="TopLimitCollisionShape" parent="MapLimits/MapVerticalLimitArea" index="0"]
-position = Vector2( -7.03532, -472.632 )
+[node name="TopLimit" parent="MapLimits/MapVerticalLimit" index="0"]
+position = Vector2( -24, -344 )
 
-[node name="BotLimitCollisionShapè" parent="MapLimits/MapVerticalLimitArea" index="1"]
-position = Vector2( 4.65088, 492.64 )
+[node name="BotLimit" parent="MapLimits/MapVerticalLimit" index="1"]
+position = Vector2( 0, 344 )
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 5 )]
 
 [node name="SpawnPosition1" parent="EnemySpawner" index="1"]
-position = Vector2( 458.849, 251.477 )
+position = Vector2( 448, 256 )
 
 [node name="SpawnPosition2" parent="EnemySpawner" index="2"]
-position = Vector2( -443.856, 238.487 )
+position = Vector2( -448, 256 )
 
 [node name="SpawnPosition3" parent="EnemySpawner" index="3"]
-position = Vector2( 465.308, -252.209 )
+position = Vector2( 448, -256 )
 
 [node name="SpawnPosition4" parent="EnemySpawner" index="4"]
-position = Vector2( -458.372, -259.52 )
+position = Vector2( -448, -256 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Projectiles" type="Node" parent="."]
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Projectiles" type="Node" parent="."]
+[node name="Player" parent="." instance=ExtResource( 1 )]
 
 [node name="Effects" type="Node" parent="."]
 
 [editable path="MapLimits"]
-
-[editable path="MapLimits/MapHorizontalLimitArea"]
-
-[editable path="MapLimits/MapVerticalLimitArea"]
 
 [editable path="EnemySpawner"]

@@ -12,18 +12,18 @@
 
 [node name="Level1" instance=ExtResource( 6 )]
 
-[node name="CameraComponent" parent="." index="1"]
+[node name="CameraComponent" parent="." index="0"]
 position = Vector2( 48.0002, 192 )
 
-[node name="Player" parent="." index="2"]
+[node name="Player" parent="." index="1"]
 position = Vector2( 48.0004, 192 )
 
-[node name="RemoteTransform2D" parent="Player" index="6"]
+[node name="RemoteTransform2D" parent="Player" index="7"]
 position = Vector2( -0.000305176, 0 )
 
-[node name="EndLevel" parent="." index="3"]
+[node name="EndLevel" parent="." index="2"]
 position = Vector2( 1712, -440 )
-next_level = "res://src/Interface/ThanksForPlaying.tscn"
+next_level = "res://src/Levels/Level4.tscn"
 
 [node name="Spikes" parent="Traps" index="0" instance=ExtResource( 3 )]
 position = Vector2( 232, 296 )

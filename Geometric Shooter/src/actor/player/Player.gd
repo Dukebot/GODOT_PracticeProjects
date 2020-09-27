@@ -18,9 +18,12 @@ func move(delta):
 
 func attack():
 	var mouse_pos = get_global_mouse_position()
+	
 	if input_component.is_primary_fire_shooting():
 		primary_fire.shoot(mouse_pos)
-	if input_component.is_secondary_fire_shooting():
+	
+	elif input_component.is_secondary_fire_shooting():
 		secondary_fire.shoot(mouse_pos)
-	if input_component.is_special_attack_shooting():
+	
+	elif input_component.is_special_attack_shooting():
 		print("Special Attack")

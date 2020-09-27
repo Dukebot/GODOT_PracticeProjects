@@ -8,7 +8,7 @@ export var speed = 0
 export var damage = 0
 export var life_time = 1.0
 
-export var Particle = preload("res://src/effects/PlayerShootParticle.tscn")
+export var Particle = preload("res://src/particles/PlayerShootParticle.tscn")
 export var HitSoundPlayer = preload("res://src/sound players/HitSoundPlayer.tscn")
 
 var direction = Vector2()

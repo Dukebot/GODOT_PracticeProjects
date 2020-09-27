@@ -1,18 +1,44 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://src/levels/map limits/MapVerticalLimit.gd" type="Script" id=1]
-[ext_resource path="res://src/levels/map limits/MapHorizontalLimit.gd" type="Script" id=2]
-[ext_resource path="res://src/levels/map limits/MapHorizontalLimit.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/levels/map limits/MapVerticalLimit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/levels/map limits/MapLimits.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40.0001, 352 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 72, 360 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 536, 48 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 584, 48 )
 
 [node name="MapLimits" type="Node"]
-
-[node name="MapHorizontalLimitArea" type="Area2D" parent="." instance=ExtResource( 3 )]
-collision_layer = 0
-collision_mask = 2
-script = ExtResource( 2 )
-
-[node name="MapVerticalLimitArea" type="Area2D" parent="." instance=ExtResource( 4 )]
 script = ExtResource( 1 )
-[connection signal="body_entered" from="MapHorizontalLimitArea" to="MapHorizontalLimitArea" method="_on_MapVerticalLimitArea_body_entered"]
-[connection signal="body_entered" from="MapVerticalLimitArea" to="MapVerticalLimitArea" method="_on_MapVerticalLimitArea_body_entered"]
+
+[node name="MapHorizontalLimit" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="LeftLimit" type="CollisionShape2D" parent="MapHorizontalLimit"]
+position = Vector2( -184, 0 )
+shape = SubResource( 1 )
+
+[node name="RightLimit" type="CollisionShape2D" parent="MapHorizontalLimit"]
+position = Vector2( 184, 0 )
+shape = SubResource( 2 )
+
+[node name="MapVerticalLimit" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="TopLimit" type="CollisionShape2D" parent="MapVerticalLimit"]
+position = Vector2( 0, -120 )
+shape = SubResource( 3 )
+
+[node name="BotLimit" type="CollisionShape2D" parent="MapVerticalLimit"]
+position = Vector2( 0, 120 )
+shape = SubResource( 4 )
+[connection signal="area_entered" from="MapHorizontalLimit" to="." method="_on_MapHorizontalLimit_area_entered"]
+[connection signal="area_entered" from="MapVerticalLimit" to="." method="_on_MapVerticalLimit_area_entered"]

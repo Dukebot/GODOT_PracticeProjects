@@ -4,8 +4,14 @@ class_name Level
 
 onready var player = $Player
 
+func _ready():
+	pass
+
+
 func get_player(): return player
 
+
+#Adding objects to the scene
 
 func add_object(ObjectScene, _position):
 	var object = ObjectScene.instance()
