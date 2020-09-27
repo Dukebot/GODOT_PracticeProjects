@@ -47,6 +47,8 @@ position = Vector2( -458.372, -259.52 )
 
 [node name="Enemies" type="Node" parent="."]
 
+[node name="Projectiles" type="Node" parent="."]
+
 [node name="Effects" type="Node" parent="."]
 
 [editable path="MapLimits"]

@@ -1,5 +1,6 @@
 extends Node
 
+signal spawn_enemy
 
 export var enemies_to_spawn = [
 	preload("res://src/actor/enemies/Cercles/EnemyCercle.tscn"),
@@ -10,17 +11,13 @@ export var enemies_to_spawn = [
 export var spawn_rate = 2.0
 
 func _ready():
+	connect("spawn_enemy", get_tree().current_scene, "add_enemy")
 	$Timer.start(spawn_rate)
-
 
 func _on_Timer_timeout():
 	var rand_index = get_random_enemy_index()
 	var spawn_position = get_random_spawn_position_node()
-	
-	var enemy = enemies_to_spawn[rand_index].instance()
-	enemy.position = spawn_position.position
-	get_tree().current_scene.add_enemy(enemy)
-
+	emit_signal("spawn_enemy", enemies_to_spawn[rand_index], spawn_position.position)
 
 func get_random_enemy_index():
 	randomize()

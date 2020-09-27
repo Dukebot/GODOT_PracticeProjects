@@ -2,6 +2,7 @@ extends Node2D
 
 class_name Projectile
 
+signal spawn_effect
 
 export var speed = 0
 export var damage = 0
@@ -16,6 +17,7 @@ onready var sprite = $Sprite
 onready var timer = $Timer
 
 func _ready():
+	connect("spawn_effect", get_tree().current_scene, "add_effect")
 	timer.start(life_time)
 
 func set_direction(_direction):
@@ -44,6 +46,4 @@ func create_hit_sound():
 
 func create_particles(num_particles):
 	for i in range(num_particles):
-		var particle = Particle.instance()
-		get_tree().current_scene.add_effect(particle)
-		particle.position = position
+		emit_signal("spawn_effect", Particle, position)
