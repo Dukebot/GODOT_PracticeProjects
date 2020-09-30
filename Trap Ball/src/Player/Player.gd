@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal dead_effect
+
 export var DeadParticle = preload("res://src/Effects/Particle.tscn")
 
 var respawn_position = Vector2()
@@ -11,6 +13,7 @@ onready var respawn_timer = $RespawnTimer
 onready var bounce_sound = $Bounce
 
 func _ready():
+	connect("dead_effect", get_tree().current_scene, "create_effect")
 	respawn_position = position
 
 func _physics_process(delta):
@@ -27,8 +30,9 @@ func die():
 		is_alive = false
 		set_physics_process(false)
 		set_visible(false)
-		respawn_timer.start()
 		create_dead_particles()
+		movement_component.stop()
+		respawn_timer.start()
 
 func _on_RespawnTimer_timeout():
 	position = respawn_position
@@ -50,6 +54,4 @@ func play_bounce_sound():
 
 func create_dead_particles():
 	for i in range(20):
-		var particle = DeadParticle.instance()
-		particle.position = self.position
-		get_parent().add_effect_child(particle)
+		emit_signal("dead_effect", DeadParticle, position)

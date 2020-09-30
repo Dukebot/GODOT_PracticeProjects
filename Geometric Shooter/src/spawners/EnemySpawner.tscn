@@ -6,6 +6,7 @@
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="SpawnPosition1" type="Position2D" parent="."]
 position = Vector2( 169.09, 146.728 )

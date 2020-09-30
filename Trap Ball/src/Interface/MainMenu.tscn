@@ -4,8 +4,8 @@
 [ext_resource path="res://Assets/GFX/Interface/GameTitle.png" type="Texture" id=2]
 
 [node name="MainMenu" type="MarginContainer"]
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 custom_constants/margin_right = 120
 custom_constants/margin_top = 80
 custom_constants/margin_left = 120
@@ -15,46 +15,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 120.0
 margin_top = 80.0
-margin_right = 904.0
-margin_bottom = 520.0
-mouse_filter = 0
+margin_right = 1160.0
+margin_bottom = 640.0
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 136.0
-margin_right = 648.0
-margin_bottom = 440.0
-
-[node name="Logo" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
-margin_right = 512.0
+[node name="Logo" type="TextureRect" parent="VBoxContainer"]
+margin_right = 1040.0
 margin_bottom = 192.0
 texture = ExtResource( 2 )
-stretch_mode = 3
+stretch_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 196.0
-margin_right = 512.0
-margin_bottom = 440.0
+margin_right = 1040.0
+margin_bottom = 560.0
 size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
-[node name="NewGameButton" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 87.0
-margin_right = 512.0
-margin_bottom = 107.0
+[node name="NewGameButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_top = 147.0
+margin_right = 1040.0
+margin_bottom = 167.0
 text = "New Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ExitGameButton" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 137.0
-margin_right = 512.0
-margin_bottom = 157.0
+[node name="ExitGameButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+margin_top = 197.0
+margin_right = 1040.0
+margin_bottom = 217.0
 text = "Exit Game"
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/ExitGameButton" to="." method="_on_ExitGameButton_pressed"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ExitGameButton" to="." method="_on_ExitGameButton_pressed"]

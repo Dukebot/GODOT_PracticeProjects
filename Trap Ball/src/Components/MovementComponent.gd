@@ -43,3 +43,7 @@ func vertical_movement(delta):
 		player.play_bounce_sound()
 		player.position.y -= 2
 		motion.y = -JUMP_SPEED
+
+
+func stop():
+	motion = Vector2()
