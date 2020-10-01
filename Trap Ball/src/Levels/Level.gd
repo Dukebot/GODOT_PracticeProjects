@@ -12,7 +12,22 @@ func restart():
 func change_level(level):
 	get_tree().change_scene(level)
 
-func create_effect(EffectScene, _position):
+
+func add_child_scene(Scene, _position):
+	var scene = Scene.instance()
+	scene.position = _position
+	add_child(scene)
+
+func add_child_scenes(Scene, _position, num_childs):
+	for i in range(num_childs):
+		add_child_scene(Scene, _position)
+
+
+func add_effect_scene(EffectScene, _position):
 	var effect = EffectScene.instance()
 	effect.position = _position
 	effects.add_child(effect)
+
+func add_effect_scenes(EffectScene, _position, num_scenes):
+	for i in range(num_scenes):
+		add_effect_scene(EffectScene, _position)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=16 format=2]
 
+[ext_resource path="res://Assets/SFX/Stardust Speedway Zone Act 2 - Sonic Mania [OST].wav" type="AudioStream" id=1]
 [ext_resource path="res://src/Items/EndLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/GFX/World/grassRight.png" type="Texture" id=3]
 [ext_resource path="res://src/Items/Checkpoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/GFX/World/grassLeft.png" type="Texture" id=5]
-[ext_resource path="res://Assets/SFX/Port_of_Adia_wav.wav" type="AudioStream" id=6]
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Levels/Level.gd" type="Script" id=8]
 [ext_resource path="res://src/Components/CameraComponent.tscn" type="PackedScene" id=9]
@@ -114,7 +114,6 @@ script = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 0, 7.62939e-06 )
-scale = Vector2( 1, 1 )
 tile_set = SubResource( 5 )
 cell_size = Vector2( 70, 70 )
 collision_mask = 0
@@ -154,5 +153,6 @@ position = Vector2( 261.442, 165.518 )
 position = Vector2( 362.621, 163.518 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
+stream = ExtResource( 1 )
 volume_db = -14.136
+autoplay = true

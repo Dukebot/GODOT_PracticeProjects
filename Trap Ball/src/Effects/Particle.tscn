@@ -7,6 +7,7 @@
 extents = Vector2( 5.03574, 5.11644 )
 
 [node name="Particle" type="Area2D"]
+scale = Vector2( 0.5, 0.5 )
 collision_layer = 0
 script = ExtResource( 2 )
 
