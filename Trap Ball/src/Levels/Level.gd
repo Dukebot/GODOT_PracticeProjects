@@ -2,15 +2,17 @@ extends Node2D
 
 onready var effects = $Effects
 
+
 func _process(delta):
 	if Input.is_action_just_pressed("restart_level"):
-		restart()
+		restart_level()
 
-func restart():
+
+func restart_level():
 	get_tree().reload_current_scene()
 
-func change_level(level):
-	get_tree().change_scene(level)
+func change_level(level_path):
+	get_tree().change_scene(level_path)
 
 
 func add_child_scene(Scene, _position):
