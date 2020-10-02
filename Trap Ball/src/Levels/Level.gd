@@ -15,6 +15,10 @@ func change_level(level_path):
 	get_tree().change_scene(level_path)
 
 
+func stop_level_time_count():
+	$GUI.pause()
+
+
 func add_child_scene(Scene, _position):
 	var scene = Scene.instance()
 	scene.position = _position

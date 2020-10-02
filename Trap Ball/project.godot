@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Trap Ball"
-run/main_scene="res://src/Interface/MainMenu.tscn"
+run/main_scene="res://src/Interface/LevelSelector.tscn"
 config/icon="res://icon.png"
 
 [display]

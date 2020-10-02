@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/SFX/Stardust Speedway Zone Act 2 - Sonic Mania [OST].wav" type="AudioStream" id=1]
 [ext_resource path="res://src/Items/EndLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/GFX/World/grassRight.png" type="Texture" id=3]
 [ext_resource path="res://src/Items/Checkpoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/GFX/World/grassLeft.png" type="Texture" id=5]
+[ext_resource path="res://src/Interface/GUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Levels/Level.gd" type="Script" id=8]
 [ext_resource path="res://src/Components/CameraComponent.tscn" type="PackedScene" id=9]
@@ -124,14 +125,14 @@ tile_data = PoolIntArray( 327678, 2, 0, 327679, 2, 0, 262144, 2, 0 )
 position = Vector2( -36.3856, 170.484 )
 scale = Vector2( 0.66, 0.66 )
 
+[node name="EndLevel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 559.636, 167.527 )
+
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( -36.3856, 170.484 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../CameraComponent")
-
-[node name="EndLevel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 559.636, 167.527 )
 
 [node name="Traps" type="Node" parent="."]
 
@@ -151,6 +152,8 @@ position = Vector2( 261.442, 165.518 )
 
 [node name="Checkpoint3" parent="Checkpoints" instance=ExtResource( 4 )]
 position = Vector2( 362.621, 163.518 )
+
+[node name="GUI" parent="." instance=ExtResource( 6 )]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

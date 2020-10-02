@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/GFX/Interface/GameTitle.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 72
 font_data = ExtResource( 3 )
 
@@ -37,7 +37,7 @@ stretch_mode = 4
 [node name="GameTitle" type="Label" parent="VBoxContainer"]
 margin_right = 1040.0
 margin_bottom = 89.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Trap Ball"
 align = 1
 __meta__ = {
