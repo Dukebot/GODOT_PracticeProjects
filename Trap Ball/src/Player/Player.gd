@@ -19,9 +19,14 @@ func _ready():
 
 func _physics_process(delta):
 	var direction = input_component.get_horizontal_direction()
+	set_sprite_orientation(direction)
 	movement_component.move(direction, delta)
 	if position.y > 1000:
 		die()
+
+func set_sprite_orientation(direction):
+	if direction > 0: $Sprite.flip_h = false
+	elif direction < 0: $Sprite.flip_h = true
 
 func _on_Hitbox_area_entered(area):
 	die()

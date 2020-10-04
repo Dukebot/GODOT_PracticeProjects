@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Assets/SFX/Stardust Speedway Zone Act 2 - Sonic Mania [OST].wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/SFX/AstralJournie.wav" type="AudioStream" id=1]
 [ext_resource path="res://src/Items/EndLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/GFX/World/grassRight.png" type="Texture" id=3]
-[ext_resource path="res://src/Items/Checkpoint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/GFX/World/grassLeft.png" type="Texture" id=5]
 [ext_resource path="res://src/Interface/GUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=7]
@@ -113,20 +112,17 @@ points = PoolVector2Array( 0, 0, 70, 0, 70, 70, 0, 70 )
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 8 )
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 0, 7.62939e-06 )
-tile_set = SubResource( 5 )
-cell_size = Vector2( 70, 70 )
-collision_mask = 0
-format = 1
-tile_data = PoolIntArray( 327678, 2, 0, 327679, 2, 0, 262144, 2, 0 )
-
 [node name="CameraComponent" parent="." instance=ExtResource( 9 )]
 position = Vector2( -36.3856, 170.484 )
-scale = Vector2( 0.66, 0.66 )
+scale = Vector2( 2.5, 2.5 )
+zoom = Vector2( 1, 1 )
 
-[node name="EndLevel" parent="." instance=ExtResource( 2 )]
-position = Vector2( 559.636, 167.527 )
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="EndLevel" parent="Items" instance=ExtResource( 2 )]
+position = Vector2( 254.285, 124.963 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( -36.3856, 170.484 )
@@ -134,24 +130,15 @@ position = Vector2( -36.3856, 170.484 )
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../CameraComponent")
 
-[node name="Traps" type="Node" parent="."]
+[node name="Effects" type="Node2D" parent="."]
 
-[node name="Effects" type="Node" parent="."]
-
-[node name="World" type="Node" parent="."]
-
-[node name="Bouncepads" type="Node" parent="."]
-
-[node name="Checkpoints" type="Node" parent="."]
-
-[node name="Checkpoint" parent="Checkpoints" instance=ExtResource( 4 )]
-position = Vector2( 161.927, 166.17 )
-
-[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource( 4 )]
-position = Vector2( 261.442, 165.518 )
-
-[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource( 4 )]
-position = Vector2( 362.621, 163.518 )
+[node name="World" type="TileMap" parent="."]
+position = Vector2( 0, 7.62939e-06 )
+tile_set = SubResource( 5 )
+cell_size = Vector2( 70, 70 )
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 327678, 2, 0, 327679, 2, 0, 262144, 2, 0 )
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
 

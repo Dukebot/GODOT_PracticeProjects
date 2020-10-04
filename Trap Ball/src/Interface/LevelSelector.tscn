@@ -38,7 +38,7 @@ alignment = 1
 margin_right = 1040.0
 margin_bottom = 89.0
 custom_fonts/font = SubResource( 1 )
-text = "Trap Ball"
+text = "Trap Ball Prototype"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -113,26 +113,26 @@ margin_bottom = 332.0
 alignment = 1
 
 [node name="PrevWorldButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 211.0
-margin_right = 487.0
+margin_left = 421.0
+margin_right = 452.0
 margin_bottom = 46.0
 custom_fonts/font = SubResource( 2 )
-text = "Previous World"
+text = "<"
 
 [node name="WorldSelectedLabel" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 491.0
+margin_left = 456.0
 margin_top = 3.0
-margin_right = 618.0
+margin_right = 583.0
 margin_bottom = 43.0
 custom_fonts/font = SubResource( 3 )
 text = "World 1"
 
 [node name="NextWorldButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 622.0
-margin_right = 829.0
+margin_left = 587.0
+margin_right = 618.0
 margin_bottom = 46.0
 custom_fonts/font = SubResource( 2 )
-text = "Next World"
+text = ">"
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer1/Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer1/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer1/Button3" to="." method="_on_Button3_pressed"]
