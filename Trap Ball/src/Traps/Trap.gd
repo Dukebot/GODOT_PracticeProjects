@@ -7,7 +7,6 @@ export var direction = Vector2()
 export var change_dir_distance = 100
 
 onready var initial_position = position
-onready var timer = $ChangeDirTimer
 
 func _ready():
 	if speed == 0 or direction == Vector2.ZERO:

@@ -150,13 +150,13 @@ position = Vector2( 1260, -1295 )
 position = Vector2( 2030, -1715 )
 
 [node name="Checkpoint" parent="Items" index="7" instance=ExtResource( 7 )]
-position = Vector2( 1260, 105 )
+position = Vector2( 1365, -140 )
 
 [node name="Checkpoint2" parent="Items" index="8" instance=ExtResource( 7 )]
-position = Vector2( 1260, -700 )
+position = Vector2( 1365, -980 )
 
 [node name="Checkpoint3" parent="Items" index="9" instance=ExtResource( 7 )]
-position = Vector2( 1260, -1505 )
+position = Vector2( 1365, -1820 )
 
 [node name="Player" parent="." index="3"]
 position = Vector2( -35, 105 )

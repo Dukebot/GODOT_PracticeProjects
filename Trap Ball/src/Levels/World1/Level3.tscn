@@ -87,7 +87,7 @@ position = Vector2( 1820, 315 )
 position = Vector2( 1015, 210 )
 
 [node name="Checkpoint2" parent="Items" index="3" instance=ExtResource( 2 )]
-position = Vector2( 1820, 105 )
+position = Vector2( 1715, -210 )
 
 [node name="Checkpoint3" parent="Items" index="4" instance=ExtResource( 2 )]
 position = Vector2( 1015, -210 )
