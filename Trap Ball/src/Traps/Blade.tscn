@@ -11,9 +11,8 @@ height = 19.3031
 [node name="Blade" instance=ExtResource( 1 )]
 scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
-can_move = true
-speed_x = 100
-change_dir_time = 1.0
+speed = 100
+direction = Vector2( 1, 0 )
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, -16 )

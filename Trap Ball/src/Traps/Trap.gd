@@ -2,28 +2,22 @@ extends Area2D
 
 class_name Trap
 
-export var can_move = false
-export var speed_x = 0
-export var speed_y = 0
-export var change_dir_time = 1.0
+export var speed = 0
+export var direction = Vector2()
+export var change_dir_distance = 100
 
-var direction = 1
-
+onready var initial_position = position
 onready var timer = $ChangeDirTimer
 
 func _ready():
-	set_process(false)
-	if can_move:
-		set_process(true)
-		timer.start(change_dir_time/2)
+	if speed == 0 or direction == Vector2.ZERO:
+		set_process(false)
 
 func _process(delta):
 	move(delta)
 
 func move(delta):
-	position.x += speed_x * direction * delta
-	position.y += speed_y * direction * delta
-
-func _on_ChangeDirTimer_timeout():
-	direction *= -1
-	timer.start(change_dir_time)
+	position += speed * direction.normalized() * delta
+	if position.distance_to(initial_position) > change_dir_distance:
+		direction *= -1
+		position = initial_position + (position - initial_position).normalized() * change_dir_distance

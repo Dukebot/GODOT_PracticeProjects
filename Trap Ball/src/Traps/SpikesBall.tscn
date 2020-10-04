@@ -8,8 +8,9 @@ radius = 25.3965
 
 [node name="SpikesBall" instance=ExtResource( 1 )]
 scale = Vector2( 0.75, 0.75 )
-can_move = true
-speed_y = 100
+speed = 100
+direction = Vector2( 0, 1 )
+change_dir_distance = 50
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 2, 2 )
