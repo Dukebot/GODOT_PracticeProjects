@@ -8,7 +8,7 @@
 [ext_resource path="res://src/Traps/SpikesBall.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Items/Checkpoint.tscn" type="PackedScene" id=7]
 
-[node name="Level6" instance=ExtResource( 1 )]
+[node name="Level 1-6" instance=ExtResource( 1 )]
 
 [node name="CameraComponent" parent="." index="0"]
 position = Vector2( -35, 105 )
@@ -105,15 +105,9 @@ position = Vector2( 1820, -70 )
 
 [node name="SpikesBall" parent="Traps" index="30" instance=ExtResource( 6 )]
 position = Vector2( 1645, -210 )
-speed_x = 150
-speed_y = 0
-change_dir_time = 1.5
 
 [node name="SpikesBall2" parent="Traps" index="31" instance=ExtResource( 6 )]
 position = Vector2( 1645, -630 )
-speed_x = 150
-speed_y = 0
-change_dir_time = 1.5
 
 [node name="Blade" parent="Traps" index="32" instance=ExtResource( 5 )]
 position = Vector2( 420, 280 )
@@ -129,13 +123,9 @@ position = Vector2( 1785, -2170 )
 
 [node name="Blade3" parent="Traps" index="36" instance=ExtResource( 5 )]
 position = Vector2( 1645, -910 )
-speed_x = 150
-change_dir_time = 1.5
 
 [node name="Blade4" parent="Traps" index="37" instance=ExtResource( 5 )]
 position = Vector2( 1680, -1750 )
-speed_x = 150
-change_dir_time = 1.5
 
 [node name="EndLevel" parent="Items" index="0"]
 position = Vector2( 1365, -2170 )

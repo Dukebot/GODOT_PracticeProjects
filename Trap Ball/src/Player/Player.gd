@@ -57,5 +57,6 @@ func boost_jump():
 func unboost_jump():
 	movement_component.JUMP_SPEED /= 2
 
-func play_bounce_sound():
+
+func bounce():
 	bounce_sound.play()

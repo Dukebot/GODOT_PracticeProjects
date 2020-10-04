@@ -8,7 +8,7 @@
 [ext_resource path="res://src/Traps/Spikes.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Items/Checkpoint.tscn" type="PackedScene" id=7]
 
-[node name="Level4" instance=ExtResource( 5 )]
+[node name="Level 1-4" instance=ExtResource( 5 )]
 
 [node name="FallingSpike" parent="Traps" index="0" instance=ExtResource( 1 )]
 position = Vector2( 735, 0 )
@@ -87,15 +87,9 @@ position = Vector2( 1855, 140 )
 
 [node name="SpikesBall" parent="Traps" index="25" instance=ExtResource( 4 )]
 position = Vector2( 1435, 35 )
-speed_x = 100
-speed_y = 0
-change_dir_time = 2.0
 
 [node name="SpikesBall2" parent="Traps" index="26" instance=ExtResource( 4 )]
 position = Vector2( 3815, -560 )
-speed_x = 100
-speed_y = 0
-change_dir_time = 2.0
 
 [node name="Blade" parent="Traps" index="27" instance=ExtResource( 3 )]
 position = Vector2( 2940, 70 )
@@ -117,10 +111,13 @@ position = Vector2( 3500, -70 )
 position = Vector2( 4130, -490 )
 
 [node name="Checkpoint" parent="Items" index="3" instance=ExtResource( 7 )]
-position = Vector2( 1575, 70 )
+position = Vector2( 1295, 70 )
 
-[node name="Checkpoint2" parent="Items" index="4" instance=ExtResource( 7 )]
-position = Vector2( 3500, -280 )
+[node name="Checkpoint3" parent="Items" index="4" instance=ExtResource( 7 )]
+position = Vector2( 3605, -560 )
+
+[node name="Checkpoint2" parent="Items" index="5" instance=ExtResource( 7 )]
+position = Vector2( 2485, 70 )
 
 [node name="World" parent="." index="5"]
 tile_data = PoolIntArray( -851919, 2, 0, -851918, 2, 0, -851917, 2, 0, -851916, 2, 0, -851915, 2, 0, -851914, 2, 0, -851913, 2, 0, -851912, 2, 0, -851911, 2, 0, -458701, 2, 0, -458700, 2, 0, -458699, 2, 0, -458698, 2, 0, -458697, 2, 0, -458696, 2, 0, -458695, 2, 0, -262119, 2, 0, -262118, 2, 0, -262116, 2, 0, -262115, 2, 0, -262113, 2, 0, -262112, 2, 0, -262108, 2, 0, -262107, 2, 0, -196594, 2, 0, -131060, 2, 0, -65534, 2, 0, -65530, 2, 0, -65526, 2, 0, 45, 2, 0, 46, 2, 0, 47, 2, 0, 48, 2, 0, 65576, 2, 0, 65577, 2, 0, 65578, 2, 0, 65579, 2, 0, 131086, 2, 0, 131087, 2, 0, 131090, 2, 0, 131091, 2, 0, 131092, 2, 0, 131093, 2, 0, 131094, 2, 0, 131096, 2, 0, 131097, 2, 0, 131098, 2, 0, 131099, 2, 0, 131100, 2, 0, 131101, 2, 0, 131102, 2, 0, 131103, 2, 0, 131104, 2, 0, 131105, 2, 0, 131107, 2, 0, 131108, 2, 0, 131109, 2, 0, 131110, 2, 0, 196620, 2, 0, 196621, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262146, 2, 0, 262148, 2, 0, 262150, 2, 0, 262152, 2, 0, 262154, 2, 0, 262155, 2, 0 )

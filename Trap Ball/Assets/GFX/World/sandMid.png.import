@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ground_grass_small.png-2e04c51112ef30edbc6297362dfde100.stex"
+path="res://.import/sandMid.png-5e85fcdbf8e4de3278ba77351c88c361.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GFX/World/ground_grass_small.png"
-dest_files=[ "res://.import/ground_grass_small.png-2e04c51112ef30edbc6297362dfde100.stex" ]
+source_file="res://Assets/GFX/World/sandMid.png"
+dest_files=[ "res://.import/sandMid.png-5e85fcdbf8e4de3278ba77351c88c361.stex" ]
 
 [params]
 

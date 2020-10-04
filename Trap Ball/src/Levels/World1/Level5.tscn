@@ -8,7 +8,7 @@
 [ext_resource path="res://src/Traps/Blade.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Items/Checkpoint.tscn" type="PackedScene" id=7]
 
-[node name="Level5" instance=ExtResource( 1 )]
+[node name="Level 1-5" instance=ExtResource( 1 )]
 
 [node name="CameraComponent" parent="." index="0"]
 drag_margin_top = 0.25
@@ -147,16 +147,16 @@ position = Vector2( 2730, -700 )
 
 [node name="SpikesBall6" parent="Traps" index="44" instance=ExtResource( 5 )]
 position = Vector2( 735, -245 )
-speed_x = 120
-speed_y = 0
 
 [node name="Blade" parent="Traps" index="45" instance=ExtResource( 6 )]
 position = Vector2( 1260, -210 )
-speed_x = 50
+speed = 50
+change_dir_distance = 50
 
 [node name="Blade2" parent="Traps" index="46" instance=ExtResource( 6 )]
 position = Vector2( 1050, -210 )
-speed_x = 50
+speed = 50
+change_dir_distance = 50
 
 [node name="Blade3" parent="Traps" index="47" instance=ExtResource( 6 )]
 position = Vector2( 315, -140 )
@@ -169,13 +169,22 @@ next_level = "res://src/Levels/World1/Level6.tscn"
 position = Vector2( 4375, -175 )
 
 [node name="Checkpoint" parent="Items" index="2" instance=ExtResource( 7 )]
+position = Vector2( 875, 210 )
+
+[node name="Checkpoint4" parent="Items" index="3" instance=ExtResource( 7 )]
 position = Vector2( 1995, -70 )
 
-[node name="Checkpoint2" parent="Items" index="3" instance=ExtResource( 7 )]
+[node name="Checkpoint5" parent="Items" index="4" instance=ExtResource( 7 )]
+position = Vector2( 3185, -280 )
+
+[node name="Checkpoint2" parent="Items" index="5" instance=ExtResource( 7 )]
 position = Vector2( 4200, -280 )
 
-[node name="Checkpoint3" parent="Items" index="4" instance=ExtResource( 7 )]
-position = Vector2( 2275, -630 )
+[node name="Checkpoint3" parent="Items" index="6" instance=ExtResource( 7 )]
+position = Vector2( 2625, -700 )
+
+[node name="Checkpoint6" parent="Items" index="7" instance=ExtResource( 7 )]
+position = Vector2( 1435, -350 )
 
 [node name="World" parent="." index="5"]
 tile_data = PoolIntArray( -589790, 2, 0, -589789, 2, 0, -589788, 2, 0, -589787, 2, 0, -589784, 2, 0, -589781, 2, 0, -589778, 2, 0, -589775, 2, 0, -589772, 2, 0, -589771, 2, 0, -589770, 2, 0, -589769, 2, 0, -589767, 2, 0, -589766, 2, 0, -589765, 2, 0, -589764, 2, 0, -524256, 2, 0, -458722, 2, 0, -393188, 2, 0, -327654, 2, 0, -262124, 2, 0, -262123, 2, 0, -262122, 2, 0, -262121, 2, 0, -262120, 2, 0, -196594, 2, 0, -196593, 2, 0, -196592, 2, 0, -196591, 2, 0, -196590, 2, 0, -196574, 2, 0, -196573, 2, 0, -196572, 2, 0, -196571, 2, 0, -196569, 2, 0, -196568, 2, 0, -196567, 2, 0, -196565, 2, 0, -196563, 2, 0, -196561, 2, 0, -196560, 2, 0, -196559, 2, 0, -196558, 2, 0, -196556, 2, 0, -196555, 2, 0, -196554, 2, 0, -196553, 2, 0, -196551, 2, 0, -196550, 2, 0, -196549, 2, 0, -196548, 2, 0, -65538, 2, 0, -65537, 2, 0, -131072, 2, 0, -131070, 2, 0, -131069, 2, 0, -131068, 2, 0, -131067, 2, 0, -131066, 2, 0, -131064, 2, 0, -131063, 2, 0, -131062, 2, 0, -131061, 2, 0, -131060, 2, 0, -131040, 2, 0, -65506, 2, 0, 28, 2, 0, 65562, 2, 0, 131092, 2, 0, 131093, 2, 0, 131094, 2, 0, 131095, 2, 0, 131096, 2, 0, 196622, 2, 0, 196623, 2, 0, 196624, 2, 0, 196625, 2, 0, 196626, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0 )

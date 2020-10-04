@@ -1,5 +1,7 @@
 extends Node
 
+signal bounce
+
 const UP = Vector2(0, -1)
 
 export var ACCELERATION = 2000
@@ -11,13 +13,13 @@ export var JUMP_SPEED = 700
 
 var motion = Vector2()
 
-onready var player = get_parent()
-
+func _ready():
+	connect("bounce", get_parent(), "bounce")
 
 func move(direction, delta):
 	horizontal_movement(direction, delta)
 	vertical_movement(delta)
-	motion = player.move_and_slide(motion, UP)
+	motion = get_parent().move_and_slide(motion, UP)
 
 
 func horizontal_movement(direction, delta):
@@ -37,13 +39,18 @@ func horizontal_movement(direction, delta):
 
 
 func vertical_movement(delta):
-	if not player.is_on_floor():
+	if not get_parent().is_on_floor():
 		motion.y += GRAVITY * delta
 	else:
-		player.play_bounce_sound()
-		player.position.y -= 2
-		motion.y = -JUMP_SPEED
+		jump()
+		emit_signal("bounce")
 
+func jump():
+	get_parent().position.y -= 2
+	motion.y = -JUMP_SPEED
 
 func stop():
 	motion = Vector2()
+
+
+
