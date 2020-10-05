@@ -9,7 +9,6 @@ var respawn_position = Vector2()
 var respawn_time = 0.0
 var is_alive = true
 
-onready var input_component = $InputComponent
 onready var movement_component = $MovementComponent
 onready var respawn_timer = $RespawnTimer
 onready var bounce_sound = $Bounce
@@ -21,11 +20,28 @@ func _ready():
 	respawn_position = position
 
 func _physics_process(delta):
-	var direction = input_component.get_horizontal_direction()
+	var direction = get_horizontal_direction()
 	set_sprite_orientation(direction)
 	movement_component.move(direction, delta)
 	if position.y > 1000:
 		die()
+
+func get_horizontal_direction():
+	var direction = 0
+	
+	if Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
+		direction = -1
+	elif Input.is_action_pressed("right") and not Input.is_action_pressed("left"):
+		direction = 1
+	
+	if direction == 0:
+		if Input.is_action_pressed("mouse_left"):
+			if get_global_mouse_position().x < position.x:
+				direction = -1
+			else:
+				direction = 1
+	
+	return direction
 
 func set_sprite_orientation(direction):
 	if direction > 0: $Sprite.flip_h = false

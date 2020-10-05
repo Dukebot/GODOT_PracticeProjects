@@ -28,6 +28,7 @@ __meta__ = {
 margin_right = 100.0
 margin_bottom = 40.0
 custom_fonts/font = SubResource( 1 )
+text = "Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,6 +38,7 @@ margin_top = 44.0
 margin_right = 100.0
 margin_bottom = 84.0
 custom_fonts/font = SubResource( 1 )
+text = "Time"
 __meta__ = {
 "_edit_use_anchors_": false
 }
