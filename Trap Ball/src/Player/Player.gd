@@ -58,7 +58,7 @@ func die():
 		hit_sound.play()
 		movement_component.stop()
 		respawn_timer.start()
-		emit_signal("create_dead_particles", DeadParticle, position, 30)
+		emit_signal("create_dead_particles", DeadParticle, position, 20)
 		emit_signal("set_time", respawn_time)
 
 func _on_RespawnTimer_timeout():

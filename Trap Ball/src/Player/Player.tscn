@@ -24,6 +24,7 @@ FRICTION = 2500
 MAX_SPEED = 320
 
 [node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [node name="Sprite" type="Sprite" parent="."]
