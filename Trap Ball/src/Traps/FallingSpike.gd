@@ -9,8 +9,10 @@ onready var initial_position = position
 
 
 func _on_PlayerDetector_body_entered(body):
-	falling = true
-	$LifeTime.start(life_time)
+	if not falling: 
+		falling = true
+		$FallSound.play()
+		$LifeTime.start(life_time)
 
 func _on_GroundDetectror_body_entered(body):
 	disable()
