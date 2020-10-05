@@ -12,6 +12,7 @@ var is_alive = true
 onready var movement_component = $MovementComponent
 onready var respawn_timer = $RespawnTimer
 onready var bounce_sound = $Bounce
+onready var collision_shape = $CollisionShape2D
 onready var hit_sound = $Hit
 
 func _ready():
@@ -58,6 +59,7 @@ func die():
 		hit_sound.play()
 		movement_component.stop()
 		respawn_timer.start()
+		collision_shape.set_disabled(true)
 		emit_signal("create_dead_particles", DeadParticle, position, 20)
 		emit_signal("set_time", respawn_time)
 
@@ -66,6 +68,7 @@ func _on_RespawnTimer_timeout():
 	is_alive = true
 	set_physics_process(true)
 	set_visible(true)
+	collision_shape.set_disabled(false)
 
 
 func set_respawn_position(_position):
