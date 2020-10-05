@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var effects = $Effects
+onready var gui = $GUI
 
 
 func _process(delta):
@@ -17,6 +18,13 @@ func change_level(level_path):
 
 func stop_level_time_count():
 	$GUI.pause()
+
+
+func set_time(time):
+	gui.set_time(time)
+
+func get_time():
+	return gui.get_time()
 
 
 func add_child_scene(Scene, _position):

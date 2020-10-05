@@ -22,6 +22,7 @@ zoom = Vector2( 1, 1 )
 
 [node name="EndLevel" parent="Items" instance=ExtResource( 2 )]
 position = Vector2( 254.285, 124.963 )
+next_level = "res://src/Interface/ThanksForPlaying.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( -36.3856, 170.484 )

@@ -10,5 +10,6 @@ func _ready():
 #Should only detect body in the player layer
 func _on_Checkpoint_body_entered(body):
 	body.set_respawn_position(self.position)
+	body.set_respawn_time(get_tree().current_scene.get_time())
 	emit_signal("pickup_sound", PickupSound, self.position)
 	queue_free()

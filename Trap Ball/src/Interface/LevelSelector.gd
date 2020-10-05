@@ -1,7 +1,7 @@
 extends MarginContainer
 
 const LEVEL_PATH = "res://src/Levels/"
-const NUM_WORLDS = 1
+const NUM_WORLDS = 2
 
 var world_path = "World1/"
 

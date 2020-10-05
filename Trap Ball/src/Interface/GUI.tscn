@@ -18,13 +18,14 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
-margin_left = 40.0
-margin_top = 40.0
+margin_right = 100.0
+margin_bottom = 132.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Level" type="Label" parent="Control/VBoxContainer"]
+margin_right = 100.0
 margin_bottom = 40.0
 custom_fonts/font = SubResource( 1 )
 __meta__ = {
@@ -33,8 +34,23 @@ __meta__ = {
 
 [node name="Time" type="Label" parent="Control/VBoxContainer"]
 margin_top = 44.0
+margin_right = 100.0
 margin_bottom = 84.0
 custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MainMenuButton" type="Button" parent="Control/VBoxContainer"]
+margin_top = 88.0
+margin_right = 100.0
+margin_bottom = 108.0
+text = "Main Menu"
+
+[node name="RestartLevelButton" type="Button" parent="Control/VBoxContainer"]
+margin_top = 112.0
+margin_right = 100.0
+margin_bottom = 132.0
+text = "Restart Level"
+[connection signal="pressed" from="Control/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/RestartLevelButton" to="." method="_on_RestartLevelButton_pressed"]
