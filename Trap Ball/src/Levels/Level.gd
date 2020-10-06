@@ -38,6 +38,7 @@ func end_level():
 	pause = true
 	save_score()
 
+
 func save_score():
 	if time < best_time or best_time == 0:
 		GameSave.set_score(name, time)
@@ -46,6 +47,7 @@ func save_score():
 
 func set_time(_time): time = _time
 func get_time(): return time
+
 
 func set_player_direction(direction):
 	player.set_direction(direction)

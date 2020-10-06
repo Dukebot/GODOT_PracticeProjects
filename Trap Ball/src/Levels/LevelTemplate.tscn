@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/SFX/AstralJournie.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/SFX/Background/AstralJournie.wav" type="AudioStream" id=1]
 [ext_resource path="res://src/Items/EndLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/World/WorldTileset.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Interface/GUI.tscn" type="PackedScene" id=6]
@@ -14,7 +14,7 @@ script = ExtResource( 8 )
 [node name="CameraComponent" parent="." instance=ExtResource( 9 )]
 position = Vector2( -36.3856, 170.484 )
 scale = Vector2( 2.5, 2.5 )
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 0.8, 0.8 )
 
 [node name="Vegetation" type="Node2D" parent="."]
 

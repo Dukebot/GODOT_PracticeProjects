@@ -2,8 +2,10 @@ extends KinematicBody2D
 
 signal set_time
 signal create_dead_particles
+signal create_hit_effect
 
 export var DeadParticle = preload("res://src/Effects/Particle.tscn")
+export var HitEffect = preload("res://src/Effects/HitEffect.tscn")
 
 var respawn_position = Vector2()
 var respawn_time = 0.0
@@ -18,6 +20,7 @@ onready var hit_sound = $Hit
 
 func _ready():
 	connect("create_dead_particles", get_tree().current_scene, "add_effect_scenes")
+	connect("create_hit_effect", get_tree().current_scene, "add_effect_scene")
 	connect("set_time", get_tree().current_scene, "set_time")
 	respawn_position = position
 
@@ -64,6 +67,7 @@ func die():
 		movement_component.stop()
 		respawn_timer.start()
 		collision_shape.disabled = true
+		emit_signal("create_hit_effect", HitEffect, position)
 		emit_signal("create_dead_particles", DeadParticle, position, 20)
 		#emit_signal("set_time", respawn_time)
 
