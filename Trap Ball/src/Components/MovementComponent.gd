@@ -12,11 +12,16 @@ export var MAX_SPEED = 300
 export var JUMP_SPEED = 700
 
 var motion = Vector2()
+var direction = 0
 
 func _ready():
 	connect("bounce", get_parent(), "bounce")
 
-func move(direction, delta):
+func set_direction(value): direction = value
+func get_direction(): return direction
+
+
+func move(delta):
 	horizontal_movement(direction, delta)
 	vertical_movement(delta)
 	motion = get_parent().move_and_slide(motion, UP)

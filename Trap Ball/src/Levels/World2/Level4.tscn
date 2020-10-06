@@ -103,6 +103,7 @@ position = Vector2( 1960, -910 )
 
 [node name="EndLevel" parent="Items" index="0"]
 position = Vector2( 2695, -840 )
+next_level = "res://src/Levels/World2/Level5.tscn"
 
 [node name="BouncePad" parent="Items" index="1" instance=ExtResource( 2 )]
 position = Vector2( 1680, 315 )

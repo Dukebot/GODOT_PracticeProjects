@@ -8,7 +8,6 @@ export var DeadParticle = preload("res://src/Effects/Particle.tscn")
 var respawn_position = Vector2()
 var respawn_time = 0.0
 var is_alive = true
-var direction = 0
 
 onready var movement_component = $MovementComponent
 onready var respawn_timer = $RespawnTimer
@@ -16,45 +15,45 @@ onready var bounce_sound = $Bounce
 onready var collision_shape = $CollisionShape2D
 onready var hit_sound = $Hit
 
+
 func _ready():
 	connect("create_dead_particles", get_tree().current_scene, "add_effect_scenes")
 	connect("set_time", get_tree().current_scene, "set_time")
 	respawn_position = position
 
+
+func set_direction(_direction): movement_component.set_direction(_direction)
+func get_direction(): return movement_component.get_direction()
+
+
 func _physics_process(delta):
-	var direction = get_horizontal_direction()
+	var direction = movement_component.get_direction()
+	if OS.get_name() != "Android":
+		direction = get_horizontal_direction()
 	set_sprite_orientation(direction)
-	movement_component.move(direction, delta)
+	movement_component.set_direction(direction)
+	movement_component.move(delta)
 	if position.y > 1000:
 		die()
 
-#Prueba improvisada para controles de android, no usando actualmente...
-func set_direction(_direction):
-	direction = _direction
 
 func get_horizontal_direction():
 	var direction = 0
-	
 	if Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
 		direction = -1
 	elif Input.is_action_pressed("right") and not Input.is_action_pressed("left"):
 		direction = 1
-	
-	#if direction == 0:
-		#if Input.is_action_pressed("mouse_left"):
-			#if get_global_mouse_position().x < position.x:
-				#direction = -1
-			#else:
-				#direction = 1
-	
 	return direction
+
 
 func set_sprite_orientation(direction):
 	if direction > 0: $Sprite.flip_h = false
 	elif direction < 0: $Sprite.flip_h = true
 
+
 func _on_Hitbox_area_entered(area):
 	die()
+
 
 func die():
 	if is_alive:
@@ -67,6 +66,7 @@ func die():
 		collision_shape.disabled = true
 		emit_signal("create_dead_particles", DeadParticle, position, 20)
 		#emit_signal("set_time", respawn_time)
+
 
 func _on_RespawnTimer_timeout():
 	position = respawn_position
@@ -81,6 +81,7 @@ func set_respawn_position(_position):
 
 func set_respawn_time(time):
 	respawn_time = time
+
 
 func boost_jump():
 	movement_component.JUMP_SPEED *= 2

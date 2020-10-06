@@ -22,6 +22,10 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("restart_level"):
 		restart_level()
+	
+	#Set the direction of the player based on the inpud readed from the GUI
+	var player_direction = gui.get_player_direction()
+	player.set_direction(player_direction)
 
 
 func restart_level():
