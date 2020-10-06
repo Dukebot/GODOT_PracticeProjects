@@ -8,6 +8,7 @@ export var DeadParticle = preload("res://src/Effects/Particle.tscn")
 var respawn_position = Vector2()
 var respawn_time = 0.0
 var is_alive = true
+var direction = 0
 
 onready var movement_component = $MovementComponent
 onready var respawn_timer = $RespawnTimer
@@ -27,6 +28,10 @@ func _physics_process(delta):
 	if position.y > 1000:
 		die()
 
+#Prueba improvisada para controles de android, no usando actualmente...
+func set_direction(_direction):
+	direction = _direction
+
 func get_horizontal_direction():
 	var direction = 0
 	
@@ -35,12 +40,12 @@ func get_horizontal_direction():
 	elif Input.is_action_pressed("right") and not Input.is_action_pressed("left"):
 		direction = 1
 	
-	if direction == 0:
-		if Input.is_action_pressed("mouse_left"):
-			if get_global_mouse_position().x < position.x:
-				direction = -1
-			else:
-				direction = 1
+	#if direction == 0:
+		#if Input.is_action_pressed("mouse_left"):
+			#if get_global_mouse_position().x < position.x:
+				#direction = -1
+			#else:
+				#direction = 1
 	
 	return direction
 

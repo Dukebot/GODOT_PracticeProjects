@@ -7,6 +7,7 @@ var pause = false
 
 onready var effects = $Effects
 onready var gui = $GUI
+onready var player = $Player
 
 func _ready():
 	best_time = GameSave.get_score(name)
@@ -41,6 +42,9 @@ func save_score():
 
 func set_time(_time): time = _time
 func get_time(): return time
+
+func set_player_direction(direction):
+	player.set_direction(direction)
 
 
 func add_child_scene(Scene, _position):
