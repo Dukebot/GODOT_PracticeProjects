@@ -1,21 +1,18 @@
 extends CanvasLayer
 
-var time = 0.0
-var pause = false
+onready var level_label = $Control/VBoxContainer/Level
+onready var time_label = $Control/VBoxContainer/Time
+onready var best_time_label = $Control/VBoxContainer/BestTime
 
-func _ready():
-	$Control/VBoxContainer/Level.text = get_tree().current_scene.name
 
-func _process(delta):
-	if not pause:
-		time += delta
-		$Control/VBoxContainer/Time.text = "TIME " + str(time)
+func set_level_name(level_name):
+	level_label.text = level_name
 
-func set_time(_time): time = _time
-func get_time(): return time
+func set_time(time):
+	time_label.text = "TIME " + str(time)
 
-func pause(): pause = true
-func unpause(): pause = false
+func set_best_time(time):
+	best_time_label.text = "BEST TIME " + str(time)
 
 
 func _on_MainMenuButton_pressed():

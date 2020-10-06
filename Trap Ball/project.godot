@@ -30,6 +30,10 @@ config/name="Trap Ball"
 run/main_scene="res://src/Interface/LevelSelector.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameSave="*res://src/Game/GameSave.gd"
+
 [display]
 
 window/size/width=1280

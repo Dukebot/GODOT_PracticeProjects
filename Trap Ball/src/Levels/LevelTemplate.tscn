@@ -16,6 +16,8 @@ position = Vector2( -36.3856, 170.484 )
 scale = Vector2( 2.5, 2.5 )
 zoom = Vector2( 1, 1 )
 
+[node name="Vegetation" type="Node2D" parent="."]
+
 [node name="Traps" type="Node2D" parent="."]
 
 [node name="Items" type="Node2D" parent="."]

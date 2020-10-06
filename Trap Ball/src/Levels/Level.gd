@@ -1,10 +1,24 @@
 extends Node2D
 
+var time = 0.0
+var best_time = 0.0
+
+var pause = false
+
 onready var effects = $Effects
 onready var gui = $GUI
 
+func _ready():
+	best_time = GameSave.get_score(name)
+	gui.set_level_name(name)
+	gui.set_time(time)
+	gui.set_best_time(best_time)
 
 func _process(delta):
+	if not pause:
+		time += delta
+		gui.set_time(time)
+	
 	if Input.is_action_just_pressed("restart_level"):
 		restart_level()
 
@@ -15,16 +29,18 @@ func restart_level():
 func change_level(level_path):
 	get_tree().change_scene(level_path)
 
+func end_level():
+	pause = true
+	save_score()
 
-func stop_level_time_count():
-	$GUI.pause()
+func save_score():
+	if time < best_time or best_time == 0:
+		GameSave.set_score(name, time)
+		GameSave.save()
 
 
-func set_time(time):
-	gui.set_time(time)
-
-func get_time():
-	return gui.get_time()
+func set_time(_time): time = _time
+func get_time(): return time
 
 
 func add_child_scene(Scene, _position):

@@ -141,6 +141,7 @@ speed = 120
 
 [node name="EndLevel" parent="Items" index="0"]
 position = Vector2( 840, -420 )
+next_level = "res://src/Levels/World2/Level4.tscn"
 
 [node name="BouncePad" parent="Items" index="1" instance=ExtResource( 3 )]
 position = Vector2( 1015, 315 )
@@ -172,7 +173,7 @@ position = Vector2( 105, -455 )
 [node name="Checkpoint9" parent="Items" index="10" instance=ExtResource( 6 )]
 position = Vector2( 525, -455 )
 
-[node name="World" parent="." index="4"]
+[node name="World" parent="." index="5"]
 tile_data = PoolIntArray( -327694, 3, 0, -327693, 3, 0, -327692, 3, 0, -327691, 3, 0, -327690, 3, 0, -327688, 3, 0, -327687, 3, 0, -327686, 3, 0, -327685, 3, 0, -327684, 3, 0, -327682, 3, 0, -327681, 3, 0, -393216, 3, 0, -393215, 3, 0, -393214, 3, 0, -393213, 3, 0, -393211, 3, 0, -393210, 3, 0, -393209, 3, 0, -393208, 3, 0, -393207, 3, 0, -393205, 3, 0, -393204, 3, 0, -14, 3, 0, -13, 3, 0, -12, 3, 0, -11, 3, 0, -10, 3, 0, -8, 3, 0, -7, 3, 0, -6, 3, 0, -5, 3, 0, -4, 3, 0, -2, 3, 0, -1, 3, 0, -65536, 3, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65531, 3, 0, -65530, 3, 0, -65529, 3, 0, -65528, 3, 0, -65527, 3, 0, -65525, 3, 0, -65524, 3, 0, 327678, 3, 0, 327679, 3, 0, 262144, 3, 0, 262146, 3, 0, 262147, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262155, 3, 0, 262156, 3, 0 )
 
 [node name="DesertGroundMovable" parent="World" index="0" instance=ExtResource( 8 )]
