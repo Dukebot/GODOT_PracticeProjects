@@ -15,7 +15,6 @@ onready var movement_component = $MovementComponent
 onready var respawn_timer = $RespawnTimer
 onready var bounce_sound = $Bounce
 onready var collision_shape = $CollisionShape2D
-onready var hit_sound = $Hit
 
 
 func _ready():
@@ -54,7 +53,7 @@ func set_sprite_orientation(direction):
 	elif direction < 0: $Sprite.flip_h = true
 
 
-func _on_Hitbox_area_entered(area):
+func _on_Hitbox_area_entered(_area):
 	die()
 
 
@@ -63,9 +62,9 @@ func die():
 		is_alive = false
 		set_physics_process(false)
 		set_visible(false)
-		hit_sound.play()
 		movement_component.stop()
 		respawn_timer.start()
+		#Usar deferred
 		collision_shape.disabled = true
 		emit_signal("create_hit_effect", HitEffect, position)
 		emit_signal("create_dead_particles", DeadParticle, position, 20)
@@ -77,6 +76,7 @@ func _on_RespawnTimer_timeout():
 	is_alive = true
 	set_physics_process(true)
 	set_visible(true)
+	#Usar deferred
 	collision_shape.disabled = false
 
 

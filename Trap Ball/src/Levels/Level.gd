@@ -59,7 +59,7 @@ func add_child_scene(Scene, _position):
 	add_child(scene)
 
 func add_child_scenes(Scene, _position, num_childs):
-	for i in range(num_childs):
+	for _i in range(num_childs):
 		add_child_scene(Scene, _position)
 
 
@@ -69,5 +69,5 @@ func add_effect_scene(EffectScene, _position):
 	effects.add_child(effect)
 
 func add_effect_scenes(EffectScene, _position, num_scenes):
-	for i in range(num_scenes):
+	for _i in range(num_scenes):
 		add_effect_scene(EffectScene, _position)

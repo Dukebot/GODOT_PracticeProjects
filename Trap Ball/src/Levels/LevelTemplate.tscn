@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/SFX/Background/AstralJournie.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/SFX/AstralJournie.wav" type="AudioStream" id=1]
 [ext_resource path="res://src/Items/EndLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/World/WorldTileset.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Interface/GUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Levels/Level.gd" type="Script" id=8]
 [ext_resource path="res://src/Components/CameraComponent.tscn" type="PackedScene" id=9]
+
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 8 )

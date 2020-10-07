@@ -8,13 +8,13 @@ var falling = false
 onready var initial_position = position
 
 
-func _on_PlayerDetector_body_entered(body):
+func _on_PlayerDetector_body_entered(_body):
 	if not falling: 
 		falling = true
 		$FallSound.play()
 		$LifeTime.start(life_time)
 
-func _on_GroundDetectror_body_entered(body):
+func _on_GroundDetectror_body_entered(_body):
 	disable()
 
 func _on_LifeTime_timeout():

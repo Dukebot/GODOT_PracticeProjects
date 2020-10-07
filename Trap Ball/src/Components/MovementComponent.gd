@@ -22,12 +22,12 @@ func get_direction(): return direction
 
 
 func move(delta):
-	horizontal_movement(direction, delta)
+	horizontal_movement(delta)
 	vertical_movement(delta)
 	motion = get_parent().move_and_slide(motion, UP)
 
 
-func horizontal_movement(direction, delta):
+func horizontal_movement(delta):
 	if direction > 0:
 		motion.x += ACCELERATION * delta
 		if  motion.x > MAX_SPEED: motion.x = MAX_SPEED
