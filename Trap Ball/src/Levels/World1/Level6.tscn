@@ -11,7 +11,7 @@
 [node name="Level 1-6" instance=ExtResource( 1 )]
 
 [node name="CameraComponent" parent="." index="0"]
-position = Vector2( -35, 105 )
+position = Vector2( -35, 30 )
 
 [node name="FallingSpike" parent="Traps" index="0" instance=ExtResource( 3 )]
 position = Vector2( 315, 0 )
@@ -163,6 +163,9 @@ position = Vector2( 1925, -1400 )
 
 [node name="Checkpoint3" parent="Items" index="12" instance=ExtResource( 7 )]
 position = Vector2( 1365, -1820 )
+
+[node name="Checkpoint7" parent="Items" index="13" instance=ExtResource( 7 )]
+position = Vector2( 1925, -2240 )
 
 [node name="Player" parent="." index="4"]
 position = Vector2( -35, 105 )

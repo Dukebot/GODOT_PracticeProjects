@@ -41,9 +41,10 @@ func load_main_menu():
 	get_tree().change_scene("res://src/Interface/LevelSelector.tscn")
 
 func end_level(_next_level_path):
+	next_level_path = _next_level_path
 	pause = true
 	save_score()
-	next_level_path = _next_level_path
+	player.set_physics_process(false)
 	GUI.set_visible(false)
 	victory.set_time(time)
 	victory.set_best_time(best_time)

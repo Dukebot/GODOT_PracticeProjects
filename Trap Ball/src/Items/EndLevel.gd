@@ -8,6 +8,5 @@ func _ready():
 	connect("end_level", get_tree().current_scene, "end_level")
 
 func _on_EndLevel_body_entered(body):
-	body.set_physics_process(false)
 	$VictorySound.play()
 	emit_signal("end_level", next_level)

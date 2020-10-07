@@ -13,7 +13,7 @@
 script = ExtResource( 8 )
 
 [node name="CameraComponent" parent="." instance=ExtResource( 9 )]
-position = Vector2( -36.3856, 170.484 )
+position = Vector2( -36.3856, 95.484 )
 scale = Vector2( 2.5, 2.5 )
 zoom = Vector2( 0.8, 0.8 )
 
@@ -31,6 +31,7 @@ next_level = "res://src/Interface/ThanksForPlaying.tscn"
 position = Vector2( -36.3856, 170.484 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+position = Vector2( 0, -30 )
 remote_path = NodePath("../../CameraComponent")
 
 [node name="World" type="TileMap" parent="."]
