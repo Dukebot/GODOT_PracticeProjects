@@ -7,30 +7,25 @@ var time = 0.0
 var best_time = 0.0
 var pause = false
 
-onready var effects = $Effects
-onready var gui = $GUI
-onready var victory = $Victory
 onready var player = $Player
+onready var effects = $Effects
+onready var GUI = $CanvasLayer/GUI
+onready var victory = $CanvasLayer/Victory
 
 func _ready():
 	best_time = GameSave.get_score(name)
-	gui.set_level_name(name)
-	gui.set_time(time)
-	gui.set_best_time(best_time)
+	GUI.set_level_name(name)
+	GUI.set_time(time)
+	GUI.set_best_time(best_time)
 	victory.set_visible(false)
 
 func _process(delta):
 	if not pause:
 		time += delta
-		gui.set_time(time)
+		GUI.set_time(time)
 	
 	if Input.is_action_just_pressed("restart_level"):
 		restart_level()
-	
-	#Set the direction of the player based on the inpud readed from the GUI
-	#REFACTOR: Make a getter and make player read from this getter each frame
-	var player_direction = gui.get_player_direction()
-	player.set_direction(player_direction)
 
 
 func restart_level():
@@ -49,7 +44,7 @@ func end_level(_next_level_path):
 	pause = true
 	save_score()
 	next_level_path = _next_level_path
-	gui.set_visible(false)
+	GUI.set_visible(false)
 	victory.set_time(time)
 	victory.set_best_time(best_time)
 	victory.set_visible(true)
@@ -66,8 +61,7 @@ func set_time(_time): time = _time
 func get_time(): return time
 
 
-func set_player_direction(direction):
-	player.set_direction(direction)
+func get_player_direction(): return GUI.get_player_direction()
 
 
 func add_child_scene(Scene, _position):

@@ -16,11 +16,13 @@ onready var respawn_timer = $RespawnTimer
 onready var bounce_sound = $Bounce
 onready var collision_shape = $CollisionShape2D
 
+onready var root = get_tree().current_scene
+
 
 func _ready():
-	connect("create_dead_particles", get_tree().current_scene, "add_effect_scenes")
-	connect("create_hit_effect", get_tree().current_scene, "add_effect_scene")
-	connect("set_time", get_tree().current_scene, "set_time")
+	connect("create_dead_particles", root, "add_effect_scenes")
+	connect("create_hit_effect", root, "add_effect_scene")
+	connect("set_time", root, "set_time")
 	respawn_position = position
 
 
@@ -29,7 +31,7 @@ func get_direction(): return movement_component.get_direction()
 
 
 func _physics_process(delta):
-	var direction = movement_component.get_direction()
+	var direction = root.get_player_direction()
 	if OS.get_name() != "Android":
 		direction = get_horizontal_direction()
 	set_sprite_orientation(direction)

@@ -1,12 +1,12 @@
-extends CanvasLayer
+extends Control
 
 
-onready var level_label = $Control/VBoxContainer/Level
-onready var time_label = $Control/VBoxContainer/Time
-onready var best_time_label = $Control/VBoxContainer/BestTime
+onready var level_label = $VBoxContainer/Level
+onready var time_label = $VBoxContainer/Time
+onready var best_time_label = $VBoxContainer/BestTime
 
-onready var touch_screen_button_left = $Control/TouchScreenButtonLeft
-onready var touch_screen_button_right = $Control/TouchScreenButtonRight
+onready var touch_screen_button_left = $TouchScreenButtonLeft
+onready var touch_screen_button_right = $TouchScreenButtonRight
 
 
 var player_direction = 0
@@ -19,8 +19,6 @@ func _ready():
 		touch_screen_button_left.visible = false
 		touch_screen_button_right.visible = false
 
-func set_visible(value):
-	$Control.set_visible(value)
 
 func set_level_name(level_name):
 	level_label.text = level_name

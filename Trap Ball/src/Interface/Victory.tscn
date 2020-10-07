@@ -14,15 +14,13 @@ font_data = ExtResource( 1 )
 size = 32
 font_data = ExtResource( 1 )
 
-[node name="Victory" type="CanvasLayer"]
+[node name="Victory" type="Control"]
 script = ExtResource( 2 )
-
-[node name="Control" type="Control" parent="."]
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VictoryText" type="Label" parent="Control"]
+[node name="VictoryText" type="Label" parent="."]
 margin_left = 504.0
 margin_top = 128.0
 margin_right = 804.0
@@ -33,7 +31,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Time" type="Label" parent="Control"]
+[node name="Time" type="Label" parent="."]
 margin_left = 536.0
 margin_top = 264.0
 margin_right = 927.0
@@ -44,7 +42,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BestTime" type="Label" parent="Control"]
+[node name="BestTime" type="Label" parent="."]
 margin_left = 536.0
 margin_top = 312.0
 margin_right = 927.0
@@ -56,19 +54,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NextLevelSimpleButton" parent="Control" instance=ExtResource( 3 )]
+[node name="NextLevelSimpleButton" parent="." instance=ExtResource( 3 )]
 margin_left = 568.0
 margin_top = 408.0
 margin_right = 712.0
 margin_bottom = 464.0
 
-[node name="RestartLevelSimpleButton" parent="Control" instance=ExtResource( 5 )]
+[node name="RestartLevelSimpleButton" parent="." instance=ExtResource( 5 )]
 margin_left = 568.0
 margin_top = 488.0
 margin_right = 712.0
 margin_bottom = 544.0
 
-[node name="MainMenuSimpleButton" parent="Control" instance=ExtResource( 4 )]
+[node name="MainMenuSimpleButton" parent="." instance=ExtResource( 4 )]
 margin_left = 568.0
 margin_top = 568.0
 margin_right = 712.0
