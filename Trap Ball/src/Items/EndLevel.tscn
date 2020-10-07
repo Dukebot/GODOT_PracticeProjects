@@ -24,4 +24,3 @@ shape = SubResource( 1 )
 [node name="VictorySound" type="AudioStreamPlayer2D" parent="." index="2"]
 stream = ExtResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_EndLevel_body_entered"]
-[connection signal="finished" from="VictorySound" to="." method="_on_VictorySound_finished"]

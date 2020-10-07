@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Interface/Simple Buttons/SimpleButton.tscn" type="PackedScene" id=1]
+
+[node name="NextLevelSimpleButton" instance=ExtResource( 1 )]
+text = "Next Level"
+[connection signal="pressed" from="." to="." method="_on_NextLevelSimpleButton_pressed"]

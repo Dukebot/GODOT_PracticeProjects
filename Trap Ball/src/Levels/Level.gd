@@ -1,12 +1,15 @@
 extends Node2D
 
+export var next_level_path = "res://src/Interface/ThanksForPlaying.tscn"
+export var Victory = preload("res://src/Interface/Victory.tscn")
+
 var time = 0.0
 var best_time = 0.0
-
 var pause = false
 
 onready var effects = $Effects
 onready var gui = $GUI
+onready var victory = $Victory
 onready var player = $Player
 
 func _ready():
@@ -14,6 +17,7 @@ func _ready():
 	gui.set_level_name(name)
 	gui.set_time(time)
 	gui.set_best_time(best_time)
+	victory.set_visible(false)
 
 func _process(delta):
 	if not pause:
@@ -24,6 +28,7 @@ func _process(delta):
 		restart_level()
 	
 	#Set the direction of the player based on the inpud readed from the GUI
+	#REFACTOR: Make a getter and make player read from this getter each frame
 	var player_direction = gui.get_player_direction()
 	player.set_direction(player_direction)
 
@@ -31,12 +36,24 @@ func _process(delta):
 func restart_level():
 	get_tree().reload_current_scene()
 
+func load_next_level():
+	get_tree().change_scene(next_level_path)
+
 func change_level(level_path):
 	get_tree().change_scene(level_path)
 
-func end_level():
+func load_main_menu():
+	get_tree().change_scene("res://src/Interface/LevelSelector.tscn")
+
+func end_level(_next_level_path):
 	pause = true
 	save_score()
+	next_level_path = _next_level_path
+	gui.set_visible(false)
+	victory.set_time(time)
+	victory.set_best_time(best_time)
+	victory.set_visible(true)
+
 
 
 func save_score():
