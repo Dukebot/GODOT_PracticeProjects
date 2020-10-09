@@ -5,3 +5,4 @@
 
 [node name="CheckpointSound" instance=ExtResource( 1 )]
 stream = ExtResource( 2 )
+volume_db = -12.117

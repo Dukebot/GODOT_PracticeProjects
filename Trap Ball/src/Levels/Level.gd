@@ -1,55 +1,80 @@
 extends Node2D
 
-export var next_level_path = "res://src/Interface/ThanksForPlaying.tscn"
-export var Victory = preload("res://src/Interface/Victory.tscn")
+var next_level_path
 
 var time = 0.0
 var best_time = 0.0
-var pause = false
 
 onready var player = $Player
+onready var enemies = $Enemies
 onready var effects = $Effects
+onready var world = $World
+
 onready var GUI = $CanvasLayer/GUI
 onready var victory = $CanvasLayer/Victory
+onready var pause = $CanvasLayer/Pause
 
+
+#Initialize and set up the tree
 func _ready():
+	next_level_path = get_next_level_path()
 	best_time = GameSave.get_score(name)
 	GUI.set_level_name(name)
 	GUI.set_time(time)
 	GUI.set_best_time(best_time)
 	victory.set_visible(false)
+	pause.set_visible(false)
 
+
+#We increase the timer and update the GUI to show the time to player
 func _process(delta):
-	if not pause:
-		time += delta
-		GUI.set_time(time)
-	
+	time += delta
+	GUI.set_time(time)
 	if Input.is_action_just_pressed("restart_level"):
 		restart_level()
 
 
+#This function return the path where the next level scene is located
+func get_next_level_path():
+	var world_level = name.split(" ")[1]
+	var world = int(world_level.split("-")[0])
+	var level = int(world_level.split("-")[1])
+	
+	level += 1
+	if level > 6:
+		level = 1
+		world += 1
+		if world > 2:
+			return "res://src/Interface/ThanksForPlaying.tscn"
+	
+	return "res://src/Levels/World" + str(world) + "/Level" + str(level) + ".tscn"
+
+
 func restart_level():
+	unpause()
 	get_tree().reload_current_scene()
 
 func load_next_level():
+	unpause()
 	get_tree().change_scene(next_level_path)
 
-func change_level(level_path):
-	get_tree().change_scene(level_path)
-
-func load_main_menu():
-	get_tree().change_scene("res://src/Interface/LevelSelector.tscn")
-
-func end_level(_next_level_path):
-	next_level_path = _next_level_path
-	pause = true
+func end_level():
+	pause()
 	save_score()
-	player.set_physics_process(false)
+	pause.set_visible(false)
 	GUI.set_visible(false)
+	victory.set_visible(true)
 	victory.set_time(time)
 	victory.set_best_time(best_time)
-	victory.set_visible(true)
 
+
+func pause():
+	pause.set_visible(true)
+	get_tree().paused = true
+
+func unpause():
+	pause.set_visible(false)
+	get_tree().paused = false
 
 
 func save_score():

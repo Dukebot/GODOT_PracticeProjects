@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Interface/LevelSelector.gd" type="Script" id=1]
+[ext_resource path="res://src/Interface/Texture Buttons/TextureButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/GFX/Backgrounds/640af70a-1084-4f93-9581-cc412750c1e2.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -11,33 +13,25 @@ font_data = ExtResource( 3 )
 size = 32
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 32
-font_data = ExtResource( 3 )
-
-[node name="LevelSelector" type="MarginContainer"]
+[node name="LevelSelector" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 6.10352e-05
-custom_constants/margin_right = 120
-custom_constants/margin_top = 80
-custom_constants/margin_left = 120
-custom_constants/margin_bottom = 80
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 120.0
-margin_top = 80.0
-margin_right = 1160.0
-margin_bottom = 640.0
-alignment = 1
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 4 )
 
-[node name="GameTitle" type="Label" parent="VBoxContainer"]
-margin_right = 1040.0
-margin_bottom = 89.0
+[node name="GameTitle" type="Label" parent="."]
+margin_left = 128.0
+margin_top = 96.0
+margin_right = 1168.0
+margin_bottom = 185.0
 custom_fonts/font = SubResource( 1 )
 text = "Trap Ball Prototype"
 align = 1
@@ -45,100 +39,113 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
-margin_top = 93.0
-margin_right = 1040.0
-margin_bottom = 560.0
-size_flags_vertical = 3
-custom_constants/separation = 30
-alignment = 1
+[node name="Level1Button" parent="." instance=ExtResource( 2 )]
+margin_left = 288.0
+margin_top = 288.0
+margin_right = 478.0
+margin_bottom = 337.0
 
-[node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
-margin_top = 134.0
-margin_right = 1040.0
-margin_bottom = 180.0
-alignment = 1
-
-[node name="Button1" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer1"]
-margin_left = 321.0
-margin_right = 447.0
-margin_bottom = 46.0
-custom_fonts/font = SubResource( 2 )
+[node name="Label" parent="Level1Button" index="0"]
 text = "Level 1"
 
-[node name="Button2" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer1"]
-margin_left = 451.0
-margin_right = 583.0
-margin_bottom = 46.0
-custom_fonts/font = SubResource( 2 )
+[node name="Level2Button" parent="." instance=ExtResource( 2 )]
+margin_left = 544.0
+margin_top = 288.0
+margin_right = 734.0
+margin_bottom = 337.0
+
+[node name="Label" parent="Level2Button" index="0"]
 text = "Level 2"
 
-[node name="Button3" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer1"]
-margin_left = 587.0
-margin_right = 719.0
-margin_bottom = 46.0
-custom_fonts/font = SubResource( 2 )
+[node name="Level3Button" parent="." instance=ExtResource( 2 )]
+margin_left = 800.0
+margin_top = 288.0
+margin_right = 990.0
+margin_bottom = 337.0
+
+[node name="Label" parent="Level3Button" index="0"]
 text = "Level 3"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
-margin_top = 210.0
-margin_right = 1040.0
-margin_bottom = 256.0
-alignment = 1
+[node name="Level4Button" parent="." instance=ExtResource( 2 )]
+margin_left = 288.0
+margin_top = 384.0
+margin_right = 478.0
+margin_bottom = 433.0
 
-[node name="Button4" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 315.0
-margin_right = 450.0
-margin_bottom = 46.0
-custom_fonts/font = SubResource( 2 )
+[node name="Label" parent="Level4Button" index="0"]
 text = "Level 4"
 
-[node name="Button5" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 454.0
-margin_right = 586.0
-margin_bottom = 46.0
-custom_fonts/font = SubResource( 2 )
+[node name="Level5Button" parent="." instance=ExtResource( 2 )]
+margin_left = 544.0
+margin_top = 384.0
+margin_right = 734.0
+margin_bottom = 433.0
+
+[node name="Label" parent="Level5Button" index="0"]
 text = "Level 5"
 
-[node name="Button6" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 590.0
-margin_right = 724.0
-margin_bottom = 46.0
-custom_fonts/font = SubResource( 2 )
+[node name="Level6Button" parent="." instance=ExtResource( 2 )]
+margin_left = 800.0
+margin_top = 384.0
+margin_right = 990.0
+margin_bottom = 433.0
+
+[node name="Label" parent="Level6Button" index="0"]
 text = "Level 6"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
-margin_top = 286.0
-margin_right = 1040.0
-margin_bottom = 332.0
-alignment = 1
+[node name="PrevWorldButton" parent="." instance=ExtResource( 2 )]
+margin_left = 288.0
+margin_top = 576.0
+margin_right = 478.0
+margin_bottom = 625.0
 
-[node name="PrevWorldButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 421.0
-margin_right = 452.0
-margin_bottom = 46.0
-custom_fonts/font = SubResource( 2 )
+[node name="Label" parent="PrevWorldButton" index="0"]
+margin_right = 192.0
 text = "<"
 
-[node name="WorldSelectedLabel" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 456.0
-margin_top = 3.0
-margin_right = 583.0
-margin_bottom = 43.0
-custom_fonts/font = SubResource( 3 )
-text = "World 1"
-
-[node name="NextWorldButton" type="Button" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 587.0
-margin_right = 618.0
-margin_bottom = 46.0
+[node name="World" type="Label" parent="."]
+margin_left = 560.0
+margin_top = 576.0
+margin_right = 736.0
+margin_bottom = 624.0
 custom_fonts/font = SubResource( 2 )
+text = "World 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextWorldButton" parent="." instance=ExtResource( 2 )]
+margin_left = 800.0
+margin_top = 576.0
+margin_right = 990.0
+margin_bottom = 625.0
+
+[node name="Label" parent="NextWorldButton" index="0"]
+margin_right = 192.0
 text = ">"
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer1/Button1" to="." method="_on_Button1_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer1/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer1/Button3" to="." method="_on_Button3_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/Button4" to="." method="_on_Button4_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/Button5" to="." method="_on_Button5_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer2/Button6" to="." method="_on_Button6_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer3/PrevWorldButton" to="." method="_on_PrevWorldButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HBoxContainer3/NextWorldButton" to="." method="_on_NextWorldButton_pressed"]
+[connection signal="pressed" from="Level1Button" to="." method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="Level2Button" to="." method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="Level3Button" to="." method="_on_Level3Button_pressed"]
+[connection signal="pressed" from="Level4Button" to="." method="_on_Level4Button_pressed"]
+[connection signal="pressed" from="Level5Button" to="." method="_on_Level5Button_pressed"]
+[connection signal="pressed" from="Level6Button" to="." method="_on_Level6Button_pressed"]
+[connection signal="pressed" from="PrevWorldButton" to="." method="_on_PrevWorldButton_pressed"]
+[connection signal="pressed" from="NextWorldButton" to="." method="_on_NextWorldButton_pressed"]
+
+[editable path="Level1Button"]
+
+[editable path="Level2Button"]
+
+[editable path="Level3Button"]
+
+[editable path="Level4Button"]
+
+[editable path="Level5Button"]
+
+[editable path="Level6Button"]
+
+[editable path="PrevWorldButton"]
+
+[editable path="NextWorldButton"]

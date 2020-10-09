@@ -1,28 +1,23 @@
 extends Node
 
+const FORCE_NEW_GAME_CREATION = false
+
 var savegame = File.new() #file
 var save_path = "user://savegame.save" #place of the file
 
 #Se me pone en minúscula aunque lo ponga en mayúscula aquí
 var save_data = {
-	"highscore": 0,
-	"level 1-1": 0.0,
-	"level 1-2": 0.0,
-	"level 1-3": 0.0,
-	"level 1-4": 0.0,
-	"level 1-5": 0.0,
-	"level 1-6": 0.0,
-	"level 2-1": 0.0,
-	"level 2-2": 0.0,
-	"level 2-3": 0.0,
-	"level 2-4": 0.0,
-	"level 2-5": 0.0,
-	"level 2-6": 0.0
+	"level 1-1": 0.0, "level 1-2": 0.0, "level 1-3": 0.0,
+	"level 1-4": 0.0, "level 1-5": 0.0, "level 1-6": 0.0,
+	"level 2-1": 0.0, "level 2-2": 0.0, "level 2-3": 0.0,
+	"level 2-4": 0.0, "level 2-5": 0.0, "level 2-6": 0.0,
+	"level 3-1": 0.0, "level 3-2": 0.0, "level 3-3": 0.0,
+	"level 3-4": 0.0, "level 3-5": 0.0, "level 3-6": 0.0
 } #variable to store data
 
 
 func _ready():
-	if not savegame.file_exists(save_path):
+	if not savegame.file_exists(save_path) or FORCE_NEW_GAME_CREATION:
 		savegame.open(save_path, File.WRITE) #open file to write
 		savegame.store_var(save_data) #store the data
 		savegame.close() # close the file
@@ -34,11 +29,10 @@ func _ready():
 	print(str(save_data))
 
 
-func get_score(key):
-	print("Calling get score with key = " + key)
+func get_score(key): 
 	return save_data[key.to_lower()]
 
-func set_score(key, value):
+func set_score(key, value): 
 	save_data[key.to_lower()] = value
 
 

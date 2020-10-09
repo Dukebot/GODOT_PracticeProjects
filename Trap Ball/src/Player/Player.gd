@@ -66,8 +66,7 @@ func die():
 		set_visible(false)
 		movement_component.stop()
 		respawn_timer.start()
-		#Usar deferred
-		collision_shape.disabled = true
+		collision_shape.set_deferred("disabled", true)
 		emit_signal("create_hit_effect", HitEffect, position)
 		emit_signal("create_dead_particles", DeadParticle, position, 20)
 		#emit_signal("set_time", respawn_time)
@@ -78,7 +77,8 @@ func _on_RespawnTimer_timeout():
 	is_alive = true
 	set_physics_process(true)
 	set_visible(true)
-	#Usar deferred
+	
+	yield(get_tree().create_timer(.2), "timeout")
 	collision_shape.disabled = false
 
 

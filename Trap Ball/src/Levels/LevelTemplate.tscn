@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/SFX/AstralJournie.wav" type="AudioStream" id=1]
 [ext_resource path="res://src/Items/EndLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/World/WorldTileset.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Interface/Victory.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Interface/Pause.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Interface/GUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Levels/Level.gd" type="Script" id=8]
@@ -25,7 +26,6 @@ zoom = Vector2( 0.8, 0.8 )
 
 [node name="EndLevel" parent="Items" instance=ExtResource( 2 )]
 position = Vector2( 254.285, 124.963 )
-next_level = "res://src/Interface/ThanksForPlaying.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( -36.3856, 170.484 )
@@ -49,6 +49,8 @@ tile_data = PoolIntArray( 327678, 2, 0, 327679, 2, 0, 262144, 2, 0 )
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [node name="Victory" parent="CanvasLayer" instance=ExtResource( 4 )]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 5 )]
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
