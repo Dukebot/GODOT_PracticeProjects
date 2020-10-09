@@ -78,7 +78,7 @@ func _on_RespawnTimer_timeout():
 	set_physics_process(true)
 	set_visible(true)
 	
-	yield(get_tree().create_timer(.2), "timeout")
+	yield(get_tree().create_timer(.1), "timeout")
 	collision_shape.disabled = false
 
 
