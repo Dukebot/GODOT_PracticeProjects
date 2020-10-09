@@ -1,23 +1,22 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Traps/Trap.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/GFX/Traps/floor blade.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GFX/Traps/Skin Tearing Blade - Black.png" type="Texture" id=2]
 [ext_resource path="res://src/Traps/Blade.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 5.63143
-height = 19.3031
+height = 38.0
 
 [node name="Blade" instance=ExtResource( 1 )]
-scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
 speed = 100
 direction = Vector2( 1, 0 )
 
 [node name="Sprite" parent="." index="0"]
-position = Vector2( 0, -16 )
+position = Vector2( 0, -8 )
+scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 0, -12 )
+position = Vector2( 0, -26 )
 shape = SubResource( 1 )
