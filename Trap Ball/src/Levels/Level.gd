@@ -3,13 +3,15 @@ extends Node2D
 const WorldParallaxBackgrounds = [
 	preload("res://src/Backgrounds/World1ParallaxBackground.tscn"),
 	preload("res://src/Backgrounds/World2ParallaxBackground.tscn"),
-	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn")
+	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn"),
+	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn"),
 ]
 
 const WorldMusic = [
 	preload("res://src/Sound/BackgroundMusic/World1BackgroundMusic.tscn"),
 	preload("res://src/Sound/BackgroundMusic/World2BackgroundMusic.tscn"),
-	preload("res://src/Sound/BackgroundMusic/World3BackgroundMusic.tscn")
+	preload("res://src/Sound/BackgroundMusic/World3BackgroundMusic.tscn"),
+	preload("res://src/Sound/BackgroundMusic/World4BackgroundMusic.tscn"),
 ]
 
 var next_level_path
@@ -48,7 +50,7 @@ func _ready():
 	
 	world_number = get_world_number()
 	level_number = get_level_number()
-	next_level_path = LevelManager.get_next_level_path(world_number, level_number)
+	next_level_path = Game.get_next_level_path(world_number, level_number)
 	
 	var bg_music = WorldMusic[world_number-1].instance()
 	add_child(bg_music)

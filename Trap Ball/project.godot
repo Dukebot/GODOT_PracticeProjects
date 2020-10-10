@@ -33,7 +33,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GameSave="*res://src/Game/GameSave.gd"
-LevelManager="*res://src/Game/LevelManager.gd"
+Game="*res://src/Game/Game.gd"
 
 [display]
 

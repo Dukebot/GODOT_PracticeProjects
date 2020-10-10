@@ -13,8 +13,7 @@
 script = ExtResource( 8 )
 
 [node name="CameraComponent" parent="." instance=ExtResource( 9 )]
-position = Vector2( -36.3856, 95.484 )
-scale = Vector2( 2.5, 2.5 )
+position = Vector2( -36.3856, 140.484 )
 zoom = Vector2( 0.8, 0.8 )
 
 [node name="Vegetation" type="Node2D" parent="."]

@@ -28,6 +28,7 @@ scale = Vector2( 2.5, 2.5 )
 normal = ExtResource( 4 )
 
 [node name="Panel" type="TextureRect" parent="."]
+visible = false
 margin_left = 32.0
 margin_top = 32.0
 margin_right = 368.0

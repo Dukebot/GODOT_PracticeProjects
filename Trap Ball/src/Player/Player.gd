@@ -77,9 +77,15 @@ func _on_RespawnTimer_timeout():
 	is_alive = true
 	set_visible(true)
 	set_physics_process(true)
-	is_on_floor()
+	
+	#We do this to avoid bug when we die and we are on the floor
+	#We respawn jumping with the bug, so we set it to 0
+	var jump_speed_previous = movement_component.JUMP_SPEED
+	movement_component.JUMP_SPEED = 0
+
 	yield(get_tree().create_timer(.1), "timeout")
 	collision_shape.disabled = false
+	movement_component.JUMP_SPEED = jump_speed_previous
 
 
 func set_respawn_position(_position):

@@ -1,7 +1,7 @@
 extends Node
 
 const LEVEL_PATH = "res://src/Levels/"
-const NUM_WORLDS = 3
+const NUM_WORLDS = 4
 
 
 func load_level(world, level):

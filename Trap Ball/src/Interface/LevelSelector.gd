@@ -1,13 +1,13 @@
 extends Control
 
-const NUM_WORLDS = LevelManager.NUM_WORLDS
+const NUM_WORLDS = Game.NUM_WORLDS
 
 var world_selected = 1
 var level_selected = 1
 
 
 func load_level():
-	LevelManager.load_level(world_selected, level_selected)
+	Game.load_level(world_selected, level_selected)
 
 func update_world_selected():
 	$World.text = "World " + str(world_selected)
