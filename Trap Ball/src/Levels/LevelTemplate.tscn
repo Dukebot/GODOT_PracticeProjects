@@ -46,7 +46,10 @@ tile_data = PoolIntArray( 327678, 2, 0, 327679, 2, 0, 262144, 2, 0 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = false
 
 [node name="Victory" parent="CanvasLayer" instance=ExtResource( 4 )]
+visible = false
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource( 5 )]
+visible = false

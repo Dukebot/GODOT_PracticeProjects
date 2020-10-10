@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/Interface/Victory.gd" type="Script" id=2]
 [ext_resource path="res://src/Interface/TextureButtons/NextLevelTextureButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Interface/TextureButtons/RestartLevelTextureButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Interface/TextureButtons/MainMenuTextureButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/GFX/Interface/blue_panel.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -17,6 +18,17 @@ font_data = ExtResource( 1 )
 [node name="Victory" type="Control"]
 pause_mode = 2
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="TextureRect" parent="."]
+margin_left = 464.0
+margin_top = 112.0
+margin_right = 856.0
+margin_bottom = 376.0
+texture = ExtResource( 6 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

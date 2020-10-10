@@ -1,5 +1,11 @@
 extends Node2D
 
+const WorldParallaxBackgrounds = [
+	preload("res://src/Backgrounds/World1ParallaxBackground.tscn"),
+	preload("res://src/Backgrounds/World2ParallaxBackground.tscn"),
+	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn")
+]
+
 const WorldMusic = [
 	preload("res://src/Sound/BackgroundMusic/World1BackgroundMusic.tscn"),
 	preload("res://src/Sound/BackgroundMusic/World2BackgroundMusic.tscn"),
@@ -15,6 +21,7 @@ var time = 0.0
 var best_time = 0.0
 
 
+onready var camera = $CameraComponent
 onready var player = $Player
 onready var enemies = $Enemies
 onready var effects = $Effects
@@ -35,6 +42,7 @@ func _ready():
 	GUI.set_time(time)
 	GUI.set_best_time(best_time)
 	
+	GUI.set_visible(true)
 	victory.set_visible(false)
 	pause.set_visible(false)
 	
@@ -42,9 +50,14 @@ func _ready():
 	level_number = get_level_number()
 	next_level_path = LevelManager.get_next_level_path(world_number, level_number)
 	
-	var world_music = WorldMusic[world_number-1].instance()
-	add_child(world_music)
-	world_music.play()
+	var bg_music = WorldMusic[world_number-1].instance()
+	add_child(bg_music)
+	bg_music.play()
+	
+	#var parallax_background = WorldParallaxBackgrounds[world_number-1].instance()
+	var Background = load("res://src/Backgrounds/SpaceParallaxBackground.tscn")
+	var parallax_background = Background.instance()
+	camera.add_child(parallax_background)
 
 
 func get_world_number():

@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Interface/LevelSelector.gd" type="Script" id=1]
 [ext_resource path="res://src/Interface/TextureButtons/TextureButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/GFX/Backgrounds/640af70a-1084-4f93-9581-cc412750c1e2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GFX/Interface/Buttons/SquareButtons/blue_button07.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GFX/Interface/Buttons/SquareButtons/blue_button08.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GFX/Interface/Buttons/SquareButtons/blue_button09.png" type="Texture" id=7]
+[ext_resource path="res://src/Interface/TextureButtons/ExitGameTextureButton.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -26,6 +30,9 @@ __meta__ = {
 margin_right = 1280.0
 margin_bottom = 720.0
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GameTitle" type="Label" parent="."]
 margin_left = 128.0
@@ -33,7 +40,7 @@ margin_top = 96.0
 margin_right = 1168.0
 margin_bottom = 185.0
 custom_fonts/font = SubResource( 1 )
-text = "Trap Ball Prototype"
+text = "Trap Ball"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -94,20 +101,23 @@ margin_bottom = 433.0
 text = "Level 6"
 
 [node name="PrevWorldButton" parent="." instance=ExtResource( 2 )]
-margin_left = 288.0
-margin_top = 576.0
-margin_right = 478.0
-margin_bottom = 625.0
+margin_left = 496.0
+margin_top = 544.0
+margin_right = 544.0
+margin_bottom = 593.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 
 [node name="Label" parent="PrevWorldButton" index="0"]
-margin_right = 192.0
+margin_right = 48.0
 text = "<"
 
 [node name="World" type="Label" parent="."]
 margin_left = 560.0
-margin_top = 576.0
+margin_top = 544.0
 margin_right = 736.0
-margin_bottom = 624.0
+margin_bottom = 592.0
 custom_fonts/font = SubResource( 2 )
 text = "World 1"
 align = 1
@@ -117,14 +127,23 @@ __meta__ = {
 }
 
 [node name="NextWorldButton" parent="." instance=ExtResource( 2 )]
-margin_left = 800.0
-margin_top = 576.0
-margin_right = 990.0
-margin_bottom = 625.0
+margin_left = 752.0
+margin_top = 544.0
+margin_right = 800.0
+margin_bottom = 593.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
 
 [node name="Label" parent="NextWorldButton" index="0"]
-margin_right = 192.0
+margin_right = 48.0
 text = ">"
+
+[node name="ExitGameTextureButton" parent="." instance=ExtResource( 8 )]
+margin_left = 1056.0
+margin_top = 32.0
+margin_right = 1248.0
+margin_bottom = 91.0
 [connection signal="pressed" from="Level1Button" to="." method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="Level2Button" to="." method="_on_Level2Button_pressed"]
 [connection signal="pressed" from="Level3Button" to="." method="_on_Level3Button_pressed"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Interface/GUI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/GFX/Interface/Buttons/flatDark23.png" type="Texture" id=3]
 [ext_resource path="res://Assets/GFX/Interface/Buttons/flatDark24.png" type="Texture" id=4]
 [ext_resource path="res://src/Interface/TextureButtons/PauseTextureButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/GFX/Interface/blue_panel.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -26,11 +27,22 @@ position = Vector2( 1056, 480 )
 scale = Vector2( 2.5, 2.5 )
 normal = ExtResource( 4 )
 
-[node name="Level" type="Label" parent="."]
+[node name="Panel" type="TextureRect" parent="."]
 margin_left = 32.0
 margin_top = 32.0
-margin_right = 203.0
-margin_bottom = 72.0
+margin_right = 368.0
+margin_bottom = 208.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 48.0
+margin_right = 235.0
+margin_bottom = 88.0
 custom_fonts/font = SubResource( 1 )
 text = "Level"
 align = 2
@@ -39,19 +51,19 @@ __meta__ = {
 }
 
 [node name="LevelValue" type="Label" parent="."]
-margin_left = 224.0
-margin_top = 32.0
-margin_right = 395.0
-margin_bottom = 72.0
+margin_left = 256.0
+margin_top = 48.0
+margin_right = 427.0
+margin_bottom = 88.0
 custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Time" type="Label" parent="."]
-margin_left = 32.0
+margin_left = 64.0
 margin_top = 96.0
-margin_right = 203.0
+margin_right = 235.0
 margin_bottom = 136.0
 custom_fonts/font = SubResource( 1 )
 text = "Time"
@@ -61,9 +73,9 @@ __meta__ = {
 }
 
 [node name="TimeValue" type="Label" parent="."]
-margin_left = 224.0
+margin_left = 256.0
 margin_top = 96.0
-margin_right = 395.0
+margin_right = 427.0
 margin_bottom = 136.0
 custom_fonts/font = SubResource( 1 )
 __meta__ = {
@@ -71,10 +83,10 @@ __meta__ = {
 }
 
 [node name="BestTime" type="Label" parent="."]
-margin_left = 32.0
-margin_top = 160.0
-margin_right = 203.0
-margin_bottom = 200.0
+margin_left = 64.0
+margin_top = 144.0
+margin_right = 235.0
+margin_bottom = 184.0
 custom_fonts/font = SubResource( 1 )
 text = "Best Time"
 align = 2
@@ -83,10 +95,10 @@ __meta__ = {
 }
 
 [node name="BestTimeValue" type="Label" parent="."]
-margin_left = 224.0
-margin_top = 160.0
-margin_right = 395.0
-margin_bottom = 200.0
+margin_left = 256.0
+margin_top = 144.0
+margin_right = 427.0
+margin_bottom = 184.0
 custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
