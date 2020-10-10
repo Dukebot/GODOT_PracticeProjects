@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/SFX/AstralJournie.wav" type="AudioStream" id=1]
 [ext_resource path="res://src/Items/EndLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/World/WorldTileset.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Interface/Victory.tscn" type="PackedScene" id=4]
@@ -51,8 +50,3 @@ tile_data = PoolIntArray( 327678, 2, 0, 327679, 2, 0, 262144, 2, 0 )
 [node name="Victory" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource( 5 )]
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
-volume_db = -14.136
-autoplay = true

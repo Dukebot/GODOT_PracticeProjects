@@ -1,9 +1,19 @@
 extends Node2D
 
+const WorldMusic = [
+	preload("res://src/Sound/BackgroundMusic/World1BackgroundMusic.tscn"),
+	preload("res://src/Sound/BackgroundMusic/World2BackgroundMusic.tscn"),
+	preload("res://src/Sound/BackgroundMusic/World3BackgroundMusic.tscn")
+]
+
 var next_level_path
+
+var world_number = 0
+var level_number = 0
 
 var time = 0.0
 var best_time = 0.0
+
 
 onready var player = $Player
 onready var enemies = $Enemies
@@ -14,40 +24,47 @@ onready var GUI = $CanvasLayer/GUI
 onready var victory = $CanvasLayer/Victory
 onready var pause = $CanvasLayer/Pause
 
+onready var background_music = $BackgroundMusic
+
 
 #Initialize and set up the tree
 func _ready():
-	next_level_path = get_next_level_path()
 	best_time = GameSave.get_score(name)
+	
 	GUI.set_level_name(name)
 	GUI.set_time(time)
 	GUI.set_best_time(best_time)
+	
 	victory.set_visible(false)
 	pause.set_visible(false)
+	
+	world_number = get_world_number()
+	level_number = get_level_number()
+	next_level_path = LevelManager.get_next_level_path(world_number, level_number)
+	
+	var world_music = WorldMusic[world_number-1].instance()
+	add_child(world_music)
+	world_music.play()
+
+
+func get_world_number():
+	var world_level = name.split(" ")[1]
+	var world = int(world_level.split("-")[0])
+	return world
+
+func get_level_number():
+	var world_level = name.split(" ")[1]
+	var level = int(world_level.split("-")[1])
+	return level
 
 
 #We increase the timer and update the GUI to show the time to player
 func _process(delta):
 	time += delta
 	GUI.set_time(time)
+	
 	if Input.is_action_just_pressed("restart_level"):
 		restart_level()
-
-
-#This function return the path where the next level scene is located
-func get_next_level_path():
-	var world_level = name.split(" ")[1]
-	var world = int(world_level.split("-")[0])
-	var level = int(world_level.split("-")[1])
-	
-	level += 1
-	if level > 6:
-		level = 1
-		world += 1
-		if world > 2:
-			return "res://src/Interface/ThanksForPlaying.tscn"
-	
-	return "res://src/Levels/World" + str(world) + "/Level" + str(level) + ".tscn"
 
 
 func restart_level():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Levels/LevelTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Items/BouncePad.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/Traps/Spikes.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Traps/SpikesBall.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Traps/Blade.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/GFX/World/tundraMid.png" type="Texture" id=9]
 
 [node name="Level 3-6" instance=ExtResource( 1 )]
 
@@ -145,10 +146,17 @@ position = Vector2( 525, -840 )
 position = Vector2( 70, -560 )
 
 [node name="World" parent="." index="5"]
-tile_data = PoolIntArray( -720894, 3, 0, -720893, 3, 0, -720892, 3, 0, -720891, 3, 0, -720889, 3, 0, -720887, 3, 0, -720886, 3, 0, -720885, 3, 0, -720884, 3, 0, -720883, 3, 0, -720881, 3, 0, -458752, 3, 0, -458751, 3, 0, -458750, 3, 0, -458749, 3, 0, -458748, 3, 0, -458747, 3, 0, -458745, 3, 0, -458743, 3, 0, -458742, 3, 0, -458741, 3, 0, -458740, 3, 0, -458739, 3, 0, -458737, 3, 0, -458735, 3, 0, -458734, 3, 0, -458733, 3, 0, -458732, 3, 0, -458731, 3, 0, -196604, 3, 0, -196602, 3, 0, -196601, 3, 0, -196600, 3, 0, -196598, 3, 0, -196597, 3, 0, -196596, 3, 0, -196595, 3, 0, -196594, 3, 0, -196593, 3, 0, -65538, 3, 0, -65537, 3, 0, -131072, 3, 0, -131070, 3, 0, 131076, 3, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131082, 3, 0, 131084, 3, 0, 131085, 3, 0, 131086, 3, 0, 131087, 3, 0, 196610, 3, 0, 327678, 3, 0, 327679, 3, 0, 262144, 3, 0 )
+tile_data = PoolIntArray( -720894, 11, 0, -720893, 4, 0, -720892, 4, 0, -720891, 13, 0, -720889, 12, 0, -720887, 11, 0, -720886, 4, 0, -720885, 4, 0, -720884, 4, 0, -720883, 13, 0, -720881, 12, 0, -458752, 11, 0, -458751, 4, 0, -458750, 4, 0, -458749, 4, 0, -458748, 4, 0, -458747, 13, 0, -458745, 12, 0, -458743, 11, 0, -458742, 4, 0, -458741, 4, 0, -458740, 4, 0, -458739, 13, 0, -458737, 12, 0, -458735, 11, 0, -458734, 4, 0, -458733, 4, 0, -458732, 4, 0, -458731, 13, 0, -196604, 12, 0, -196602, 11, 0, -196601, 4, 0, -196600, 13, 0, -196598, 11, 0, -196597, 4, 0, -196596, 4, 0, -196595, 4, 0, -196594, 4, 0, -196593, 13, 0, -65538, 11, 0, -65537, 4, 0, -131072, 13, 0, -131070, 12, 0, 131076, 12, 0, 131078, 11, 0, 131079, 4, 0, 131080, 13, 0, 131082, 12, 0, 131084, 11, 0, 131085, 4, 0, 131086, 4, 0, 131087, 13, 0, 196610, 12, 0, 327678, 11, 0, 327679, 4, 0, 262144, 13, 0 )
 
 [node name="DesertGroundMovable" parent="World" index="0" instance=ExtResource( 3 )]
 position = Vector2( -245, -455 )
 
 [node name="DesertGroundMovable2" parent="World" index="1" instance=ExtResource( 3 )]
 position = Vector2( 1400, -735 )
+
+[node name="Sprite" parent="World/DesertGroundMovable2" index="1"]
+texture = ExtResource( 9 )
+
+[editable path="World/DesertGroundMovable"]
+
+[editable path="World/DesertGroundMovable2"]

@@ -3,7 +3,7 @@ extends Node
 const FORCE_NEW_GAME_CREATION = false
 
 var savegame = File.new() #file
-var save_path = "user://savegame.save" #place of the file
+var save_path = "user://savegame.save" #place of the file  
 
 #Se me pone en minúscula aunque lo ponga en mayúscula aquí
 var save_data = {

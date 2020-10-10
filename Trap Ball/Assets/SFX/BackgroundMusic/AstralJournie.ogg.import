@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/AstralJournie.ogg-c7147f75cf5853633fc963ac4006725a.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/BackgroundMusic/AstralJournie.ogg"
+dest_files=[ "res://.import/AstralJournie.ogg-c7147f75cf5853633fc963ac4006725a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

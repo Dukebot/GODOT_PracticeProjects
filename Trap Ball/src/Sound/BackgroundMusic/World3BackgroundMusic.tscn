@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Sound/BackgroundMusic/BackgroundMusicPlayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/SFX/BackgroundMusic/BigBussiness.ogg" type="AudioStream" id=2]
+
+[node name="World3BackgroundMusic" instance=ExtResource( 1 )]
+stream = ExtResource( 2 )

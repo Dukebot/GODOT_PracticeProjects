@@ -1,9 +1,11 @@
 extends Control
 
 
-onready var level_label = $VBoxContainer/Level
-onready var time_label = $VBoxContainer/Time
-onready var best_time_label = $VBoxContainer/BestTime
+onready var level_value = $LevelValue
+onready var time_value = $TimeValue
+onready var best_time_value = $BestTimeValue
+
+
 
 onready var touch_screen_button_left = $TouchScreenButtonLeft
 onready var touch_screen_button_right = $TouchScreenButtonRight
@@ -21,13 +23,16 @@ func _ready():
 
 
 func set_level_name(level_name):
-	level_label.text = level_name
+	print(level_name)
+	level_value.text = level_name.split(" ")[1]
 
 func set_time(time):
-	time_label.text = "TIME " + str(time)
+	time = stepify(time, 0.01)
+	time_value.text = str(time)
 
 func set_best_time(time):
-	best_time_label.text = "BEST TIME " + str(time)
+	time = stepify(time, 0.01)
+	best_time_value.text = str(time)
 
 
 func _on_TouchScreenButtonLeft_pressed():

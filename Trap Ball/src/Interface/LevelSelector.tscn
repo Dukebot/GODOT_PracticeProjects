@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Interface/LevelSelector.gd" type="Script" id=1]
-[ext_resource path="res://src/Interface/Texture Buttons/TextureButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Interface/TextureButtons/TextureButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/GFX/Backgrounds/640af70a-1084-4f93-9581-cc412750c1e2.png" type="Texture" id=4]
 

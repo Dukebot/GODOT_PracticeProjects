@@ -48,7 +48,7 @@ position = Vector2( 735, -140 )
 position = Vector2( -35, -140 )
 
 [node name="Spikes14" parent="Traps" index="11" instance=ExtResource( 5 )]
-position = Vector2( 35, -560 )
+position = Vector2( 0, -560 )
 
 [node name="Spikes15" parent="Traps" index="12" instance=ExtResource( 5 )]
 position = Vector2( 210, -560 )
@@ -72,7 +72,7 @@ position = Vector2( 2415, -280 )
 position = Vector2( 735, -70 )
 
 [node name="FallingSpike7" parent="Traps" index="19" instance=ExtResource( 6 )]
-position = Vector2( 665, -490 )
+position = Vector2( 700, -490 )
 
 [node name="FallingSpike9" parent="Traps" index="20" instance=ExtResource( 6 )]
 position = Vector2( 280, -490 )
@@ -81,7 +81,7 @@ position = Vector2( 280, -490 )
 position = Vector2( 35, -490 )
 
 [node name="FallingSpike8" parent="Traps" index="22" instance=ExtResource( 6 )]
-position = Vector2( 840, -490 )
+position = Vector2( 805, -490 )
 
 [node name="FallingSpike2" parent="Traps" index="23" instance=ExtResource( 6 )]
 position = Vector2( 1015, -70 )
@@ -114,7 +114,7 @@ position = Vector2( 700, -560 )
 position = Vector2( 1575, -245 )
 
 [node name="SpikesBall2" parent="Traps" index="33" instance=ExtResource( 7 )]
-position = Vector2( 140, -665 )
+position = Vector2( 105, -665 )
 
 [node name="EndLevel" parent="Items" index="0"]
 position = Vector2( 945, -560 )
@@ -137,11 +137,14 @@ position = Vector2( 2065, -280 )
 [node name="Checkpoint4" parent="Items" index="6" instance=ExtResource( 2 )]
 position = Vector2( 1155, -210 )
 
-[node name="Checkpoint5" parent="Items" index="7" instance=ExtResource( 2 )]
+[node name="Checkpoint6" parent="Items" index="7" instance=ExtResource( 2 )]
+position = Vector2( 595, -210 )
+
+[node name="Checkpoint5" parent="Items" index="8" instance=ExtResource( 2 )]
 position = Vector2( -105, -630 )
 
 [node name="World" parent="." index="5"]
-tile_data = PoolIntArray( -458754, 3, 0, -458753, 3, 0, -524288, 3, 0, -524287, 3, 0, -524286, 3, 0, -524285, 3, 0, -524284, 3, 0, -524281, 3, 0, -524280, 3, 0, -524279, 3, 0, -524278, 3, 0, -524277, 3, 0, -524276, 3, 0, -524275, 3, 0, -262113, 3, 0, -262112, 3, 0, -262111, 3, 0, -262110, 3, 0, -262109, 3, 0, -196579, 3, 0, -65538, 3, 0, -65537, 3, 0, -131072, 3, 0, -131064, 3, 0, -131063, 3, 0, -131062, 3, 0, -131061, 3, 0, -131060, 3, 0, -131059, 3, 0, -131058, 3, 0, -131056, 3, 0, -131054, 3, 0, -131053, 3, 0, -131052, 3, 0, -131051, 3, 0, -131050, 3, 0, -131049, 3, 0, -131048, 3, 0, -131047, 3, 0, -131046, 3, 0, -131045, 3, 0, 131103, 3, 0, 131104, 3, 0, 131105, 3, 0, 131106, 3, 0, 131107, 3, 0, 196637, 3, 0, 327678, 3, 0, 327679, 3, 0, 262144, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262160, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 3, 0, 262169, 3, 0, 262170, 3, 0, 262171, 3, 0 )
+tile_data = PoolIntArray( -458754, 11, 0, -458753, 4, 0, -524288, 4, 0, -524287, 4, 0, -524286, 4, 0, -524285, 4, 0, -524284, 13, 0, -524281, 11, 0, -524280, 4, 0, -524279, 4, 0, -524278, 4, 0, -524277, 4, 0, -524276, 4, 0, -524275, 13, 0, -262113, 11, 0, -262112, 4, 0, -262111, 4, 0, -262110, 4, 0, -262109, 13, 0, -196579, 12, 0, -65538, 11, 0, -65537, 4, 0, -131072, 13, 0, -131064, 11, 0, -131063, 4, 0, -131062, 4, 0, -131061, 4, 0, -131060, 4, 0, -131059, 4, 0, -131058, 13, 0, -131056, 12, 0, -131054, 11, 0, -131053, 4, 0, -131052, 4, 0, -131051, 4, 0, -131050, 4, 0, -131049, 4, 0, -131048, 4, 0, -131047, 4, 0, -131046, 4, 0, -131045, 13, 0, 131103, 11, 0, 131104, 4, 0, 131105, 4, 0, 131106, 4, 0, 131107, 13, 0, 196637, 12, 0, 327678, 11, 0, 327679, 4, 0, 262144, 13, 0, 262152, 11, 0, 262153, 4, 0, 262154, 4, 0, 262155, 4, 0, 262156, 4, 0, 262157, 4, 0, 262158, 13, 0, 262160, 12, 0, 262162, 11, 0, 262163, 4, 0, 262164, 4, 0, 262165, 4, 0, 262166, 4, 0, 262167, 4, 0, 262168, 4, 0, 262169, 4, 0, 262170, 4, 0, 262171, 13, 0 )
 
 [node name="DesertGroundMovable" parent="World" index="0" instance=ExtResource( 3 )]
 position = Vector2( 315, 315 )

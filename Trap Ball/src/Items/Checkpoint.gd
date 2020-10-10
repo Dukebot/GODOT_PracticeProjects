@@ -2,7 +2,7 @@ extends Area2D
 
 signal pickup_sound
 
-export var PickupSound = preload("res://src/Sound Players/CheckpointSound.tscn")
+export var PickupSound = preload("res://src/Sound/SoundEffects/CheckpointSound.tscn")
 
 func _ready():
 	connect("pickup_sound", get_tree().current_scene, "add_child_scene")

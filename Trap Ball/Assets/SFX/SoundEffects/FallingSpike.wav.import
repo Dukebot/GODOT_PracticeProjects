@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FallingSpike.wav-499410beb54a1c1b829f985b4110f8f9.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/SoundEffects/FallingSpike.wav"
+dest_files=[ "res://.import/FallingSpike.wav-499410beb54a1c1b829f985b4110f8f9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

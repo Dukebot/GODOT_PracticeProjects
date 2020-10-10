@@ -37,7 +37,7 @@ func _physics_process(delta):
 	set_sprite_orientation(direction)
 	movement_component.set_direction(direction)
 	movement_component.move(delta)
-	if position.y > 1000:
+	if position.y > 500:
 		die()
 
 
@@ -75,9 +75,9 @@ func die():
 func _on_RespawnTimer_timeout():
 	position = respawn_position
 	is_alive = true
-	set_physics_process(true)
 	set_visible(true)
-	
+	set_physics_process(true)
+	is_on_floor()
 	yield(get_tree().create_timer(.1), "timeout")
 	collision_shape.disabled = false
 

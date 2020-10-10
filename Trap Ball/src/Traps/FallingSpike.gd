@@ -1,7 +1,7 @@
 extends Area2D
 
 export var FALLING_SPEED = 400
-export var life_time = 3
+export var life_time = 2
 
 var falling = false
 

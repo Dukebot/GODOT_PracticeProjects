@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BigBussiness.ogg-c5a43a7695d7cb54365d9674b3c299bb.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/BackgroundMusic/BigBussiness.ogg"
+dest_files=[ "res://.import/BigBussiness.ogg-c5a43a7695d7cb54365d9674b3c299bb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

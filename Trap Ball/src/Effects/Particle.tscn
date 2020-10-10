@@ -3,8 +3,8 @@
 [ext_resource path="res://Assets/GFX/Effects/Particles/red_particle.png" type="Texture" id=1]
 [ext_resource path="res://src/Effects/Particle.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.03574, 5.11644 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.58286
 
 [node name="Particle" type="KinematicBody2D"]
 scale = Vector2( 0.5, 0.5 )
