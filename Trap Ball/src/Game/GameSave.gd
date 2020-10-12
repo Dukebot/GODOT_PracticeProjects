@@ -1,6 +1,6 @@
 extends Node
 
-const FORCE_NEW_GAME_CREATION = false
+const FORCE_NEW_GAME_CREATION = true
 
 var savegame = File.new() #file
 var save_path = "user://savegame.save" #place of the file  

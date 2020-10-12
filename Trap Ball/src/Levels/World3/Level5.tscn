@@ -11,9 +11,6 @@
 
 [node name="Level 3-5" instance=ExtResource( 1 )]
 
-[node name="CameraComponent" parent="." index="0"]
-position = Vector2( -36.3856, 95.484 )
-
 [node name="Spikes" parent="Traps" index="0" instance=ExtResource( 5 )]
 position = Vector2( 385, 280 )
 
@@ -95,52 +92,49 @@ position = Vector2( 1295, -350 )
 [node name="FallingSpike11" parent="Traps" index="26" instance=ExtResource( 8 )]
 position = Vector2( 1050, -350 )
 
-[node name="FallingSpike12" parent="Traps" index="27" instance=ExtResource( 8 )]
-position = Vector2( 840, -350 )
-
-[node name="FallingSpike13" parent="Traps" index="28" instance=ExtResource( 8 )]
+[node name="FallingSpike13" parent="Traps" index="27" instance=ExtResource( 8 )]
 position = Vector2( 525, -350 )
 
-[node name="FallingSpike14" parent="Traps" index="29" instance=ExtResource( 8 )]
+[node name="FallingSpike14" parent="Traps" index="28" instance=ExtResource( 8 )]
 position = Vector2( 70, -350 )
 
-[node name="FallingSpike7" parent="Traps" index="30" instance=ExtResource( 8 )]
+[node name="FallingSpike7" parent="Traps" index="29" instance=ExtResource( 8 )]
 position = Vector2( 2135, 0 )
 
-[node name="Blade" parent="Traps" index="31" instance=ExtResource( 7 )]
+[node name="Blade" parent="Traps" index="30" instance=ExtResource( 7 )]
 position = Vector2( 385, 280 )
 
-[node name="Blade2" parent="Traps" index="32" instance=ExtResource( 7 )]
+[node name="Blade2" parent="Traps" index="31" instance=ExtResource( 7 )]
 position = Vector2( 945, 280 )
 
-[node name="Blade3" parent="Traps" index="33" instance=ExtResource( 7 )]
+[node name="Blade3" parent="Traps" index="32" instance=ExtResource( 7 )]
 position = Vector2( 2030, 280 )
 
-[node name="Blade4" parent="Traps" index="34" instance=ExtResource( 7 )]
+[node name="Blade4" parent="Traps" index="33" instance=ExtResource( 7 )]
 position = Vector2( 1960, -70 )
 
-[node name="Blade5" parent="Traps" index="35" instance=ExtResource( 7 )]
+[node name="Blade5" parent="Traps" index="34" instance=ExtResource( 7 )]
 position = Vector2( 945, -70 )
 
-[node name="Blade6" parent="Traps" index="36" instance=ExtResource( 7 )]
+[node name="Blade6" parent="Traps" index="35" instance=ExtResource( 7 )]
 position = Vector2( 70, -70 )
 
-[node name="Blade7" parent="Traps" index="37" instance=ExtResource( 7 )]
+[node name="Blade7" parent="Traps" index="36" instance=ExtResource( 7 )]
 position = Vector2( 245, -420 )
 
-[node name="Blade8" parent="Traps" index="38" instance=ExtResource( 7 )]
+[node name="Blade8" parent="Traps" index="37" instance=ExtResource( 7 )]
 position = Vector2( 840, -420 )
 
-[node name="Blade9" parent="Traps" index="39" instance=ExtResource( 7 )]
+[node name="Blade9" parent="Traps" index="38" instance=ExtResource( 7 )]
 position = Vector2( 1260, -420 )
 
-[node name="SpikesBall3" parent="Traps" index="40" instance=ExtResource( 6 )]
+[node name="SpikesBall3" parent="Traps" index="39" instance=ExtResource( 6 )]
 position = Vector2( 1540, -525 )
 
-[node name="SpikesBall4" parent="Traps" index="41" instance=ExtResource( 6 )]
+[node name="SpikesBall4" parent="Traps" index="40" instance=ExtResource( 6 )]
 position = Vector2( 980, -525 )
 
-[node name="SpikesBall5" parent="Traps" index="42" instance=ExtResource( 6 )]
+[node name="SpikesBall5" parent="Traps" index="41" instance=ExtResource( 6 )]
 position = Vector2( 455, -525 )
 
 [node name="EndLevel" parent="Items" index="0"]
@@ -153,16 +147,16 @@ position = Vector2( 2415, 315 )
 position = Vector2( -245, -35 )
 
 [node name="Checkpoint" parent="Items" index="3" instance=ExtResource( 4 )]
-position = Vector2( 665, 210 )
+position = Vector2( 1085, 210 )
 
 [node name="Checkpoint2" parent="Items" index="4" instance=ExtResource( 4 )]
-position = Vector2( 1715, 210 )
+position = Vector2( 1750, 210 )
 
 [node name="Checkpoint3" parent="Items" index="5" instance=ExtResource( 4 )]
-position = Vector2( 2275, -140 )
+position = Vector2( 1715, -140 )
 
 [node name="Checkpoint4" parent="Items" index="6" instance=ExtResource( 4 )]
-position = Vector2( 1435, -140 )
+position = Vector2( 840, -140 )
 
 [node name="Checkpoint5" parent="Items" index="7" instance=ExtResource( 4 )]
 position = Vector2( -70, -490 )

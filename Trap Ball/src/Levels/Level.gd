@@ -128,6 +128,14 @@ func get_time(): return time
 func get_player_direction(): return GUI.get_player_direction()
 
 
+func _on_player_dead(_position):
+	effects.create_particles(_position, 20)
+	effects.create_hit_effect(_position)
+
+func _on_player_respawn(_position):
+	effects.create_respawn_effect(_position)
+
+
 func add_child_scene(Scene, _position):
 	var scene = Scene.instance()
 	scene.position = _position
@@ -136,13 +144,3 @@ func add_child_scene(Scene, _position):
 func add_child_scenes(Scene, _position, num_childs):
 	for _i in range(num_childs):
 		add_child_scene(Scene, _position)
-
-
-func add_effect_scene(EffectScene, _position):
-	var effect = EffectScene.instance()
-	effect.position = _position
-	effects.add_child(effect)
-
-func add_effect_scenes(EffectScene, _position, num_scenes):
-	for _i in range(num_scenes):
-		add_effect_scene(EffectScene, _position)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
+[ext_resource path="res://src/Effects/Effects.gd" type="Script" id=1]
 [ext_resource path="res://src/Items/EndLevel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/World/WorldTileset.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Interface/Victory.tscn" type="PackedScene" id=4]
@@ -41,6 +42,7 @@ format = 1
 tile_data = PoolIntArray( 327678, 2, 0, 327679, 2, 0, 262144, 2, 0 )
 
 [node name="Effects" type="Node2D" parent="."]
+script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

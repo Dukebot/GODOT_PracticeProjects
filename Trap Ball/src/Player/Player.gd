@@ -1,11 +1,7 @@
 extends KinematicBody2D
 
-signal set_time
-signal create_dead_particles
-signal create_hit_effect
-
-export var DeadParticle = preload("res://src/Effects/Particle.tscn")
-export var HitEffect = preload("res://src/Effects/HitEffect.tscn")
+signal player_dead
+signal player_respawned
 
 var respawn_position = Vector2()
 var respawn_time = 0.0
@@ -20,9 +16,8 @@ onready var root = get_tree().current_scene
 
 
 func _ready():
-	connect("create_dead_particles", root, "add_effect_scenes")
-	connect("create_hit_effect", root, "add_effect_scene")
-	connect("set_time", root, "set_time")
+	connect("player_dead", root, "_on_player_dead")
+	connect("player_respawned", root, "_on_player_respawn")
 	respawn_position = position
 
 
@@ -67,9 +62,7 @@ func die():
 		movement_component.stop()
 		respawn_timer.start()
 		collision_shape.set_deferred("disabled", true)
-		emit_signal("create_hit_effect", HitEffect, position)
-		emit_signal("create_dead_particles", DeadParticle, position, 20)
-		#emit_signal("set_time", respawn_time)
+		emit_signal("player_dead", position)
 
 
 func _on_RespawnTimer_timeout():
@@ -77,6 +70,7 @@ func _on_RespawnTimer_timeout():
 	is_alive = true
 	set_visible(true)
 	set_physics_process(true)
+	emit_signal("player_respawned", position)
 	
 	#We do this to avoid bug when we die and we are on the floor
 	#We respawn jumping with the bug, so we set it to 0
