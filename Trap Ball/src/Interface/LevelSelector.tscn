@@ -48,30 +48,63 @@ __meta__ = {
 
 [node name="Level1Button" parent="." instance=ExtResource( 2 )]
 margin_left = 288.0
-margin_top = 288.0
+margin_top = 256.0
 margin_right = 478.0
-margin_bottom = 337.0
+margin_bottom = 305.0
 
 [node name="Label" parent="Level1Button" index="0"]
 text = "Level 1"
 
+[node name="Level1Time" type="Label" parent="."]
+margin_left = 288.0
+margin_top = 304.0
+margin_right = 480.0
+margin_bottom = 352.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Level2Button" parent="." instance=ExtResource( 2 )]
 margin_left = 544.0
-margin_top = 288.0
+margin_top = 256.0
 margin_right = 734.0
-margin_bottom = 337.0
+margin_bottom = 305.0
 
 [node name="Label" parent="Level2Button" index="0"]
 text = "Level 2"
 
+[node name="Level2Time" type="Label" parent="."]
+margin_left = 544.0
+margin_top = 304.0
+margin_right = 736.0
+margin_bottom = 352.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Level3Button" parent="." instance=ExtResource( 2 )]
 margin_left = 800.0
-margin_top = 288.0
+margin_top = 256.0
 margin_right = 990.0
-margin_bottom = 337.0
+margin_bottom = 305.0
 
 [node name="Label" parent="Level3Button" index="0"]
 text = "Level 3"
+
+[node name="Level3Time" type="Label" parent="."]
+margin_left = 800.0
+margin_top = 304.0
+margin_right = 992.0
+margin_bottom = 352.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Level4Button" parent="." instance=ExtResource( 2 )]
 margin_left = 288.0
@@ -82,6 +115,17 @@ margin_bottom = 433.0
 [node name="Label" parent="Level4Button" index="0"]
 text = "Level 4"
 
+[node name="Level4Time" type="Label" parent="."]
+margin_left = 288.0
+margin_top = 432.0
+margin_right = 480.0
+margin_bottom = 480.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Level5Button" parent="." instance=ExtResource( 2 )]
 margin_left = 544.0
 margin_top = 384.0
@@ -91,6 +135,17 @@ margin_bottom = 433.0
 [node name="Label" parent="Level5Button" index="0"]
 text = "Level 5"
 
+[node name="Level5Time" type="Label" parent="."]
+margin_left = 544.0
+margin_top = 432.0
+margin_right = 736.0
+margin_bottom = 480.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Level6Button" parent="." instance=ExtResource( 2 )]
 margin_left = 800.0
 margin_top = 384.0
@@ -99,6 +154,17 @@ margin_bottom = 433.0
 
 [node name="Label" parent="Level6Button" index="0"]
 text = "Level 6"
+
+[node name="Level6Time" type="Label" parent="."]
+margin_left = 800.0
+margin_top = 432.0
+margin_right = 992.0
+margin_bottom = 480.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PrevWorldButton" parent="." instance=ExtResource( 2 )]
 margin_left = 496.0

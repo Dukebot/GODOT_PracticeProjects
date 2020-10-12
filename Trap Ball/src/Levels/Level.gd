@@ -1,18 +1,24 @@
 extends Node2D
 
+
 const WorldParallaxBackgrounds = [
 	preload("res://src/Backgrounds/World1ParallaxBackground.tscn"),
 	preload("res://src/Backgrounds/World2ParallaxBackground.tscn"),
 	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn"),
 	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn"),
+	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn"),
+	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn"),
 ]
 
 const WorldMusic = [
-	preload("res://src/Sound/BackgroundMusic/World1BackgroundMusic.tscn"),
-	preload("res://src/Sound/BackgroundMusic/World2BackgroundMusic.tscn"),
-	preload("res://src/Sound/BackgroundMusic/World3BackgroundMusic.tscn"),
-	preload("res://src/Sound/BackgroundMusic/World4BackgroundMusic.tscn"),
+	preload("res://src/Sound/BackgroundMusic/AstralJourney.tscn"),
+	preload("res://src/Sound/BackgroundMusic/AGoodDayToStop.tscn"),
+	preload("res://src/Sound/BackgroundMusic/ChristmasGroove.tscn"),
+	preload("res://src/Sound/BackgroundMusic/CyberParty.tscn"),
+	preload("res://src/Sound/BackgroundMusic/BlackMagic.tscn"),
+	preload("res://src/Sound/BackgroundMusic/ChristmasShooping.tscn"),
 ]
+
 
 var next_level_path
 
@@ -56,9 +62,9 @@ func _ready():
 	add_child(bg_music)
 	bg_music.play()
 	
-	#var parallax_background = WorldParallaxBackgrounds[world_number-1].instance()
 	var Background = load("res://src/Backgrounds/SpaceParallaxBackground.tscn")
 	var parallax_background = Background.instance()
+	#var parallax_background = WorldParallaxBackgrounds[world_number-1].instance()
 	camera.add_child(parallax_background)
 
 

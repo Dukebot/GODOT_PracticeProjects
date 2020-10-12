@@ -1,12 +1,13 @@
 extends Node
 
-const FORCE_NEW_GAME_CREATION = true
+const FORCE_NEW_GAME_CREATION = false
 
 var savegame = File.new() #file
 var save_path = "user://savegame.save" #place of the file  
 
 #Se me pone en minúscula aunque lo ponga en mayúscula aquí
 var save_data = {
+	"current_world": 1,
 	"level 1-1": 0.0, "level 1-2": 0.0, "level 1-3": 0.0,
 	"level 1-4": 0.0, "level 1-5": 0.0, "level 1-6": 0.0,
 	"level 2-1": 0.0, "level 2-2": 0.0, "level 2-3": 0.0,
@@ -39,11 +40,11 @@ func _ready():
 	print(str(save_data))
 
 
-func get_score(key): 
-	return save_data[key.to_lower()]
+func get_score(key): return save_data[key.to_lower()]
+func set_score(key, value): save_data[key.to_lower()] = value
 
-func set_score(key, value): 
-	save_data[key.to_lower()] = value
+func get_current_world(): return save_data["current_world"]
+func set_current_world(value): save_data["current_world"] = value
 
 
 func save():

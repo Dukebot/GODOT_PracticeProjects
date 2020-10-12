@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ChristmasShooping.ogg-5ee38e2a04e640a77bd6dee778d85634.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/BackgroundMusic/ChristmasShooping.ogg"
+dest_files=[ "res://.import/ChristmasShooping.ogg-5ee38e2a04e640a77bd6dee778d85634.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
