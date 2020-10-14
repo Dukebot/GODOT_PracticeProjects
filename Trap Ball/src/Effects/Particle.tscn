@@ -7,7 +7,7 @@
 radius = 4.58286
 
 [node name="Particle" type="KinematicBody2D"]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.33, 0.33 )
 collision_layer = 0
 script = ExtResource( 2 )
 life_time = 2.0

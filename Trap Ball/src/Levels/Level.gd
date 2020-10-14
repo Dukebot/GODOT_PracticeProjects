@@ -129,7 +129,7 @@ func get_player_direction(): return GUI.get_player_direction()
 
 
 func _on_player_dead(_position):
-	effects.create_particles(_position, 20)
+	effects.create_particles(_position, 40)
 	effects.create_hit_effect(_position)
 
 func _on_player_respawn(_position):

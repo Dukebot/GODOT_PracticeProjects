@@ -1,12 +1,11 @@
 extends Node
 
-const FORCE_NEW_GAME_CREATION = true
-
 var savegame = File.new() #file
-var save_path = "user://savegame.save" #place of the file  
+var save_path = "user://savegame.save" #place of the file
+var save_data = {} #variable to store data
 
 #Se me pone en minúscula aunque lo ponga en mayúscula aquí
-var save_data = {
+const initial_save_data = {
 	"current_world": 1,
 	"level 1-1": 0.0, "level 1-2": 0.0, "level 1-3": 0.0,
 	"level 1-4": 0.0, "level 1-5": 0.0, "level 1-6": 0.0,
@@ -24,11 +23,11 @@ var save_data = {
 	"level 7-4": 0.0, "level 7-5": 0.0, "level 7-6": 0.0,
 	"level 8-1": 0.0, "level 8-2": 0.0, "level 8-3": 0.0,
 	"level 8-4": 0.0, "level 8-5": 0.0, "level 8-6": 0.0,
-} #variable to store data
-
+}
 
 func _ready():
-	if not savegame.file_exists(save_path) or FORCE_NEW_GAME_CREATION:
+	if not savegame.file_exists(save_path):
+		save_data = initial_save_data.duplicate()
 		savegame.open(save_path, File.WRITE) #open file to write
 		savegame.store_var(save_data) #store the data
 		savegame.close() # close the file
@@ -37,11 +36,24 @@ func _ready():
 		save_data = savegame.get_var() #get the value
 		savegame.close() #close the file
 	
-	print(str(save_data))
+	#Make sure that we add new keys if added
+	for key in initial_save_data.keys():
+		if not save_data.has(key):
+			save_data[key] = initial_save_data[key]
 
 
-func get_score(key): return save_data[key.to_lower()]
-func set_score(key, value): save_data[key.to_lower()] = value
+func get_score(key):
+	key = key.to_lower()
+	if save_data.has(key):
+		return save_data[key]
+	return null
+
+func set_score(key, value): 
+	key = key.to_lower()
+	if save_data.has(key):
+		save_data[key.to_lower()] = value
+	else:
+		print("WARNING! Invalid key to save score")
 
 func get_current_world(): return save_data["current_world"]
 func set_current_world(value): save_data["current_world"] = value

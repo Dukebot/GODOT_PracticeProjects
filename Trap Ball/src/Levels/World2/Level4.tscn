@@ -1,73 +1,54 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Traps/FallingSpike.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/SFX/BackgroundMusic/AGoodDayToStop.ogg" type="AudioStream" id=2]
-[ext_resource path="res://src/Traps/Blade.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Traps/SpikesBall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Traps/Presets/3T/1Spikes2Falling.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Traps/Presets/4T/1Blade2Spikes1Falling.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Traps/Presets/3T/1Spike1Falling1Ball.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Levels/LevelTemplate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Traps/Spikes.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Items/Checkpoint.tscn" type="PackedScene" id=7]
-
-
+[ext_resource path="res://src/Traps/Presets/5T/3Spikes2Falling.tscn" type="PackedScene" id=8]
 
 [node name="Level 2-4" instance=ExtResource( 5 )]
 
-[node name="CameraComponent" parent="." index="0"]
-position = Vector2( -36.3856, 95.484 )
-
-[node name="FallingSpike3" parent="Traps" index="0" instance=ExtResource( 1 )]
-position = Vector2( 210, 0 )
-
-[node name="FallingSpike11" parent="Traps" index="1" instance=ExtResource( 1 )]
-position = Vector2( 420, 0 )
-
-[node name="FallingSpike2" parent="Traps" index="2" instance=ExtResource( 1 )]
+[node name="FallingSpike2" parent="Traps" index="0" instance=ExtResource( 1 )]
 position = Vector2( 875, -70 )
 
-[node name="FallingSpike4" parent="Traps" index="3" instance=ExtResource( 1 )]
-position = Vector2( 1435, -140 )
+[node name="FallingSpike8" parent="Traps" index="1" instance=ExtResource( 1 )]
+position = Vector2( 1015, -140 )
 
-[node name="FallingSpike5" parent="Traps" index="4" instance=ExtResource( 1 )]
-position = Vector2( 2065, -210 )
-
-[node name="FallingSpike6" parent="Traps" index="5" instance=ExtResource( 1 )]
-position = Vector2( 2870, -210 )
-
-[node name="FallingSpike7" parent="Traps" index="6" instance=ExtResource( 1 )]
-position = Vector2( 2205, -210 )
-
-[node name="Spikes2" parent="Traps" index="7" instance=ExtResource( 6 )]
+[node name="Spikes2" parent="Traps" index="2" instance=ExtResource( 6 )]
 position = Vector2( 945, 210 )
 
-[node name="Spikes16" parent="Traps" index="8" instance=ExtResource( 6 )]
-position = Vector2( 315, 280 )
-
-[node name="Spikes15" parent="Traps" index="9" instance=ExtResource( 6 )]
+[node name="Spikes15" parent="Traps" index="3" instance=ExtResource( 6 )]
 position = Vector2( 805, 280 )
 
-[node name="Spikes3" parent="Traps" index="10" instance=ExtResource( 6 )]
-position = Vector2( 1435, 140 )
+[node name="1Spikes2Falling" parent="Traps" index="4" instance=ExtResource( 2 )]
+position = Vector2( 315, 280 )
 
-[node name="Spikes4" parent="Traps" index="11" instance=ExtResource( 6 )]
-position = Vector2( 1995, 140 )
+[node name="1Spike1Falling1Ball" parent="Traps" index="5" instance=ExtResource( 4 )]
+position = Vector2( 1505, 140 )
 
-[node name="Spikes5" parent="Traps" index="12" instance=ExtResource( 6 )]
+[node name="3Spikes2Falling" parent="Traps" index="6" instance=ExtResource( 8 )]
 position = Vector2( 2135, 140 )
 
-[node name="Spikes7" parent="Traps" index="13" instance=ExtResource( 6 )]
-position = Vector2( 2695, 70 )
+[node name="FallingSpike" parent="Traps/3Spikes2Falling" index="3"]
+position = Vector2( -70, -350 )
 
-[node name="Spikes8" parent="Traps" index="14" instance=ExtResource( 6 )]
-position = Vector2( 2835, 70 )
+[node name="FallingSpike2" parent="Traps/3Spikes2Falling" index="4"]
+position = Vector2( 70, -350 )
 
-[node name="Spikes6" parent="Traps" index="15" instance=ExtResource( 6 )]
-position = Vector2( 2275, 140 )
-
-[node name="SpikesBall" parent="Traps" index="16" instance=ExtResource( 4 )]
-position = Vector2( 1575, 35 )
-
-[node name="Blade" parent="Traps" index="17" instance=ExtResource( 3 )]
+[node name="1Blade2Spikes1Falling" parent="Traps" index="7" instance=ExtResource( 3 )]
 position = Vector2( 2765, 70 )
+
+[node name="Spikes" parent="Traps/1Blade2Spikes1Falling" index="0"]
+position = Vector2( -70, 0 )
+
+[node name="Spikes2" parent="Traps/1Blade2Spikes1Falling" index="1"]
+position = Vector2( 70, 0 )
+
+[node name="FallingSpike" parent="Traps/1Blade2Spikes1Falling" index="2"]
+position = Vector2( 140, -280 )
 
 [node name="EndLevel" parent="Items" index="0"]
 position = Vector2( 3080, 70 )
@@ -85,7 +66,8 @@ position = Vector2( 595, 210 )
 position = Vector2( 2485, 70 )
 
 [node name="World" parent="." index="5"]
-tile_data = PoolIntArray( -262117, 8, 0, -262116, 3, 0, -262115, 3, 0, -262114, 3, 0, -262113, 3, 0, -262112, 3, 0, -262111, 9, 0, -262107, 8, 0, -262106, 3, 0, -262105, 3, 0, -262104, 3, 0, -262103, 9, 0, -196588, 10, 0, -131060, 10, 0, -65534, 8, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 9, 0, 65573, 8, 0, 65574, 3, 0, 65575, 3, 0, 65576, 3, 0, 65577, 9, 0, 65579, 8, 0, 65580, 9, 0, 131086, 8, 0, 131087, 9, 0, 131089, 10, 0, 131091, 8, 0, 131092, 3, 0, 131093, 3, 0, 131094, 3, 0, 131095, 9, 0, 131097, 10, 0, 131099, 8, 0, 131100, 3, 0, 131101, 3, 0, 131102, 3, 0, 131103, 3, 0, 131104, 3, 0, 131105, 9, 0, 131107, 10, 0, 196620, 8, 0, 196621, 9, 0, 327678, 8, 0, 327679, 3, 0, 262144, 9, 0, 262146, 8, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 9, 0, 262152, 10, 0, 262154, 8, 0, 262155, 9, 0 )
+tile_data = PoolIntArray( -262117, 8, 0, -262116, 3, 0, -262115, 3, 0, -262114, 3, 0, -262113, 3, 0, -262112, 3, 0, -262111, 9, 0, -262107, 8, 0, -262106, 3, 0, -262105, 3, 0, -262104, 3, 0, -262103, 9, 0, -196594, 10, 0, -196588, 10, 0, -131060, 10, 0, -65534, 8, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 9, 0, 65573, 8, 0, 65574, 3, 0, 65575, 3, 0, 65576, 3, 0, 65577, 9, 0, 65579, 8, 0, 65580, 9, 0, 131086, 8, 0, 131087, 9, 0, 131089, 10, 0, 131091, 8, 0, 131092, 3, 0, 131093, 3, 0, 131094, 3, 0, 131095, 9, 0, 131097, 10, 0, 131099, 8, 0, 131100, 3, 0, 131101, 3, 0, 131102, 3, 0, 131103, 3, 0, 131104, 3, 0, 131105, 9, 0, 131107, 10, 0, 196620, 8, 0, 196621, 9, 0, 327678, 8, 0, 327679, 3, 0, 262144, 9, 0, 262146, 8, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 9, 0, 262152, 10, 0, 262154, 8, 0, 262155, 9, 0 )
 
-[node name="BackgroundMusic" parent="." index="8"]
-stream = ExtResource( 2 )
+[editable path="Traps/3Spikes2Falling"]
+
+[editable path="Traps/1Blade2Spikes1Falling"]

@@ -23,17 +23,19 @@ func _ready():
 
 
 func set_level_name(level_name):
-	print(level_name)
 	level_value.text = level_name.split(" ")[1]
+
 
 func set_time(time):
 	time = stepify(time, 0.01)
 	time_value.text = str(time)
 
 func set_best_time(time):
-	time = stepify(time, 0.01)
-	best_time_value.text = str(time)
-
+	if time != null:
+		time = stepify(time, 0.01)
+		best_time_value.text = str(time)
+	else:
+		best_time_value.text = "null"
 
 func _on_TouchScreenButtonLeft_pressed():
 	player_direction = -1

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Traps/Spikes.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Traps/Presets/TrapPreset.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Traps/FallingSpike.tscn" type="PackedScene" id=3]
+
+[node name="1Spikes2Falling" instance=ExtResource( 2 )]
+
+[node name="Spikes" parent="." index="0" instance=ExtResource( 1 )]
+
+[node name="FallingSpike" parent="." index="1" instance=ExtResource( 3 )]
+position = Vector2( -105, -280 )
+
+[node name="FallingSpike2" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 105, -280 )

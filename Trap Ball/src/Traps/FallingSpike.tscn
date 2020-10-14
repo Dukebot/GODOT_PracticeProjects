@@ -5,8 +5,6 @@
 [ext_resource path="res://src/Traps/FallingSpike.gd" type="Script" id=3]
 [ext_resource path="res://Assets/SFX/SoundEffects/FallingSpike.wav" type="AudioStream" id=4]
 
-
-
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 6.0
 height = 6.0
@@ -46,11 +44,16 @@ position = Vector2( 0, 16 )
 shape = SubResource( 3 )
 
 [node name="LifeTime" type="Timer" parent="." index="4"]
+one_shot = true
 
-[node name="FallSound" type="AudioStreamPlayer2D" parent="." index="5"]
+[node name="ActivationTime" type="Timer" parent="." index="5"]
+one_shot = true
+
+[node name="FallSound" type="AudioStreamPlayer2D" parent="." index="6"]
 stream = ExtResource( 4 )
 volume_db = -12.117
 [connection signal="body_entered" from="." to="." method="_on_FallingSpike_body_entered"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
 [connection signal="body_entered" from="GroundDetector" to="." method="_on_GroundDetectror_body_entered"]
 [connection signal="timeout" from="LifeTime" to="." method="_on_LifeTime_timeout"]
+[connection signal="timeout" from="ActivationTime" to="." method="_on_ActivationTime_timeout"]

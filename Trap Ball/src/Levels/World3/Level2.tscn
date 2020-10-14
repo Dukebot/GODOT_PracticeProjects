@@ -11,9 +11,6 @@
 
 [node name="Level 3-2" instance=ExtResource( 1 )]
 
-[node name="CameraComponent" parent="." index="0"]
-position = Vector2( -36.3856, 95.484 )
-
 [node name="Spikes" parent="Traps" index="0" instance=ExtResource( 5 )]
 position = Vector2( 665, 280 )
 
@@ -69,7 +66,7 @@ position = Vector2( 910, -140 )
 position = Vector2( 2415, -280 )
 
 [node name="FallingSpike" parent="Traps" index="18" instance=ExtResource( 6 )]
-position = Vector2( 805, -70 )
+position = Vector2( 665, -70 )
 
 [node name="FallingSpike7" parent="Traps" index="19" instance=ExtResource( 6 )]
 position = Vector2( 700, -490 )
@@ -87,7 +84,7 @@ position = Vector2( 805, -490 )
 position = Vector2( 910, -490 )
 
 [node name="FallingSpike2" parent="Traps" index="24" instance=ExtResource( 6 )]
-position = Vector2( 1015, -70 )
+position = Vector2( 945, -70 )
 
 [node name="FallingSpike3" parent="Traps" index="25" instance=ExtResource( 6 )]
 position = Vector2( 1435, -70 )
