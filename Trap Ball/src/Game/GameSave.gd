@@ -1,5 +1,7 @@
 extends Node
 
+const FORCE_NEW_SAVE = true
+
 var savegame = File.new() #file
 var save_path = "user://savegame.save" #place of the file
 var save_data = {} #variable to store data
@@ -26,7 +28,7 @@ const initial_save_data = {
 }
 
 func _ready():
-	if not savegame.file_exists(save_path):
+	if not savegame.file_exists(save_path) or FORCE_NEW_SAVE:
 		save_data = initial_save_data.duplicate()
 		savegame.open(save_path, File.WRITE) #open file to write
 		savegame.store_var(save_data) #store the data

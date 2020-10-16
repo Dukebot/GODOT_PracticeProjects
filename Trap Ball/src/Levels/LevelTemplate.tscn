@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/Effects/Effects.gd" type="Script" id=1]
 [ext_resource path="res://src/Items/EndLevel.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Levels/Level.gd" type="Script" id=8]
 [ext_resource path="res://src/Components/CameraComponent.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Backgrounds/SpaceParallaxBackground.tscn" type="PackedScene" id=10]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 8 )
@@ -16,6 +17,8 @@ script = ExtResource( 8 )
 [node name="CameraComponent" parent="." instance=ExtResource( 9 )]
 position = Vector2( -36.3856, 140.484 )
 zoom = Vector2( 0.8, 0.8 )
+
+[node name="SpaceParallaxBackground" parent="CameraComponent" instance=ExtResource( 10 )]
 
 [node name="Vegetation" type="Node2D" parent="."]
 
@@ -54,3 +57,7 @@ visible = false
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource( 5 )]
 visible = false
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
+autoplay = true

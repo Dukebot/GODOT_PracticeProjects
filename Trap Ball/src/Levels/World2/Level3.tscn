@@ -1,78 +1,61 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://src/Traps/SpikesBall.tscn" type="PackedScene" id=1]
-[ext_resource path="res://src/Items/Checkpoint.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Items/BouncePad.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Traps/FallingSpike.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Traps/Spikes.tscn" type="PackedScene" id=6]
-[ext_resource path="res://src/Levels/LevelTemplate.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/Traps/Presets/4T/1Blade2Spikes1Falling.tscn" type="PackedScene" id=8]
-[ext_resource path="res://src/Traps/Presets/4T/1Ball2Spikes1Falling.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/Traps/Presets/4T/1Blade3Spikes.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Traps/FallingSpike.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Levels/World2/LevelTemplateWorld2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Traps/Spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Traps/Blade.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Items/BouncePad.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Traps/SpikesBall.tscn" type="PackedScene" id=6]
 
+[node name="Level 2-3" instance=ExtResource( 2 )]
 
-[node name="Level 2-3" instance=ExtResource( 7 )]
+[node name="FallingSpike" parent="Traps" index="0" instance=ExtResource( 1 )]
+position = Vector2( 315, 0 )
 
-[node name="FallingSpike5" parent="Traps" index="0" instance=ExtResource( 4 )]
-position = Vector2( 1190, -350 )
-
-[node name="FallingSpike6" parent="Traps" index="1" instance=ExtResource( 4 )]
+[node name="FallingSpike2" parent="Traps" index="1" instance=ExtResource( 1 )]
 position = Vector2( 840, 0 )
 
-[node name="FallingSpike7" parent="Traps" index="2" instance=ExtResource( 4 )]
-position = Vector2( 1680, 0 )
+[node name="FallingSpike3" parent="Traps" index="2" instance=ExtResource( 1 )]
+position = Vector2( 175, -350 )
 
-[node name="Spikes12" parent="Traps" index="3" instance=ExtResource( 6 )]
-position = Vector2( 840, -70 )
+[node name="Spikes" parent="Traps" index="3" instance=ExtResource( 3 )]
+position = Vector2( 840, 280 )
 
-[node name="Spikes13" parent="Traps" index="4" instance=ExtResource( 6 )]
-position = Vector2( 805, -420 )
+[node name="Spikes2" parent="Traps" index="4" instance=ExtResource( 3 )]
+position = Vector2( 385, -70 )
 
-[node name="Spikes11" parent="Traps" index="5" instance=ExtResource( 6 )]
-position = Vector2( 280, -70 )
+[node name="Spikes4" parent="Traps" index="5" instance=ExtResource( 3 )]
+position = Vector2( 875, -70 )
 
-[node name="SpikesBall3" parent="Traps" index="6" instance=ExtResource( 1 )]
-position = Vector2( 945, -490 )
+[node name="SpikesBall" parent="Traps" index="6" instance=ExtResource( 6 )]
+position = Vector2( 980, 175 )
 
-[node name="1Blade2Spikes1Falling" parent="Traps" index="7" instance=ExtResource( 8 )]
-position = Vector2( 595, 280 )
+[node name="SpikesBall2" parent="Traps" index="7" instance=ExtResource( 6 )]
+position = Vector2( 980, 175 )
 
-[node name="1Ball2Spikes1Falling" parent="Traps" index="8" instance=ExtResource( 9 )]
-position = Vector2( 1435, 280 )
+[node name="SpikesBall3" parent="Traps" index="8" instance=ExtResource( 6 )]
+position = Vector2( 280, -175 )
 
-[node name="1Ball2Spikes1Falling2" parent="Traps" index="9" instance=ExtResource( 9 )]
-position = Vector2( 560, -70 )
+[node name="Blade" parent="Traps" index="9" instance=ExtResource( 4 )]
+position = Vector2( 315, 280 )
 
-[node name="1Blade3Spikes" parent="Traps" index="10" instance=ExtResource( 10 )]
-position = Vector2( 1435, -70 )
-
-[node name="1Blade3Spikes2" parent="Traps" index="11" instance=ExtResource( 10 )]
-position = Vector2( 525, -420 )
+[node name="Blade2" parent="Traps" index="10" instance=ExtResource( 4 )]
+position = Vector2( 875, -70 )
 
 [node name="EndLevel" parent="Items" index="0"]
-position = Vector2( 1190, -420 )
+position = Vector2( 175, -420 )
 
-[node name="BouncePad" parent="Items" index="1" instance=ExtResource( 3 )]
-position = Vector2( 1855, 315 )
+[node name="Checkpoint2" parent="Items" index="2"]
+position = Vector2( 1155, 105 )
 
-[node name="BouncePad2" parent="Items" index="2" instance=ExtResource( 3 )]
-position = Vector2( 105, -35 )
+[node name="Checkpoint3" parent="Items" index="3"]
+position = Vector2( 595, -140 )
 
-[node name="Checkpoint" parent="Items" index="3" instance=ExtResource( 2 )]
-position = Vector2( 1015, 210 )
+[node name="BouncePad" parent="Items" index="4" instance=ExtResource( 5 )]
+position = Vector2( 1155, 315 )
 
-[node name="Checkpoint2" parent="Items" index="4" instance=ExtResource( 2 )]
-position = Vector2( 1715, -140 )
-
-[node name="Checkpoint3" parent="Items" index="5" instance=ExtResource( 2 )]
-position = Vector2( 1015, -140 )
-
-[node name="Checkpoint4" parent="Items" index="6" instance=ExtResource( 2 )]
-position = Vector2( 245, -490 )
+[node name="BouncePad2" parent="Items" index="5" instance=ExtResource( 5 )]
+position = Vector2( 35, -35 )
 
 [node name="World" parent="." index="5"]
-tile_data = PoolIntArray( -393213, 8, 0, -393212, 3, 0, -393211, 3, 0, -393210, 3, 0, -393209, 3, 0, -393208, 3, 0, -393207, 3, 0, -393206, 3, 0, -393205, 3, 0, -393204, 9, 0, -393202, 10, 0, -393200, 8, 0, -393199, 9, 0, -65533, 8, 0, -65532, 3, 0, -65531, 3, 0, -65530, 3, 0, -65529, 3, 0, -65528, 3, 0, -65527, 3, 0, -65526, 3, 0, -65525, 3, 0, -65524, 9, 0, -65522, 10, 0, -65520, 8, 0, -65519, 3, 0, -65518, 3, 0, -65517, 3, 0, -65516, 3, 0, -65515, 3, 0, -65514, 3, 0, -65513, 3, 0, -65512, 9, 0, 327678, 8, 0, 327679, 3, 0, 262144, 9, 0, 262147, 8, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 9, 0, 262158, 10, 0, 262160, 8, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 262167, 3, 0, 262168, 9, 0 )
-
-[node name="Victory" parent="CanvasLayer" index="1"]
-margin_left = -35.0
-margin_right = -35.0
+tile_data = PoolIntArray( -393214, 10, 0, -65534, 8, 0, -65533, 3, 0, -65532, 3, 0, -65531, 3, 0, -65530, 9, 0, -65528, 10, 0, -65526, 8, 0, -65525, 3, 0, -65524, 3, 0, -65523, 3, 0, -65522, 9, 0, 327678, 8, 0, 327679, 3, 0, 262144, 9, 0, 262146, 8, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 9, 0, 262152, 10, 0, 262154, 8, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 9, 0 )

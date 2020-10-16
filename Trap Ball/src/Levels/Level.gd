@@ -1,25 +1,5 @@
 extends Node2D
 
-
-const WorldParallaxBackgrounds = [
-	preload("res://src/Backgrounds/World1ParallaxBackground.tscn"),
-	preload("res://src/Backgrounds/World2ParallaxBackground.tscn"),
-	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn"),
-	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn"),
-	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn"),
-	preload("res://src/Backgrounds/DefaultParallaxBackground.tscn"),
-]
-
-const WorldMusic = [
-	preload("res://src/Sound/BackgroundMusic/AstralJourney.tscn"),
-	preload("res://src/Sound/BackgroundMusic/AGoodDayToStop.tscn"),
-	preload("res://src/Sound/BackgroundMusic/ChristmasGroove.tscn"),
-	preload("res://src/Sound/BackgroundMusic/CyberParty.tscn"),
-	preload("res://src/Sound/BackgroundMusic/BlackMagic.tscn"),
-	preload("res://src/Sound/BackgroundMusic/ChristmasShooping.tscn"),
-]
-
-
 var next_level_path
 
 var world_number = 0
@@ -57,15 +37,6 @@ func _ready():
 	world_number = get_world_number()
 	level_number = get_level_number()
 	next_level_path = Game.get_next_level_path(world_number, level_number)
-	
-	var bg_music = WorldMusic[world_number-1].instance()
-	add_child(bg_music)
-	bg_music.play()
-	
-	var Background = load("res://src/Backgrounds/SpaceParallaxBackground.tscn")
-	var parallax_background = Background.instance()
-	#var parallax_background = WorldParallaxBackgrounds[world_number-1].instance()
-	camera.add_child(parallax_background)
 
 
 func get_world_number():
