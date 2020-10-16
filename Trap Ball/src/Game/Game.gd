@@ -5,8 +5,8 @@ const LEVEL_SELECTOR_PATH = "res://src/Interface/LevelSelector.tscn"
 const THANKS_FOR_PLAYING_PATH = "res://src/Interface/ThanksForPlaying.tscn"
 const LEVEL_PATH = "res://src/Levels"
 
-#6x6 = 36 levels
-const NUM_WORLDS = 6
+#5x6 = 30 levels
+const NUM_WORLDS = 5
 const LEVELS_PER_WORLD = 6
 
 
