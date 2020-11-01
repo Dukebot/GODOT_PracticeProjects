@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Src/Interface/Labels/NormalText.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Src/Interface/Elements/TextValue.gd" type="Script" id=2]
+
+[node name="TextValue" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Text" parent="." instance=ExtResource( 1 )]
+margin_right = 168.0
+text = "Text"
+align = 2
+valign = 1
+
+[node name="Value" parent="." instance=ExtResource( 1 )]
+margin_left = 184.0
+margin_right = 352.0
+text = "Value"
+valign = 1
