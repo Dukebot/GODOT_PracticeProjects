@@ -6,12 +6,13 @@ class_name Interaction
 export var messages := ["Test message"]
 
 #Interaction that teleports to another zone
-export var zone_path := "res://src/zones/Zone.tscn"
+export var zone_name := "Zone"
 
 export var can_teleport := false
 
-
 var interaction_number = 0
+
+onready var zone_path = "res://src/zones/" + zone_name + ".tscn"
 
 onready var label = $Label
 
@@ -25,8 +26,8 @@ func _on_Interaction_body_exited(body):
 	interaction_number = 0
 
 func set_default_text():
-	#label.text = "E - Examinate\nF - Interact"
-	label.text = "E"
+	label.text = "E - Examinate"
+	if can_teleport: label.text += "\nF - Enter"
 
 #Public
 

@@ -15,4 +15,9 @@ position = Vector2( 440, 0 )
 [node name="Interaction" parent="Interactions" index="0" instance=ExtResource( 3 )]
 position = Vector2( 440, 0 )
 messages = [ "It seems now you're trapped here", "There's no way to come back outside...", "" ]
-zone_path = ""
+
+[node name="Interaction2" parent="Interactions" index="1" instance=ExtResource( 3 )]
+position = Vector2( -65.0356, 0.8909 )
+messages = [ "Do you want to exit the wheel?" ]
+zone_name = "TestZone"
+can_teleport = true

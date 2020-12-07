@@ -30,6 +30,10 @@ config/name="Top Down Engine"
 run/main_scene="res://src/zones/TestZone.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Game="*res://src/singletons/Game.gd"
+
 [display]
 
 window/size/width=1280
