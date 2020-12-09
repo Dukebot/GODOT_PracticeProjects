@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/things/StaticObject.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Graphics/Houses/house1b.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 25.133
+height = 105.508
+
+[node name="House" instance=ExtResource( 1 )]
+scale = Vector2( 2, 2 )
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( -4.16357, -34.0996 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 1.5708
+shape = SubResource( 1 )
