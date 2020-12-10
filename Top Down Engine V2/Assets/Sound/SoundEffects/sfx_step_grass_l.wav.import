@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_step_grass_l.wav-a4c83ccccaac7d802475756ddc85ecba.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SoundEffects/sfx_step_grass_l.wav"
+dest_files=[ "res://.import/sfx_step_grass_l.wav-a4c83ccccaac7d802475756ddc85ecba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
