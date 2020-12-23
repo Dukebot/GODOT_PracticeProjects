@@ -12,6 +12,7 @@ onready var camera = $Head/Camera
 var velocity = Vector3()
 var camera_x_rotation = 0
 
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -42,6 +43,7 @@ func get_direction_input():
 		direction += head_basis.x
 	return direction.normalized()
 
+
 func mouse_look(event):
 	if not event is InputEventMouseMotion: return
 	
@@ -53,6 +55,7 @@ func mouse_look(event):
 	if camera_x_rotation + x_delta > -90 and camera_x_rotation + x_delta < 90:
 		camera.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
 		camera_x_rotation += x_delta
+
 
 func move(delta):
 	var direction = get_direction_input()
