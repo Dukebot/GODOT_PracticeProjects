@@ -11,8 +11,6 @@ position = Vector2( 250, 355 )
 
 [node name="EnemySmall" parent="." instance=ExtResource( 2 )]
 position = Vector2( 434, 198 )
-collision_layer = 1
-collision_mask = 1
 
 [node name="Wall" parent="." instance=ExtResource( 3 )]
 position = Vector2( 480, -32 )
