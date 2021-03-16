@@ -20,3 +20,4 @@ transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 2, 0, 0 )
 
 [node name="Player2" parent="." instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -2.23357, 0, 0 )
+player_id = 2
