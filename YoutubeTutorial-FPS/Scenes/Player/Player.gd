@@ -29,10 +29,10 @@ func _physics_process(delta):
 
 
 func get_direction_input():
+	var direction = Vector3()
 	#The basis contain the local transform
 	var head_basis = head.get_global_transform().basis
 	
-	var direction = Vector3()
 	if Input.is_action_pressed("move_forward"):
 		direction -= head_basis.z
 	elif Input.is_action_pressed("move_back"):
@@ -41,6 +41,7 @@ func get_direction_input():
 		direction -= head_basis.x
 	elif Input.is_action_pressed("move_right"):
 		direction += head_basis.x
+	
 	return direction.normalized()
 
 
