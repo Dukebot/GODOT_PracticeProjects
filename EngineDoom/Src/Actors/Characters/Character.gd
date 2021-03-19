@@ -17,12 +17,6 @@ onready var head = $Head
 onready var health_component: HealthComponent = $HealthComponent
 
 
-func _process(delta):
-	jump(false)
-
-func _physics_process(delta: float):
-	move(Vector3.ZERO, delta)
-
 func _on_HealthComponent_no_health():
 	queue_free()
 
