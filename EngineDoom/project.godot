@@ -29,12 +29,22 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Src/Actors/Characters/Player/Player.gd"
 }, {
+"base": "KinematicBody",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://Src/Actors/Projectiles/Projectile.gd"
+}, {
 "base": "Spatial",
 "class": "Weapon",
 "language": "GDScript",
 "path": "res://Src/Actors/Weapons/Weapon.gd"
 }, {
-"base": "Reference",
+"base": "Weapon",
+"class": "WeaponProjectile",
+"language": "GDScript",
+"path": "res://Src/Actors/Weapons/Projectile/WeaponProjectile.gd"
+}, {
+"base": "Weapon",
 "class": "WeaponRayCast",
 "language": "GDScript",
 "path": "res://Src/Actors/Weapons/RayCast/WeaponRayCast.gd"
@@ -44,7 +54,9 @@ _global_script_class_icons={
 "HealthComponent": "",
 "Map": "",
 "Player": "",
+"Projectile": "",
 "Weapon": "",
+"WeaponProjectile": "",
 "WeaponRayCast": ""
 }
 

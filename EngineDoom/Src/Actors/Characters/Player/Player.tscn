@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Src/Actors/Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/Actors/Characters/Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://Src/Actors/Weapons/RayCast/WeaponRayCast.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Src/Actors/Weapons/Projectile/WeaponProjectile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Src/Actors/Projectiles/Projectile.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -13,7 +14,8 @@ script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="Head" index="0"]
 
-[node name="WeaponRayCast" parent="Head" index="1" instance=ExtResource( 3 )]
+[node name="Weapon" parent="Head" index="1" instance=ExtResource( 3 )]
+Projectile = ExtResource( 4 )
 
 [node name="CollisionShape" parent="." index="2"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )

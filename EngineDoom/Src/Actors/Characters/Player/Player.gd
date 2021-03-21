@@ -6,7 +6,7 @@ export var mouse_sensitivity: float = 0.3
 var camera_x_rotation = 0
 
 onready var camera = $Head/Camera
-onready var weapon = $Head/WeaponRayCast
+onready var weapon = $Head/Weapon
 
 
 func _ready():
@@ -22,28 +22,20 @@ func _process(delta):
 	jump(Input.is_action_just_pressed("jump"))
 	crouch(Input.is_action_pressed("crouch"))
 	sprint(Input.is_action_pressed("sprint"))
-		
-	if weapon:
-		if Input.is_action_pressed("primary_fire"):
-			weapon.primary_attack()
-		if Input.is_action_just_pressed("reload"):
-			weapon.reload()
+	
+	if Input.is_action_pressed("primary_fire"):
+		weapon.primary_attack()
+	if Input.is_action_just_pressed("reload"):
+		weapon.reload()
 
 func _physics_process(delta: float):
 	move(get_direction_input(), delta)
 
 
-func mouse_look(event):
-	if not event is InputEventMouseMotion: return
-	
-	#Rotate HEAD Horizontally
-	head.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))
-	
-	#Rotate the CAMERA Vertically
-	var x_delta = event.relative.y * mouse_sensitivity #x increment
-	if camera_x_rotation + x_delta > -90 and camera_x_rotation + x_delta < 90:
-		camera.rotate_x(deg2rad(-event.relative.y * mouse_sensitivity))
-		camera_x_rotation += x_delta
+func mouse_look(event: InputEventMouseMotion) -> void:
+	if event is InputEventMouseMotion:
+		rotation_degrees.y -= event.relative.x * mouse_sensitivity
+		head.rotation_degrees.x = clamp(head.rotation_degrees.x - event.relative.y * mouse_sensitivity, -90, 90)
 
 
 func get_direction_input():
