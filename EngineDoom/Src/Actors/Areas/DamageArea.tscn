@@ -4,4 +4,10 @@
 
 [node name="DamageArea" type="Area"]
 script = ExtResource( 1 )
+
+[node name="LifeTimeTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_DamageArea_body_entered"]
+[connection signal="timeout" from="LifeTimeTimer" to="." method="_on_LifeTimeTimer_timeout"]

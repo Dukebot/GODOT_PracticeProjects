@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Pickup",
+"class": "AmmoPickup",
+"language": "GDScript",
+"path": "res://Src/Actors/Pickups/Ammo/AmmoPickup.gd"
+}, {
 "base": "KinematicBody",
 "class": "Character",
 "language": "GDScript",
@@ -19,15 +24,40 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Src/Components/HealthComponent.gd"
 }, {
+"base": "Pickup",
+"class": "HealthPickup",
+"language": "GDScript",
+"path": "res://Src/Actors/Pickups/Helath/HealthPickup.gd"
+}, {
+"base": "Pickup",
+"class": "KeyPickup",
+"language": "GDScript",
+"path": "res://Src/Actors/Pickups/Keys/KeyPickup.gd"
+}, {
 "base": "Spatial",
 "class": "Map",
 "language": "GDScript",
 "path": "res://Src/Maps/Map.gd"
 }, {
+"base": "Control",
+"class": "Menu",
+"language": "GDScript",
+"path": "res://Src/Interface/Menus/Menu.gd"
+}, {
+"base": "Area",
+"class": "Pickup",
+"language": "GDScript",
+"path": "res://Src/Actors/Pickups/Pickup.gd"
+}, {
 "base": "Character",
 "class": "Player",
 "language": "GDScript",
 "path": "res://Src/Actors/Characters/Player/Player.gd"
+}, {
+"base": "Pickup",
+"class": "PowerUpPickup",
+"language": "GDScript",
+"path": "res://Src/Actors/Pickups/PowerUps/PowerUpPickup.gd"
 }, {
 "base": "KinematicBody",
 "class": "Projectile",
@@ -50,10 +80,16 @@ _global_script_classes=[ {
 "path": "res://Src/Actors/Weapons/RayCast/WeaponRayCast.gd"
 } ]
 _global_script_class_icons={
+"AmmoPickup": "",
 "Character": "",
 "HealthComponent": "",
+"HealthPickup": "",
+"KeyPickup": "",
 "Map": "",
+"Menu": "",
+"Pickup": "",
 "Player": "",
+"PowerUpPickup": "",
 "Projectile": "",
 "Weapon": "",
 "WeaponProjectile": "",
@@ -63,8 +99,46 @@ _global_script_class_icons={
 [application]
 
 config/name="DoomLikeEngine"
-run/main_scene="res://Src/Maps/MapTest.tscn"
+run/main_scene="res://Src/Interface/Menus/TitleScreen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://Src/Singletons/Globals.gd"
+SceneLoader="*res://Src/Singletons/SceneLoader.gd"
+BackgroundMusic="*res://Src/Singletons/BackgroundMusic.tscn"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+
+[gui]
+
+theme/custom_font="res://Assets/Fonts/dogicapixel_16.tres"
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [input]
 
@@ -113,6 +187,16 @@ reload={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
  ]
 }
+enter={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
 
 [rendering]
 

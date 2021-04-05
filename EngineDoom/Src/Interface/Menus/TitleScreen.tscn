@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Src/Interface/Menus/Menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Src/Interface/Menus/TitleScreen.gd" type="Script" id=2]
+
+[node name="TitleScreen" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="." index="1"]
+margin_left = 512.0
+margin_top = 512.0
+margin_right = 764.0
+margin_bottom = 524.0
+text = "Press ENTER to start"
+
+[node name="Title" parent="." index="2"]
+text = "Doom Like Engine"
