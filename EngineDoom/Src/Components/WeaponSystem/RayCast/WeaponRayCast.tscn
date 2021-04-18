@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Src/Components/WeaponSystem/Weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Src/Components/WeaponSystem/RayCast/WeaponRayCast.gd" type="Script" id=2]
+
+[node name="WeaponRayCast" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+number_of_projectiles = 1
+shake_amount = 5.0

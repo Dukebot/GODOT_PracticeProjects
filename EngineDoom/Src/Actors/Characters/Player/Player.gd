@@ -6,7 +6,7 @@ export var mouse_sensitivity: float = 0.3
 var camera_x_rotation = 0
 
 onready var camera = $Head/Camera
-onready var weapon = $Head/WeaponRayCast
+onready var weapon_component = $WeaponComponent
 
 
 func _ready():
@@ -24,9 +24,7 @@ func _process(delta):
 	sprint(Input.is_action_pressed("sprint"))
 	
 	if Input.is_action_pressed("primary_fire"):
-		weapon.primary_attack()
-	if Input.is_action_just_pressed("reload"):
-		weapon.reload()
+		weapon_component.primary_attack()
 
 func _physics_process(delta: float):
 	move(get_direction_input(), delta)

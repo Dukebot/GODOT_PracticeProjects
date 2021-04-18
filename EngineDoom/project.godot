@@ -69,20 +69,25 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Src/Actors/Projectiles/Projectile.gd"
 }, {
-"base": "Spatial",
+"base": "Node",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://Src/Actors/Weapons/Weapon.gd"
+"path": "res://Src/Components/WeaponSystem/Weapon.gd"
+}, {
+"base": "Node",
+"class": "WeaponComponent",
+"language": "GDScript",
+"path": "res://Src/Components/WeaponSystem/WeaponComponent.gd"
 }, {
 "base": "Weapon",
 "class": "WeaponProjectile",
 "language": "GDScript",
-"path": "res://Src/Actors/Weapons/Projectile/WeaponProjectile.gd"
+"path": "res://Src/Components/WeaponSystem/Projectile/WeaponProjectile.gd"
 }, {
 "base": "Weapon",
 "class": "WeaponRayCast",
 "language": "GDScript",
-"path": "res://Src/Actors/Weapons/RayCast/WeaponRayCast.gd"
+"path": "res://Src/Components/WeaponSystem/RayCast/WeaponRayCast.gd"
 } ]
 _global_script_class_icons={
 "AmmoPickup": "",
@@ -98,6 +103,7 @@ _global_script_class_icons={
 "PowerUpPickup": "",
 "Projectile": "",
 "Weapon": "",
+"WeaponComponent": "",
 "WeaponProjectile": "",
 "WeaponRayCast": ""
 }
