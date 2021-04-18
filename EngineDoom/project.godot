@@ -72,7 +72,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://Src/Components/WeaponSystem/Weapon.gd"
+"path": "res://Src/Components/WeaponSystem/Weapons/Weapon.gd"
 }, {
 "base": "Node",
 "class": "WeaponComponent",
@@ -82,12 +82,12 @@ _global_script_classes=[ {
 "base": "Weapon",
 "class": "WeaponProjectile",
 "language": "GDScript",
-"path": "res://Src/Components/WeaponSystem/Projectile/WeaponProjectile.gd"
+"path": "res://Src/Components/WeaponSystem/Weapons/Projectile/WeaponProjectile.gd"
 }, {
 "base": "Weapon",
 "class": "WeaponRayCast",
 "language": "GDScript",
-"path": "res://Src/Components/WeaponSystem/RayCast/WeaponRayCast.gd"
+"path": "res://Src/Components/WeaponSystem/Weapons/RayCast/WeaponRayCast.gd"
 } ]
 _global_script_class_icons={
 "AmmoPickup": "",
@@ -202,6 +202,16 @@ reload={
 enter={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"unicode":0,"echo":false,"script":null)
+ ]
+}
+next_weapon={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+previous_weapon={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 
