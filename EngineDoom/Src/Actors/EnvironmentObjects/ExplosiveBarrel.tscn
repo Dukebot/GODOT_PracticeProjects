@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="ExplosiveBarrel" type="StaticBody"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]

@@ -6,7 +6,7 @@ export var mouse_sensitivity: float = 0.3
 var camera_x_rotation = 0
 
 onready var camera = $Head/Camera
-onready var weapon = $Head/Weapon
+onready var weapon = $Head/WeaponRayCast
 
 
 func _ready():
