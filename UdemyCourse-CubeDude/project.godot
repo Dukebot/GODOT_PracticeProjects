@@ -70,6 +70,13 @@ move_left_2={
  ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Level"
+3d_physics/layer_3="Ball"
+3d_physics/layer_4="Net"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
