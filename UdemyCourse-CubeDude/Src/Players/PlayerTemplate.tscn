@@ -24,6 +24,7 @@ surfaces/0 = {
 
 [sub_resource type="Animation" id=3]
 length = 1.04167
+loop = true
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature")
 tracks/0/interp = 1
